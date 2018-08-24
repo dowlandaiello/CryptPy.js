@@ -3,11 +3,13 @@ try:
 except ImportError:
     import pickle
 from common import commonio
+from common import common
 from bot import bot
 
 class Database:
-    def __init__(self):
+    def __init__(self, serverAddr):
         self.Bots = [bot.Bot] # Init empty array
+        common.RemoteAddr = serverAddr
 
 
     # Write self to memory
