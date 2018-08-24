@@ -1,9 +1,9 @@
 from pexpect import pxssh
 
-class ImportTest():
+class ImportTest:
     def __init__(self):
         print("imported successfully")
-class Bot():
+class Bot:
     # init class instance
     def __init__(self, host, user, password):
         self.host = host # Fetch and store host reference
