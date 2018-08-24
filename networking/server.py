@@ -37,6 +37,13 @@ class Server:
                 while true:
                     data = connection.recv(16)
                     print('received '+len(data)+' bits of data')
-                    
+
+                    if data:
+                        print('found data')
+                    else:
+                        print('found end of data stream')
+                        break
+            finally:
+                connection.close()
 
 
