@@ -1,51 +1,52 @@
 from database import database
 from common.commondefs import true
+from bot import bot
 import ipgetter
 import socket
 import sys
 
 class Server:
     def __init__(self):
-        ip = ipgetter.myip()
+        ip = ipgetter.myip() # Get external IP
 
-        databaseReference = database.Database(ip)
+        databaseReference = database.Database(ip) # Init db
         try:
-            databaseReference.ReadFromMemory()
+            databaseReference.ReadFromMemory() # Attempt to read from memory
         except Exception:
-            databaseReference.WriteToMemory()
+            databaseReference.WriteToMemory() # Write new to memory if nonexistent
 
-        self.databaseReference = databaseReference
-        self.ipAddress = ip
+        self.databaseReference = databaseReference # set db ref to init db
+        self.ipAddress = ip # Set ip ref to found ip
 
-        self.startServer()
+        self.startServer() # start server
     
     def startServer(self):
-        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        server_address = self.ipAddress
+        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # Init socket
 
-        sock.bind(server_address)
+        sock.bind(self.ipAddress, "3000") # Bind socket to server address
 
-        sock.listen(1)
+        sock.listen(1) # Listen
 
         while true:
-            print('waiting for connection')
-            connection, client_address = sock.accept()
+            print('waiting for connection') # Log begin
+            connection, client_address = sock.accept() # Accept connection
 
             try:
-                print('connection from bot '+client_address)
+                print('connection from bot '+client_address) # Log accepted connection
 
-                total_data = []
+                total_data = [] # Init data buffer
 
                 while true:
-                    data = connection.recv(16)
-                    print('received '+len(data)+' bits of data')
+                    data = connection.recv(16) # Attempt to read 
+                    print('received '+len(data)+' bits of data') # Log received data
 
                     if data:
                         print('found data')
-                        total_data.append(data)
+                        total_data.append(data) # Append data to list
                     else:
                         print('found end of data stream')
-                        break
+                        break # Found end of data stream, break loop
+                print(type(total_data[0])) # [Debug] log type of total_data
             finally:
                 connection.close()
 
