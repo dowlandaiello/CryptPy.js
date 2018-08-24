@@ -1,2 +1,2 @@
-pxssh
+pexpect
 pycrypto
