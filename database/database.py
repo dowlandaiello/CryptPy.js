@@ -19,6 +19,9 @@ class Database:
     
     # Read from memory to self
     def ReadFromMemory(self):
-        with open("database.hax", "rb") as f: # Get file reference
-            dump = pickle.load(f) # Load
-            self.Bots = dump.Bots # Set read dump to self
+        try:
+            with open("database.hax", "rb") as f: # Get file reference
+                dump = pickle.load(f) # Load
+                self.Bots = dump.Bots # Set read dump to self
+        except Exception as e: # account for exception
+            print(e)
