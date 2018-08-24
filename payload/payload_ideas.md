@@ -1,6 +1,7 @@
 # Payload Ideas
 
 * Crypto mining
+* Vbucks generator
 * Screen cap
 * Webcam cap
 * Some ransomware
