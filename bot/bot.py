@@ -1,5 +1,4 @@
 from pexpect import pxssh
-import socket
 
 class ImportTest():
     def __init__(self):
