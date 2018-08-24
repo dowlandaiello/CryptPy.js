@@ -1,5 +1,5 @@
-from bot.bot import Bot
-from bot.bot import ImportTest
+from bot.bot import Bot, ImportTest
+
 import getpass
 
 
