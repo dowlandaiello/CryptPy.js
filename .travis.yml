@@ -9,7 +9,9 @@ script:
   - python payload/rsa/key.py
   - python payload/rsa/rsa.py
 
-  - python bot/bot.py
-  - python bot/bot_test.py
-
   - python command/command.py
+
+notifications:
+  email:
+    on_success: never
+    on_failure: never
