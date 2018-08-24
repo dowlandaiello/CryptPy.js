@@ -1,8 +1,7 @@
 from key import Key
 from Crypto.PublicKey import RSA
 from Crypto.Cipher import PKCS1_OAEP
-import zlib
-import base64
+import base64, zlib
 
 class Encrypt:
     def __init__(self, files, key_hash):
@@ -17,7 +16,6 @@ class Encrypt:
             except Exception as e:
                 print("could not encrypt file '" + str(f) + "'")
                 print(e)
-
     def encrypt(self, file_name):
         raw_data = None
         with open(file_name, "rb") as rfile: # Load the raw data of the target file
@@ -29,7 +27,6 @@ class Encrypt:
         offset = 0
         encrypted = b"" # String to store the current encrypted file
         end_loop = False
-        
         while not end_loop:
             chunk = raw_data[offset:offset + chunk_size] # Current chunk
             if len(chunk) % chunk_size != 0: # Add padding, this means that the loop reached the end of the file

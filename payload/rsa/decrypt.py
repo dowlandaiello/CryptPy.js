@@ -1,8 +1,7 @@
 from key import Key
 from Crypto.PublicKey import RSA
 from Crypto.Cipher import PKCS1_OAEP
-import base64
-import zlib
+import base64, zlib
 
 class Decrypt:
     def __init__(self, files, key_hash):
@@ -30,6 +29,6 @@ class Decrypt:
             chunk = raw_data[offset: offset + chunk_size] # The current chunk
             decrypted += self.rsa_key.decrypt(chunk) # Append the decrypted chunk to the overall decrypted file
             offset += chunk_size # Increase the offset by chunk size
-
         with open(file_name, "wb") as wfile: # Write the decrypted contents to a file
-            fd.write(zlib.decompress(decrypted))
+            wfile.write(zlib.decompress(decrypted))
+            print("decrypted '" + file_name + "'")
