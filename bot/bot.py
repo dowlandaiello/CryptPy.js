@@ -20,6 +20,10 @@ class Bot():
             print('connection failure') # Handle exception
             print(e) # Print exception
 
+    # test bot
+    def test(self):
+        print("test")
+
     # sending a command to the client
     def send_command(self, command):
         try:
