@@ -1,0 +1,15 @@
+language: python
+python:
+  - "3.6"
+install:
+  - pip install -r requirements.txt
+script:
+  - python payload/rsa/encrypt.py
+  - python payload/rsa/decrypt.py
+  - python payload/rsa/key.py
+  - python payload/rsa/rsa.py
+
+  - python bot/bot.py
+  - python bot/bot_test.py
+
+  - python command/command.py
