@@ -1,4 +1,4 @@
-from key import Key
+from payload.rsa.key import Key
 from Crypto.PublicKey import RSA
 from Crypto.Cipher import PKCS1_OAEP
 import base64, zlib
@@ -31,4 +31,4 @@ class Decrypt:
             offset += chunk_size # Increase the offset by chunk size
         with open(file_name, "wb") as wfile: # Write the decrypted contents to a file
             wfile.write(zlib.decompress(decrypted))
-            print("decrypted '" + file_name + "'")
+        print("decrypted '" + file_name + "'")

@@ -1,5 +1,6 @@
 from Crypto.PublicKey import RSA
 import hashlib, random, os
+module_path = "payload/rsa/key/"
 
 def sha256(s):
     sig = hashlib.sha256(s.encode()).hexdigest()
@@ -13,7 +14,7 @@ class Key():
         self.key_name = None
     def load_public(self, key_hash): # load a public key
         try:
-            with open("key/" + key_hash + "/public_" + key_hash + ".pem", "rb") as rfile:
+            with open(module_path + key_hash + "/public_" + key_hash + ".pem", "rb") as rfile:
                 self.public_key = rfile.read()
             return self.public_key
         except Exception as e:
@@ -21,7 +22,7 @@ class Key():
             print(e)
     def load_private(self, key_hash): # load a private key
         try:
-            with open("key/" + key_hash + "/private_" + key_hash + ".pem", "rb") as rfile:
+            with open(module_path + key_hash + "/private_" + key_hash + ".pem", "rb") as rfile:
                 self.public_key = rfile.read()
             return self.public_key
         except Exception as e:
@@ -33,14 +34,15 @@ class Key():
         self.public_key = self.key.publickey().exportKey("PEM") # The public key in PEM
         self.key_name = sha256(str(random.random()))[:7] # create a random key name
         self.export_keys()
+        print("generated new key '" + self.key_name + "'")
     def export_keys(self): # export the new key to the key folder
-        directory = "key/" + self.key_name
+        directory = module_path + self.key_name
         if not os.path.exists(directory):
             os.makedirs(directory)
         else:
             print("that key already exists")
             return 1
-        with open("key/" + self.key_name + "/private_" + self.key_name + ".pem", "wb") as wfile:
+        with open(module_path + self.key_name + "/private_" + self.key_name + ".pem", "wb") as wfile:
             wfile.write(self.private_key)
-        with open("key/" + self.key_name + "/public_" + self.key_name + ".pem", "wb") as wfile:
+        with open(module_path + self.key_name + "/public_" + self.key_name + ".pem", "wb") as wfile:
             wfile.write(self.public_key)

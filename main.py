@@ -9,5 +9,4 @@ payload.encrypt("payload/rsa/test_files") # Dont put a slash at the end of the p
 # To decrypt a dir:
 payload.decrypt("payload/rsa/test_files")
 """
-
 botnet = []

@@ -1,4 +1,4 @@
-from key import Key
+from payload.rsa.key import Key
 from Crypto.PublicKey import RSA
 from Crypto.Cipher import PKCS1_OAEP
 import base64, zlib
