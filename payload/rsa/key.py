@@ -12,14 +12,21 @@ class Key():
         self.public_key = None
         self.key_name = None
     def load_public(self, key_hash): # load a public key
-        with open("key/" + key_hash + "/public_" + key_hash + ".pem", "rb") as rfile:
-            self.public_key = rfile.read()
-        return self.public_key
+        try:
+            with open("key/" + key_hash + "/public_" + key_hash + ".pem", "rb") as rfile:
+                self.public_key = rfile.read()
+            return self.public_key
+        except Exception as e:
+            print("error loading public key '" + key_hash + "'")
+            print(e)
     def load_private(self, key_hash): # load a private key
-        with open("key/" + key_hash + "/private_" + key_hash + ".pem", "rb") as rfile:
-            self.public_key = rfile.read()
-        return self.public_key
-
+        try:
+            with open("key/" + key_hash + "/private_" + key_hash + ".pem", "rb") as rfile:
+                self.public_key = rfile.read()
+            return self.public_key
+        except Exception as e:
+            print("error loading private key '" + key_hash + "'")
+            print(e)
     def new_key(self, size): # generate a new key
         self.key = RSA.generate(size, e=65537) # Generate a public/ private key pair using 4096 bits key length (512 bytes)
         self.private_key = self.key.exportKey("PEM") # The private key in PEM
@@ -30,6 +37,9 @@ class Key():
         directory = "key/" + self.key_name
         if not os.path.exists(directory):
             os.makedirs(directory)
+        else:
+            print("that key already exists")
+            return 1
         with open("key/" + self.key_name + "/private_" + self.key_name + ".pem", "wb") as wfile:
             wfile.write(self.private_key)
         with open("key/" + self.key_name + "/public_" + self.key_name + ".pem", "wb") as wfile:
