@@ -1,17 +1,16 @@
-import bot
-try:
-    import cPickle as pickle
-except ModuleNotFoundError:
-    import pickle
+from bot import bot
+import common
 
 class Database():
-    Nodes = [bot.bot.Bot()] # Init empty array
+    Bots = [bot.Bot] # Init empty array
 
 
     # Write self to memory
     def WriteToMemory():
-        with open("database.hax", "wb") as f: # Init file reference
-            pickle.dump(self, f, pickle.HIGHEST_PROTOCOL) # Dump to file
+        try:
+            common.WriteToMemory(self, "database.hax")
+        except Exception as e: # account for exception
+            print(e)
     
     # Read from memory to self
     def ReadFromMemory():
