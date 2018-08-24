@@ -1,50 +1,35 @@
-#ch9_decrypt_blob.py
+from key import Key
 from Crypto.PublicKey import RSA
 from Crypto.Cipher import PKCS1_OAEP
 import base64
 import zlib
 
-#Our Decryption Function
-def decrypt_blob(encrypted_blob, private_key):
+class Decrypt:
+    def __init__(self, files, key_hash):
+        key = Key()
+        raw_key = key.load_private(key_hash)
+        self.rsa_key = RSA.importKey(raw_key)
+        self.rsa_key = PKCS1_OAEP.new(self.rsa_key)
+        self.files = files
+        for f in self.files:
+            try:
+                self.decrypt(f)
+            except Exception as e:
+                print("could not decrypt file '" + str(f) + "'")
+                print(e)
+    def decrypt(self, file_name):
+        raw_data = None
+        with open(file_name, "rb") as rfile:
+            raw_data = rfile.read()
+        raw_data = base64.b64decode(raw_data) # Base 64 decode the data
+        # In determining the chunk size, determine the private key length used in bytes.
+        chunk_size = 512
+        offset = 0
+        decrypted = b""
+        while offset < len(raw_data): # Keep loop going as long as we have chunks to decrypt
+            chunk = raw_data[offset: offset + chunk_size] # The current chunk
+            decrypted += self.rsa_key.decrypt(chunk) # Append the decrypted chunk to the overall decrypted file
+            offset += chunk_size # Increase the offset by chunk size
 
-    #Import the Private Key and use for decryption using PKCS1_OAEP
-    rsakey = RSA.importKey(private_key)
-    rsakey = PKCS1_OAEP.new(rsakey)
-
-    #Base 64 decode the data
-    encrypted_blob = base64.b64decode(encrypted_blob)
-
-    #In determining the chunk size, determine the private key length used in bytes.
-    #The data will be in decrypted in chunks
-    chunk_size = 512
-    offset = 0
-    decrypted = ""
-
-    #keep loop going as long as we have chunks to decrypt
-    while offset < len(encrypted_blob):
-        #The chunk
-        chunk = encrypted_blob[offset: offset + chunk_size]
-
-        #Append the decrypted chunk to the overall decrypted file
-        decrypted += rsakey.decrypt(chunk)
-
-        #Increase the offset by chunk size
-        offset += chunk_size
-
-    #return the decompressed decrypted data
-    return zlib.decompress(decrypted)
-
-#Use the private key for decryption
-fd = open("private_key.pem", "rb")
-private_key = fd.read()
-fd.close()
-
-#Our candidate file to be decrypted
-fd = open("encrypted_img.jpg", "rb")
-encrypted_blob = fd.read()
-fd.close()
-
-#Write the decrypted contents to a file
-fd = open("decrypted_img.jpg", "wb")
-fd.write(decrypt_blob(encrypted_blob, private_key))
-fd.close()
+        with open(file_name, "wb") as wfile: # Write the decrypted contents to a file
+            fd.write(zlib.decompress(decrypted))

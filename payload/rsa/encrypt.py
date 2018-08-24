@@ -4,10 +4,10 @@ from Crypto.Cipher import PKCS1_OAEP
 import zlib
 import base64
 
-class Encrypt():
+class Encrypt:
     def __init__(self, files, key_hash):
         key = Key()
-        raw_key = key.load(key_hash)
+        raw_key = key.load_public(key_hash)
         self.rsa_key = RSA.importKey(raw_key)
         self.rsa_key = PKCS1_OAEP.new(self.rsa_key)
         self.files = files
@@ -20,7 +20,7 @@ class Encrypt():
 
     def encrypt(self, file_name):
         raw_data = None
-        with open(file_name, "rb") as rfile:
+        with open(file_name, "rb") as rfile: # Load the raw data of the target file
             raw_data = rfile.read()
         raw_data = zlib.compress(raw_data) # First, compress the data of the file
         # In determining the chunk size, determine the private key length used in bytes

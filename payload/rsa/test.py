@@ -1,5 +1,6 @@
 from key import Key
 from encrypt import Encrypt
+from decrypt import Decrypt
 import os
 
 def new_key():
@@ -15,7 +16,6 @@ def encrypt():
         ],
         "3b4e434"
     )
-
 
 all_files = []
 def r_loop(dir_name): # recursively loop through a folder, adding each file and its complete path to an array
@@ -35,4 +35,13 @@ def r_encrypt():
         "3b4e434"
     )
 
-r_encrypt()
+def decrypt():
+    Decrypt(
+    [
+        "test_files/test1"
+    ],
+    "3b4e434"
+)
+decrypt()
+# r_encrypt()
+
