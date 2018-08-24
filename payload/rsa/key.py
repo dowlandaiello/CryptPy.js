@@ -11,9 +11,10 @@ class Key():
         self.private_key = None
         self.public_key = None
         self.key_name = None
-    def load_key(self, key_hash): # import a key
+    def load(self, key_hash): # import a key
         with open("key/public_" + key_hash + ".pem", "rb") as rfile:
             self.public_key = rfile.read()
+        return self.public_key
 
     def new_key(self, size): # generate a new key
         self.key = RSA.generate(size, e=65537) # Generate a public/ private key pair using 4096 bits key length (512 bytes)
