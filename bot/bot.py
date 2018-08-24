@@ -1,7 +1,5 @@
 from pexpect import pxssh
 import socket
-# literally just copying everything from this tutorial: https://www.youtube.com/watch?v=eSPLRuOezGc
-
 
 class Bot():
     # init class instance
