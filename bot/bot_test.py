@@ -2,7 +2,7 @@ import bot
 
 import getpass
 
-bot.ImportTest()
+bot.ImportTest() # Test importable
 
 test_bot = bot.Bot(
     '192.168.1.14',
@@ -10,7 +10,6 @@ test_bot = bot.Bot(
     getpass.getpass("pwd: ")
 )
 
-ifconfig = test_bot.send_command("ifconfig")
-print(type(ifconfig))
+ifconfig = test_bot.send_command("ifconfig") # Send command
 
-print(ifconfig)
+print(ifconfig) # Log output
