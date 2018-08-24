@@ -40,6 +40,5 @@ class Encrypt():
             offset += chunk_size # Increase the offset by chunk size
         
         # Write the encrypted contents to a file
-        fd = open("encrypted_img.jpg", "wb")
-        with open(file_name, "wb") as f:
-            f.write(base64.b64encode(encrypted)) # Write the base 64 encode the encrypted file
+        with open(file_name, "wb") as wfile:
+            wfile.write(base64.b64encode(encrypted)) # Write the base 64 encode the encrypted file
