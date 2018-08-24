@@ -16,7 +16,7 @@ class Key():
             self.public_key = rfile.read()
         return self.public_key
     def load_private(self, key_hash): # load a private key
-        with open("key/" + key_hash + "/public_" + key_hash + ".pem", "rb") as rfile:
+        with open("key/" + key_hash + "/private_" + key_hash + ".pem", "rb") as rfile:
             self.public_key = rfile.read()
         return self.public_key
 
