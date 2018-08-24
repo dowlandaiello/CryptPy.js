@@ -1,7 +1,8 @@
 from pexpect import pxssh
-import getpass
-
 import socket
+# literally just copying everything from this tutorial: https://www.youtube.com/watch?v=eSPLRuOezGc
+
+
 class Bot():
     # init class instance
     def __init__(self, host, user, password):
@@ -26,14 +27,5 @@ class Bot():
             self.session.prompt() # match the prompt
             return self.session.before # everything before the prompt
         except Exception as e:
-            print("command could not be sent")
-            return 1 # Lol my c habits coming in                                                        
-
-# one minute, gotta get my charger
-# literally just copying everything from this tutorial: https://www.youtube.com/watch?v=eSPLRuOezGc
-
-
-# ok
-
-# we'll implement our own features once we get the basics down
-
+            print("command could not be sent") # Handle exception
+            print(e) # Print exception                                       
