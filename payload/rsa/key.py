@@ -11,7 +11,11 @@ class Key():
         self.private_key = None
         self.public_key = None
         self.key_name = None
-    def load(self, key_hash): # import a key
+    def load_public(self, key_hash): # load a public key
+        with open("key/" + key_hash + "/public_" + key_hash + ".pem", "rb") as rfile:
+            self.public_key = rfile.read()
+        return self.public_key
+    def load_private(self, key_hash): # load a private key
         with open("key/" + key_hash + "/public_" + key_hash + ".pem", "rb") as rfile:
             self.public_key = rfile.read()
         return self.public_key
