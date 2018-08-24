@@ -1,4 +1,3 @@
-# this is the way python packages work
 from bot.bot import Bot
 from bot.bot import ImportTest
 import getpass
