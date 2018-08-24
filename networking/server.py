@@ -34,12 +34,15 @@ class Server:
             try:
                 print('connection from bot '+client_address)
 
+                total_data = []
+
                 while true:
                     data = connection.recv(16)
                     print('received '+len(data)+' bits of data')
 
                     if data:
                         print('found data')
+                        total_data.append(data)
                     else:
                         print('found end of data stream')
                         break
