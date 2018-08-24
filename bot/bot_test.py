@@ -5,8 +5,8 @@ import getpass
 bot.ImportTest()
 
 test_bot = bot.Bot(
-    "192.168.1.14",
-    "bolt",
+    '192.168.1.14',
+    getpass.getuser(),
     getpass.getpass("pwd: ")
 )
 
