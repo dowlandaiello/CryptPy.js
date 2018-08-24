@@ -1,8 +1,8 @@
-FROM python:3
+FROM python:3-onbuild
 
-RUN pip install pxssh
+RUN pip install pexpect
 RUN pip install pycrypto
 RUN pip install pillow
 
-CMD [ "python", "./main_test.py" ]
+CMD [ "python", "./main.py" ]
 # Run main tests
