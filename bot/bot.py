@@ -24,7 +24,6 @@ class Bot():
 
     # sending a command to the client
     def send_command(self, command):
-        #try:
         self.session.sendline(command)
         self.session.prompt() # match the prompt
         return self.session.before # everything before the prompt
