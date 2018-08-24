@@ -1,5 +1,8 @@
 from database import database
+from common.commondefs import true
 import ipgetter
+import socket
+import sys
 
 class Server:
     def __init__(self):
@@ -8,7 +11,32 @@ class Server:
         databaseReference = database.Database(ip)
         try:
             databaseReference.ReadFromMemory()
-        except Exception as e:
+        except Exception:
             databaseReference.WriteToMemory()
 
         self.databaseReference = databaseReference
+        self.ipAddress = ip
+
+        self.startServer()
+    
+    def startServer(self):
+        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        server_address = self.ipAddress
+
+        sock.bind(server_address)
+
+        sock.listen(1)
+
+        while true:
+            print('waiting for connection')
+            connection, client_address = sock.accept()
+
+            try:
+                print('connection from bot '+client_address)
+
+                while true:
+                    data = connection.recv(16)
+                    print('received '+len(data)+' bits of data')
+                    
+
+
