@@ -2,7 +2,7 @@ from pexpect import pxssh
 
 class ImportTest:
     def __init__(self):
-        print("imported successfully")
+        print("imported successfully") # Log success
 class Bot:
     # init class instance
     def __init__(self, host, user, password):
