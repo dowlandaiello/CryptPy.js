@@ -4,5 +4,6 @@
         "pexpect",
         "pxssh",
         "wfile"
-    ]
+    ],
+    "python.linting.pylintEnabled": false
 }
