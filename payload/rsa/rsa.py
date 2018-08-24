@@ -25,4 +25,3 @@ def r_decrypt():
         all_files,
         "3b4e434"
     )
-
