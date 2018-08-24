@@ -2,8 +2,8 @@ try:
     import cPickle as pickle
 except ImportError:
     import pickle
-from bot import bot
 from common import commonio
+from bot import bot
 
 class Database:
     def __init__(self):
