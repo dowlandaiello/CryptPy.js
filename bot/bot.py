@@ -1,8 +1,9 @@
 from pexpect import pxssh
 import socket
 # literally just copying everything from this tutorial: https://www.youtube.com/watch?v=eSPLRuOezGc
-
-
+class ImportTest():
+    def __init__(self):
+        print("imported successfully")
 class Bot():
     # init class instance
     def __init__(self, host, user, password):

@@ -1,17 +1,18 @@
-# thx
-# np
+# this is the way python packages work
+from bot.bot import Bot
+from bot.bot import ImportTest
+import getpass
 
-# going to eat dinner now 
 
-# I'll be back in like 45 minutes
+ImportTest()
 
-# feel free to work on it while I'm gone
+test_bot = Bot(
+  "192.168.1.14",
+  "bolt",
+  getpass.getpass("pwd: ")
+)
 
-# I'll close liveshare now
-#
-  w# have fun
+ifconfig = test_bot.send_command("ifconfig")
+print(type(ifconfig))
 
-  # ok
-
-Bot("192.168.")
-
+print(ifconfig)
