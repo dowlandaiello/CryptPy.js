@@ -6,6 +6,9 @@ class Server:
         ip = ipgetter.myip()
 
         databaseReference = database.Database(ip)
-        databaseReference.ReadFromMemory()
+        try:
+            databaseReference.ReadFromMemory()
+        except Exception as e:
+            databaseReference.WriteToMemory()
 
         self.databaseReference = databaseReference
