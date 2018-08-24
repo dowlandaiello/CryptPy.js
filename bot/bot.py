@@ -1,4 +1,5 @@
 from pexpect import pxssh
+from common.commondefs import false
 
 class ImportTest:
     def __init__(self):
@@ -15,7 +16,7 @@ class Bot:
     def ssh(self):
         try:
             bot = pxssh.pxssh() # Open ssh client instance
-            bot.login(self.host, self.user, self.password, auto_prompt_reset=False) # Login to ssh terminal
+            bot.login(self.host, self.user, self.password, auto_prompt_reset=false) # Login to ssh terminal
             return bot
         except Exception as e: # Account for exceptions
             print('connection failure') # Handle exception

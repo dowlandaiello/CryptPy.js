@@ -2,6 +2,7 @@ from payload.rsa.key import Key
 from Crypto.PublicKey import RSA
 from Crypto.Cipher import PKCS1_OAEP
 from common.commondefs import true
+from common.commondefs import false
 import base64, zlib
 
 class Encrypt:
@@ -27,7 +28,7 @@ class Encrypt:
         chunk_size = 470
         offset = 0
         encrypted = b"" # String to store the current encrypted file
-        end_loop = False
+        end_loop = false
         while not end_loop:
             chunk = raw_data[offset:offset + chunk_size] # Current chunk
             if len(chunk) % chunk_size != 0: # Add padding, this means that the loop reached the end of the file
