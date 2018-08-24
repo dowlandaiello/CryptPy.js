@@ -1,13 +1,9 @@
 from pexpect import pxssh
 import socket
-<<<<<<< HEAD
 # literally just copying everything from this tutorial: https://www.youtube.com/watch?v=eSPLRuOezGc
 class ImportTest():
     def __init__(self):
         print("imported successfully")
-=======
-
->>>>>>> c2c14a5ca0a974df9c1bcb67f6f64a878405152b
 class Bot():
     # init class instance
     def __init__(self, host, user, password):
@@ -31,10 +27,7 @@ class Bot():
 
     # sending a command to the client
     def send_command(self, command):
-        try:
-            self.session.sendline(command)
-            self.session.prompt() # match the prompt
-            return self.session.before # everything before the prompt
-        except Exception as e:
-            print("command could not be sent") # Handle exception
-            print(e) # Print exception                                       
+        #try:
+        self.session.sendline(command)
+        self.session.prompt() # match the prompt
+        return self.session.before # everything before the prompt
