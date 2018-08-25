@@ -25,6 +25,8 @@ class Client:
             
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # Init socket
 
+        sock.connect((common.RemoteAddr, 3000)) # Connect socket
+
         serialized = commonio.ToBytes(self.bot) # Attempt to serialize
 
         sock.sendall(serialized) # Send self bot reference
