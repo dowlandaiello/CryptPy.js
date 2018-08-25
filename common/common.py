@@ -1,1 +1,1 @@
-RemoteAddr = "12.216.142.75" # Add server address
+RemoteAddr = "localhost" # Add server address
