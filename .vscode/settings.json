@@ -3,6 +3,7 @@
         "Unimported",
         "cdir",
         "ifconfig",
+        "nargs",
         "pexpect",
         "pxssh"
     ],
