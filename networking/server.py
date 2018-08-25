@@ -22,7 +22,11 @@ class Server:
     def startServer(self):
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # Init socket
 
-        sock.bind(('localhost', 3000)) # Bind socket to server address
+        server_address = ('localhost', 3000)
+
+        sock.bind(server_address) # Bind socket to server address
+
+        print('starting with address '+server_address[0]+':'+str(server_address[1]))
 
         sock.listen(1) # Listen
 
