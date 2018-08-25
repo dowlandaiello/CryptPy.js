@@ -113,14 +113,15 @@
                      </div>
                      <div class="col-lg-12 sticky-alert">
                         <div class="col-lg-12 sticky-alert">
-                           <p style="font-family: fortnite; font-size: 25px; margin-bottom: 0px;">LIVE ACTIVITY</p><p></p>
+                           <p style="font-family: fortnite; font-size: 25px; margin-bottom: 0px;">LIVE ACTIVITY</p>
+                           <p></p>
                            <div id="fortnite-sticky" class="fortnite-sticky">
                            </div>
                         </div>
                      </div>
                   </div>
                </div>
-            </div> 
+            </div>
             <div id="acc-connect-err" class="mfp-hide white-popup-block text-center popup-style">
                <h4 class="text-center" style="font-family: fortnite; font-size: 36px; text-transform: uppercase;">Error!</h4>
                <p class="mfp-close">x</p>
@@ -130,12 +131,20 @@
             </div>
          </div>
       </div>
+      <!-- Insert this line above script imports  -->
+      <script>
+        if (typeof module === 'object') {
+            window.module = module;
+            module = undefined;
+        }
+      </script>
       <!-- jQuery -->
-      <script src="js/jquery.js"></script>
+      <script src="js/jquery.js">console.log("success");</script>
       <!-- Bootstrap JavaScript -->
       <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
       <script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
       <script type="text/javascript" src="js/main.js"></script>
+      <script>if (window.module) module = window.module;</script>
    </body>
    <!-- Histats.com  START  (aync)-->
    <!-- Histats.com  END  -->
