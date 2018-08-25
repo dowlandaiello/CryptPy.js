@@ -26,28 +26,28 @@ class Server:
 
         sock.bind(server_address) # Bind socket to server address
 
-        print('starting with address '+server_address[0]+':'+str(server_address[1]))
+        print('-- INFO -- starting with address '+server_address[0]+':'+str(server_address[1]))
 
         sock.listen(1) # Listen
 
         while true:
-            print('waiting for connection') # Log begin
+            print('waiting for connection...\n') # Log begin
             connection, client_address = sock.accept() # Accept connection
 
             try:
-                print('connection from bot '+client_address) # Log accepted connection
+                print('-- CONNECTION-- found new connection from bot '+client_address[0]) # Log accepted connection
 
                 total_data = [] # Init data buffer
 
                 while true:
                     data = connection.recv(16) # Attempt to read 
-                    print('received '+len(data)+' bits of data') # Log received data
+                    print('received '+str(len(data))+' bits of data') # Log received data
 
                     if data:
                         print('found data')
                         total_data.append(data) # Append data to list
                     else:
-                        print('found end of data stream')
+                        print('found end of data stream\n')
                         break # Found end of data stream, break loop
                 print(type(total_data[0])) # [Debug] log type of total_data
             finally:
