@@ -27,7 +27,14 @@ class Client:
 
         sock.connect((common.RemoteAddr, 3000)) # Connect socket
 
+        print('-- CONNECTION -- connecting to host node')
+
         serialized = commonio.ToBytes(self.bot) # Attempt to serialize
 
         sock.sendall(serialized) # Send self bot reference
+
+        print('sending serialized obj data')
+
         sock.close() # Close socket
+
+        print('-- CONNECTION-- closing connection\n')

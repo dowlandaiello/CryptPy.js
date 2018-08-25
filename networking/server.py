@@ -50,8 +50,8 @@ class Server:
                         print('found end of data stream\n')
                         break # Found end of data stream, break loop
             finally:
-                connection.close()
+                connection.close() # Close connection
 
-                print('-- CONNECTION -- connection closed')
+                print('-- CONNECTION -- connection closed') # Log closed connection
 
 
