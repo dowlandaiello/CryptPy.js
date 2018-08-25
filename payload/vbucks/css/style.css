@@ -1,6 +1,6 @@
 @font-face{
-    font-family: fortnite;
-    src: url("LuckiestGuy.ttf") format('ttf');
+    font-family:fortnite;
+    src:url("fortnite.woff") format('woff');
 }
 
 
@@ -647,3 +647,4 @@ a.verify:hover {
     	height: 247px;
     }
 }
+
