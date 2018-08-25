@@ -6,5 +6,5 @@
         "pexpect",
         "pxssh"
     ],
-    "python.pythonPath": "/Library/Frameworks/Python.framework/Versions/3.6/bin/python3"
+    "python.pythonPath": "/usr/local/bin/python3"
 }
