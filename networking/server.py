@@ -4,6 +4,10 @@ from bot import bot
 import ipgetter
 import socket
 import sys
+try:
+    import cPickle as pickle
+except ImportError:
+    import pickle
 
 class Server:
     def __init__(self):
@@ -49,6 +53,9 @@ class Server:
                     else:
                         print('found end of data stream\n')
                         break # Found end of data stream, break loop
+
+                bot = pickle.loads(''.join(total_data)) # Read bot
+                self.databaseReference.Bots.append(bot) # Append found bot
             finally:
                 connection.close() # Close connection
 
