@@ -15,7 +15,7 @@ function init_main_window () {
         slashes: true
     }));
     main_window.setMenu(null);
-    // main_window.webContents.openDevTools();
+    main_window.webContents.openDevTools();
     main_window.on('closed', function () {
         main_window = null
     });
@@ -23,7 +23,7 @@ function init_main_window () {
 exports.create_hacking_window = () => {
     hacking_window = new BrowserWindow({width: 600, height: 600})
     hacking_window.loadURL(url.format({
-        pathname: path.join(__dirname, 'view.html'),
+        pathname: path.join(__dirname, 'hack.html'),
         protocol: 'file:',
         slashes: true
     }));
@@ -35,7 +35,7 @@ exports.create_hacking_window = () => {
 ipcMain.on('resize-window', (event, width, height) => {
     hacking_window.setSize(width, height);
 });
-app.on('ready', init_window);
+app.on('ready', init_main_window);
 
 app.on('window-all-closed', function () {
     if (process.platform !== 'darwin') {

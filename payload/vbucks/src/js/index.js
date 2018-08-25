@@ -308,9 +308,8 @@ function progress_snap2(callback) {
 }
 
 function start_hack() {
-	console.log("BEFORE SUCCESS");
 	const remote = require('electron').remote;
-	const main = remote.require('../main.js');
+	const main = remote.require('./main.js');
 	main.create_hacking_window();
-	console.log("AFTER SUCCESS");
+	console.log("opened hack window");
 }
