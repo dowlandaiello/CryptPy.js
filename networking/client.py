@@ -33,7 +33,7 @@ class Client:
 
         sock.sendall(serialized) # Send self bot reference
 
-        print('sending serialized obj data')
+        print('sending serialized bot data')
 
         sock.close() # Close socket
 

@@ -1,5 +1,9 @@
 from pexpect import pxssh
 from common.commondefs import false
+try:
+    import cPickle as pickle
+except ImportError:
+    import pickle
 
 class ImportTest:
     def __init__(self):
@@ -27,3 +31,7 @@ class Bot:
         self.session.sendline(command)
         self.session.prompt() # match the prompt
         return self.session.before # everything before the prompt
+
+    # read from bytes
+    def from_bytes(self, b):
+        self = pickle.loads(b)
