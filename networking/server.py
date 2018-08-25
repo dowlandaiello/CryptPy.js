@@ -23,7 +23,7 @@ class Server:
     def startServer(self):
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # Init socket
 
-        sock.bind(self.ipAddress, "3000") # Bind socket to server address
+        sock.bind((self.ipAddress, 3000)) # Bind socket to server address
 
         sock.listen(1) # Listen
 
