@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/mitsukomegumi/CryptPy#readme",
   "devDependencies": {
-    "electron-prebuilt": "^1.4.13"
+    "electron-prebuilt": "^1.4.13",
+    "typed.js": "^2.0.9"
   }
 }
