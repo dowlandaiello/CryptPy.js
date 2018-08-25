@@ -17,13 +17,13 @@ function init_main_window () {
         slashes: true
     }));
     main_window.setMenu(null);
-    // main_window.webContents.openDevTools();
+    main_window.webContents.openDevTools();
     main_window.on('closed', function () {
         main_window = null
     });
 }
 function new_window(new_window, page) {
-    new_window = new BrowserWindow({width: 600, height: 600})
+    new_window = new BrowserWindow({width: 600, height: 600, frame: false})
     new_window.loadURL(url.format({
         pathname: path.join(__dirname, page),
         protocol: 'file:',
@@ -37,7 +37,12 @@ function new_window(new_window, page) {
 }
 exports.create_hacking_windows = () => {
     hacking_window_one = new_window(hacking_window_one, 'hack_one.html')
+    hacking_window_one.setPosition(200, 200)
     hacking_window_two = new_window(hacking_window_two, 'hack_two.html')
+};
+exports.close_hacking_windows = () => {
+    hacking_window_one.hide();
+    hacking_window_two.hide();
 };
 ipcMain.on('resize-window', (event, width, height) => {
     hacking_window_one.setSize(width, height);

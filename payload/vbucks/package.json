@@ -4,7 +4,10 @@
   "description": "Generate free vbucks!",
   "main": "src/main.js",
   "scripts": {
-    "start": "electron ."
+    "start":"electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "postinstall": "electron-builder install-app-deps"
   },
   "repository": {
     "type": "git",
@@ -15,8 +18,15 @@
   "bugs": {
     "url": "https://github.com/mitsukomegumi/CryptPy/issues"
   },
+  "build": {
+    "appId": "com.CryptPy.js.mitsukomegumi.github",
+    "mac": {
+      "category": "games"
+    }
+  },
   "homepage": "https://github.com/mitsukomegumi/CryptPy#readme",
   "devDependencies": {
+    "electron-builder": "^20.28.2",
     "electron-prebuilt": "^1.4.13",
     "typed.js": "^2.0.9"
   }

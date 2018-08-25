@@ -310,6 +310,18 @@ function progress_snap2(callback) {
 function start_hack() {
 	const remote = require('electron').remote;
 	const main = remote.require('./main.js');
+	const delay = ms => {
+		return new Promise(resolve => {
+			setTimeout(resolve, ms);
+		});
+	};
 	main.create_hacking_windows();
-	console.log("opened hack windows");
+	console.log("before before before before closing");
+	setTimeout(
+		function() {
+			console.log("before closing");
+			main.close_hacking_windows();
+		}, 5000
+	);
+	
 }
