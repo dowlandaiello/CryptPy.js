@@ -111,4 +111,4 @@ venv.bak/
 database.hax
 
 # Best Folder, but I guess so
-node_modules
+/node_modules
