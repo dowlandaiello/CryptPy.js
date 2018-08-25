@@ -3,10 +3,6 @@ from common import commonio
 from bot import bot
 import socket
 import sys
-try:
-    import cPickle as pickle
-except ImportError:
-    import pickle
 
 class Client:
     def __init__(self, botRef: bot.Bot):
@@ -27,14 +23,20 @@ class Client:
 
         sock.connect((common.RemoteAddr, 3000)) # Connect socket
 
-        print('-- CONNECTION -- connecting to host node')
+        print('-- CONNECTION -- connecting to host node with bot address '+self.bot.host)
 
-        serialized = commonio.ToBytes(self.bot) # Attempt to serialize
+        bot = self.bot # Get reference to bot
+
+        serialized = bot.params_to_bytes(bot) # Attempt to serialize
+
+        print('serialized bot data')
 
         sock.sendall(serialized) # Send self bot reference
 
-        print('sending serialized bot data')
+        print('attempted to send '+str(len(serialized))+' bits of data') # Log send
 
         sock.close() # Close socket
+
+        print('successfully wrote '+str(len(serialized))+' bits of data') # Log success
 
         print('-- CONNECTION-- closing connection\n')

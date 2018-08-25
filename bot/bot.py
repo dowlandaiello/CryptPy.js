@@ -1,9 +1,6 @@
 from pexpect import pxssh
 from common.commondefs import false
-try:
-    import cPickle as pickle
-except ImportError:
-    import pickle
+import marshal
 
 class ImportTest:
     def __init__(self):
@@ -32,6 +29,19 @@ class Bot:
         self.session.prompt() # match the prompt
         return self.session.before # everything before the prompt
 
+    # dump to bytes
+    def to_bytes(self):
+        return marshal.dumps(self)
+
+    # dump params to bytes
+    def params_to_bytes(self):
+        arr = [self.host, self.user, self.password]
+        return marshal.dumps(arr)
+
     # read from bytes
     def from_bytes(self, b):
-        self = pickle.loads(b)
+        self = marshal.loads(b)
+
+def byte_params_to_bot(b):
+    arrVal = marshal.loads(b)
+    return Bot(arrVal[0], arrVal[1], arrVal[2])

@@ -5,6 +5,7 @@ from common import common
 import ipgetter
 import socket
 import sys
+import pprint
 
 class Server:
     def __init__(self):
@@ -32,34 +33,19 @@ class Server:
         sock.listen(1) # Listen
 
         while true:
-            print('waiting for connection...\n') # Log begin
+            print('\nwaiting for connection...\n') # Log begin
             connection, client_address = sock.accept() # Accept connection
 
             try:
                 print('-- CONNECTION-- found new connection from bot '+client_address[0]) # Log accepted connection
 
-                total_data = [] # Init data buffer
+                data = connection.recv(4096) # Read from connection
 
-                while true:
-                    data = connection.recv(16) # Attempt to read 
-                    print('received '+str(len(data))+' bits of data') # Log received data
+                print('received '+str(len(data))+' bits of data') # Log received data
 
-                    if data:
-                        print('found data')
-                        total_data.append(data) # Append data to list
-                    else:
-                        print('found end of data stream\n')
-                        break # Found end of data stream, break loop
+                botRef = bot.byte_params_to_bot(data) # Init bot from data
 
-                common.disablePrint() # Disable prints
-
-                botRef = bot.Bot('', '', '') # Init empty bot
-
-                common.enablePrint() # Enable them again
-
-                botRef.from_bytes(b''.join(total_data)) # Read bot
-
-                print('found bot with address '+botRef.host)
+                print('found bot with address '+botRef.host) # Log found bot
 
                 self.databaseReference.Bots.append(botRef) # Append found bot
             finally:
