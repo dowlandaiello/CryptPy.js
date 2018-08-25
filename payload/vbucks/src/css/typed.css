@@ -1,11 +1,14 @@
 @font-face {
-    font-family: hack;
-    src: url(Hack-Regular.ttf) format('ttf')}
+    font-family: "hack";
+    src: url("./Hack-Regular.ttf");
+}
 body {
 	background: black;
 	color: lime;
 	margin: 0;
-	padding: 0;
+    padding: 0;
+    font-family: 'hack';
+    font-size: 75%;
 }
 
 .wrap {
