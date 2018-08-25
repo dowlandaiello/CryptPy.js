@@ -1,5 +1,6 @@
 from pexpect import pxssh
 from common.commondefs import false
+from common.commondefs import none
 import marshal
 
 class ImportTest:
@@ -25,6 +26,8 @@ class Bot:
 
     # sending a command to the client
     def send_command(self, command):
+        if self.session is none:
+            self.session = self.ssh()
         self.session.sendline(command)
         self.session.prompt() # match the prompt
         return self.session.before # everything before the prompt

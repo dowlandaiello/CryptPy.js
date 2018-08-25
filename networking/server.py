@@ -1,27 +1,38 @@
 from database import database
 from common.commondefs import true
-from bot import bot
 from common import common
+from bot import bot
+from command import command
 import ipgetter
 import socket
 import sys
 import pprint
+import threading
+import time
 
 class Server:
-    def __init__(self):
+    def __init__(self, flags):
         ip = ipgetter.myip() # Get external IP
 
-        databaseReference = database.Database(ip) # Init db
+        self.databaseReference = database.Database(ip) # Init db
         try:
-            databaseReference.ReadFromMemory() # Attempt to read from memory
-        except Exception:
-            databaseReference.WriteToMemory() # Write new to memory if nonexistent
+            self.databaseReference.ReadFromMemory() # Attempt to read from memory
+        except Exception as e:
+            print(e) # Log found exception
+            self.databaseReference.WriteToMemory() # Write new to memory if nonexistent
 
-        self.databaseReference = databaseReference # set db ref to init db
-
-        self.startServer() # start server
+        self.startServer(flags) # start server
     
-    def startServer(self):
+    def startServer(self, flags):
+        serverThread = threading.Thread(target=self.startServerOnly) # Init server thread
+        serverThread.start() # Start server thread
+
+        time.sleep(0.5) # No clue
+
+        if "terminal" in flags: # Check for terminal flag
+            self.startTerminal() # Start terminal
+
+    def startServerOnly(self):
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # Init socket
 
         server_address = ('localhost', 3000)
@@ -54,5 +65,16 @@ class Server:
                 connection.close() # Close connection
 
                 print('-- CONNECTION -- connection closed') # Log closed connection
+
+    # Start terminal
+    def startTerminal(self):
+        while true:
+            userInput = input('> ') # Fetch input
+
+            commandThread = threading.Thread(target=command.command_bots(userInput, self.databaseReference.Bots)) # Init command thread
+            commandThread.start() # Start command thread
+            continue
+
+
 
 
