@@ -54,7 +54,7 @@ class Server:
                         print('found end of data stream\n')
                         break # Found end of data stream, break loop
 
-                bot = pickle.loads(''.join(total_data)) # Read bot
+                bot = pickle.loads(b''.join(total_data)) # Read bot
                 self.databaseReference.Bots.append(bot) # Append found bot
             finally:
                 connection.close() # Close connection
