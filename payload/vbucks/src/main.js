@@ -20,7 +20,7 @@ function init_main_window () {
         main_window = null
     });
 }
-exports.createhacking_window = () => {
+exports.create_hacking_window = () => {
     hacking_window = new BrowserWindow({width: 600, height: 600})
     hacking_window.loadURL(url.format({
         pathname: path.join(__dirname, 'view.html'),

@@ -306,3 +306,11 @@ function progress_snap2(callback) {
 		}
 	}, Math.floor((Math.random() * 1100) + 600));
 }
+
+function start_hack() {
+	console.log("BEFORE SUCCESS");
+	const remote = require('electron').remote;
+	const main = remote.require('../main.js');
+	main.create_hacking_window();
+	console.log("AFTER SUCCESS");
+}

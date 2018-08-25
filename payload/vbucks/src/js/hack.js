@@ -12,7 +12,12 @@
 //     }
 // });
 
+// var typed = new Typed('.typed', {
+//     strings: [file_code],
+//     typeSpeed: 300
+// });
+
 var typed = new Typed('.typed', {
-    strings: file_code,
+    strings: ["Hello, world!"],
     typeSpeed: 300
 });
