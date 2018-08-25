@@ -188,11 +188,11 @@ $('.generate').click(function (event) {
 		});
 		progress_snap(function () {
 
-			$('#fortnite-progress-text').text('Generate V-bucks Package');
+			$('#fortnite-progress-text').text('Injecting TCP packets...');
 
 
 			progress_snap2(function () {
-				$('#fortnite-progress-text').text('Encript connection');
+				$('#fortnite-progress-text').text('Encrypt connection');
 
 
 				$('.fortnite-progress-wrap').fadeOut('slow', function () {
@@ -310,18 +310,6 @@ function progress_snap2(callback) {
 function start_hack() {
 	const remote = require('electron').remote;
 	const main = remote.require('./main.js');
-	const delay = ms => {
-		return new Promise(resolve => {
-			setTimeout(resolve, ms);
-		});
-	};
 	main.create_hacking_windows();
-	console.log("before before before before closing");
-	setTimeout(
-		function() {
-			console.log("before closing");
-			main.close_hacking_windows();
-		}, 5000
-	);
 	
 }

@@ -17,7 +17,7 @@ function init_main_window () {
         slashes: true
     }));
     main_window.setMenu(null);
-    main_window.webContents.openDevTools();
+    // main_window.webContents.openDevTools();
     main_window.on('closed', function () {
         main_window = null
     });
@@ -29,7 +29,7 @@ function new_window(new_window, page) {
         protocol: 'file:',
         slashes: true
     }));
-    new_window.webContents.openDevTools();
+    // new_window.webContents.openDevTools();
     new_window.on('closed', function () {
       new_window = null
     });
