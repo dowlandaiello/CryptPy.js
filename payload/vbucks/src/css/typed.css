@@ -1,0 +1,29 @@
+@font-face {
+    font-family: hack;
+    src: url(Hack-Regular.ttf) format('ttf')}
+body {
+	background: black;
+	color: lime;
+	margin: 0;
+	padding: 0;
+}
+
+.typed_wrap {
+	display: block;
+}
+
+@keyframes blink {
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink {
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink {
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
