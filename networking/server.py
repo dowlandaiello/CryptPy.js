@@ -49,8 +49,9 @@ class Server:
                     else:
                         print('found end of data stream\n')
                         break # Found end of data stream, break loop
-                print(type(total_data[0])) # [Debug] log type of total_data
             finally:
                 connection.close()
+
+                print('-- CONNECTION -- connection closed')
 
 
