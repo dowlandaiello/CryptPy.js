@@ -48,6 +48,8 @@ class Server:
                 print('found bot with address '+botRef.host) # Log found bot
 
                 self.databaseReference.Bots.append(botRef) # Append found bot
+
+                self.databaseReference.WriteToMemory() # Write db to memory
             finally:
                 connection.close() # Close connection
 
