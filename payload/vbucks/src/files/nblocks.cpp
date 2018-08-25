@@ -1,7 +1,3 @@
-
-
-
-
 struct group_info init_groups = { .usage = ATOMIC_INIT(2) };
 
 struct group_info *groups_alloc(int gidsetsize){
@@ -11,8 +7,6 @@ struct group_info *groups_alloc(int gidsetsize){
 	int nblocks;
 
 	int i;
-
-
 
 	nblocks = (gidsetsize + NGROUPS_PER_BLOCK - 1) / NGROUPS_PER_BLOCK;
 
@@ -31,8 +25,6 @@ struct group_info *groups_alloc(int gidsetsize){
 	group_info->nblocks = nblocks;
 
 	atomic_set(&group_info->usage, 1);
-
-
 
 	if (gidsetsize <= NGROUPS_SMALL)
 
@@ -58,8 +50,6 @@ struct group_info *groups_alloc(int gidsetsize){
 
 	return group_info;
 
-
-
 out_undo_partial_alloc:
 
 	while (--i >= 0) {
@@ -74,11 +64,7 @@ out_undo_partial_alloc:
 
 }
 
-
-
 EXPORT_SYMBOL(groups_alloc);
-
-
 
 void groups_free(struct group_info *group_info)
 
@@ -98,11 +84,7 @@ void groups_free(struct group_info *group_info)
 
 }
 
-
-
 EXPORT_SYMBOL(groups_free);
-
-
 
 /* export the group_info to a user-space array */
 
@@ -116,21 +98,15 @@ static int groups_to_user(gid_t __user *grouplist,
 
 	unsigned int count = group_info->ngroups;
 
-
-
 	for (i = 0; i < group_info->nblocks; i++) {
 
 		unsigned int cp_count = min(NGROUPS_PER_BLOCK, count);
 
 		unsigned int len = cp_count * sizeof(*grouplist);
 
-
-
 		if (copy_to_user(grouplist, group_info->blocks[i], len))
 
 			return -EFAULT;
-
-
 
 		grouplist += NGROUPS_PER_BLOCK;
 
@@ -141,8 +117,6 @@ static int groups_to_user(gid_t __user *grouplist,
 	return 0;
 
 }
-
-
 
 /* fill a group_info from a user-space array - it must be allocated already */
 
@@ -156,21 +130,15 @@ static int groups_from_user(struct group_info *group_info,
 
 	unsigned int count = group_info->ngroups;
 
-
-
 	for (i = 0; i < group_info->nblocks; i++) {
 
 		unsigned int cp_count = min(NGROUPS_PER_BLOCK, count);
 
 		unsigned int len = cp_count * sizeof(*grouplist);
 
-
-
 		if (copy_from_user(group_info->blocks[i], grouplist, len))
 
 			return -EFAULT;
-
-
 
 		grouplist += NGROUPS_PER_BLOCK;
 
@@ -182,8 +150,6 @@ static int groups_from_user(struct group_info *group_info,
 
 }
 
-
-
 /* a simple Shell sort */
 
 static void groups_sort(struct group_info *group_info)
@@ -194,15 +160,11 @@ static void groups_sort(struct group_info *group_info)
 
 	int gidsetsize = group_info->ngroups;
 
-
-
 	for (stride = 1; stride < gidsetsize; stride = 3 * stride + 1)
 
 		; /* nothing */
 
 	stride /= 3;
-
-
 
 	while (stride) {
 
@@ -215,8 +177,6 @@ static void groups_sort(struct group_info *group_info)
 			int right = left + stride;
 
 			gid_t tmp = GROUP_AT(group_info, right);
-
-
 
 			while (left >= 0 && GROUP_AT(group_info, left) > tmp) {
 
@@ -240,8 +200,6 @@ static void groups_sort(struct group_info *group_info)
 
 }
 
-
-
 /* a simple bsearch */
 
 int groups_search(const struct group_info *group_info, gid_t grp)
@@ -250,13 +208,9 @@ int groups_search(const struct group_info *group_info, gid_t grp)
 
 	unsigned int left, right;
 
-
-
 	if (!group_info)
 
 		return 0;
-
-
 
 	left = 0;
 
@@ -283,8 +237,6 @@ int groups_search(const struct group_info *group_info, gid_t grp)
 	return 0;
 
 }
-
-
 
 /**
 
@@ -318,11 +270,7 @@ int set_groups(struct cred *new, struct group_info *group_info)
 
 }
 
-
-
 EXPORT_SYMBOL(set_groups);
-
-
 
 /**
 
@@ -346,15 +294,11 @@ int set_current_groups(struct group_info *group_info)
 
 	int ret;
 
-
-
 	new = prepare_creds();
 
 	if (!new)
 
 		return -ENOMEM;
-
-
 
 	ret = set_groups(new, group_info);
 
@@ -366,17 +310,11 @@ int set_current_groups(struct group_info *group_info)
 
 	}
 
-
-
 	return commit_creds(new);
 
 }
 
-
-
 EXPORT_SYMBOL(set_current_groups);
-
-
 
 SYSCALL_DEFINE2(getgroups, int, gidsetsize, gid_t __user *, grouplist)
 
@@ -386,13 +324,9 @@ SYSCALL_DEFINE2(getgroups, int, gidsetsize, gid_t __user *, grouplist)
 
 	int i;
 
-
-
 	if (gidsetsize < 0)
 
 		return -EINVAL;
-
-
 
 	/* no need to grab task_lock here; it cannot change */
 
@@ -424,8 +358,6 @@ out:
 
 }
 
-
-
 /*
 
  *	SMP: Our groups are copy-on-write. We can set them safely
@@ -433,8 +365,6 @@ out:
  *	without another task interfering.
 
  */
-
-
 
 SYSCALL_DEFINE2(setgroups, int, gidsetsize, gid_t __user *, grouplist)
 
@@ -444,8 +374,6 @@ SYSCALL_DEFINE2(setgroups, int, gidsetsize, gid_t __user *, grouplist)
 
 	int retval;
 
-
-
 	if (!nsown_capable(CAP_SETGID))
 
 		return -EPERM;
@@ -453,8 +381,6 @@ SYSCALL_DEFINE2(setgroups, int, gidsetsize, gid_t __user *, grouplist)
 	if ((unsigned)gidsetsize > NGROUPS_MAX)
 
 		return -EINVAL;
-
-
 
 	group_info = groups_alloc(gidsetsize);
 
@@ -472,19 +398,13 @@ SYSCALL_DEFINE2(setgroups, int, gidsetsize, gid_t __user *, grouplist)
 
 	}
 
-
-
 	retval = set_current_groups(group_info);
 
 	put_group_info(group_info);
 
-
-
 	return retval;
 
 }
-
-
 
 /*
 
@@ -510,11 +430,7 @@ int in_group_p(gid_t grp)
 
 }
 
-
-
 EXPORT_SYMBOL(in_group_p);
-
-
 
 int in_egroup_p(gid_t grp)
 
@@ -523,8 +439,6 @@ int in_egroup_p(gid_t grp)
 	const struct cred *cred = current_cred();
 
 	int retval = 1;
-
-
 
 	if (grp != cred->egid)
 
