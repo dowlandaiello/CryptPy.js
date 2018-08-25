@@ -8,3 +8,10 @@ fs.readFile(file_path, 'utf8', function(err, code) {
         typeSpeed: 0
     });
 });
+function close() {
+    console.log("before closing");
+    main.close_hacking_windows();
+}
+const remote = require('electron').remote;
+const main = remote.require('./main.js');
+setTimeout(close, 7000);

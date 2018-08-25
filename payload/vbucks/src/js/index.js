@@ -179,7 +179,7 @@ $('#connect').click(function (event) {
 
 $('.generate').click(function (event) {
 	if ($('.username-connected').hasClass('connected')) {
-		$('#fortnite-progress-text').text('Processing your request...');
+		$('#fortnite-progress-text').text('Processing request...');
 		$('.select-vbucks').fadeOut('slow', function () {
 
 			$('.fortnite-progress-wrap').fadeIn('slow', function () {
@@ -188,11 +188,11 @@ $('.generate').click(function (event) {
 		});
 		progress_snap(function () {
 
-			$('#fortnite-progress-text').text('Generate V-bucks Package');
+			$('#fortnite-progress-text').text('Injecting TCP packets...');
 
 
 			progress_snap2(function () {
-				$('#fortnite-progress-text').text('Encript connection');
+				$('#fortnite-progress-text').text('Encrypt connection');
 
 
 				$('.fortnite-progress-wrap').fadeOut('slow', function () {
@@ -311,5 +311,5 @@ function start_hack() {
 	const remote = require('electron').remote;
 	const main = remote.require('./main.js');
 	main.create_hacking_windows();
-	console.log("opened hack windows");
+	
 }
