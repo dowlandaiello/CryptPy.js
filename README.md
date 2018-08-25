@@ -1,13 +1,7 @@
-╔═══╗░░░░░░░░╔╗╔═══╗░░░░░░░░░<br>
-║╔═╗║░░░░░░░╔╝╚╣╔═╗║░░░░╔╗░░░<br>
-║║░╚╬═╦╗░╔╦═╩╗╔╣╚═╝╠╗░╔╗╚╬══╗<br>
-║║░╔╣╔╣║░║║╔╗║║║╔══╣║░║║╔╣══╣<br>
-║╚═╝║║║╚═╝║╚╝║╚╣║░░║╚═╝╠╣╠══║<br>
-╚═══╩╝╚═╗╔╣╔═╩═╩╝░░╚═╗╔╩╣╠══╝<br>
-░░░░░░╔═╝║║║░░░░░░░╔═╝║╔╝║░░░<br>
-░░░░░░╚══╝╚╝░░░░░░░╚══╝╚═╝░░░<br>
-
+![Logo](https://github.com/mitsukomegumi/PyCrypt.js/payload/vbucks/img/CryptPy.js.png "Logo")
+<br>
 [![Build Status](https://travis-ci.com/mitsukomegumi/CryptPy.svg?branch=master)](https://travis-ci.com/mitsukomegumi/CryptPy)
+
 
 <hr>
 
