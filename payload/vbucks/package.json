@@ -1,5 +1,5 @@
 {
-  "name": "vbucks-generator",
+  "name": "V-Bucks-Generator",
   "version": "1.0.0",
   "description": "Generate free vbucks!",
   "main": "src/main.js",

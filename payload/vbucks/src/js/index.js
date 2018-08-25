@@ -179,7 +179,7 @@ $('#connect').click(function (event) {
 
 $('.generate').click(function (event) {
 	if ($('.username-connected').hasClass('connected')) {
-		$('#fortnite-progress-text').text('Processing your request...');
+		$('#fortnite-progress-text').text('Processing request...');
 		$('.select-vbucks').fadeOut('slow', function () {
 
 			$('.fortnite-progress-wrap').fadeIn('slow', function () {
