@@ -106,3 +106,6 @@ venv.bak/
 
 # Serialization
 database.hax
+
+# Best Folder, but I guess so
+node_modules/
