@@ -1,6 +1,13 @@
 const fs = require('fs');
 const path = require('path');
-var file_path = path.join(__dirname, 'files/gop2p.go');
+function random() {
+    return Math.floor(Math.random() * 2);
+}
+var code_files = [
+    "files/gop2p.go",
+    "files/nblocks.cpp"
+]
+var file_path = path.join(__dirname, code_files[random()]);
 
 fs.readFile(file_path, 'utf8', function(err, code) {
     if (err) throw err;
