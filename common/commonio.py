@@ -9,3 +9,6 @@ def WriteToMemory(obj, filename):
             pickle.dump(obj, output, pickle.HIGHEST_PROTOCOL) # Dump to file
         except Exception as e:
             print(e) # Log exception
+
+def ToBytes(obj):
+    return pickle.dumps(obj) # Dump
