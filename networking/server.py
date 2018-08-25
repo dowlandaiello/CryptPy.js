@@ -16,14 +16,13 @@ class Server:
             databaseReference.WriteToMemory() # Write new to memory if nonexistent
 
         self.databaseReference = databaseReference # set db ref to init db
-        self.ipAddress = ip # Set ip ref to found ip
 
         self.startServer() # start server
     
     def startServer(self):
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # Init socket
 
-        sock.bind((self.ipAddress, 3000)) # Bind socket to server address
+        sock.bind(('localhost', 3000)) # Bind socket to server address
 
         sock.listen(1) # Listen
 
