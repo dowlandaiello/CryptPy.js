@@ -109,17 +109,17 @@ $(document).ready(function ($) {
 	$(document).ready(function () {
 
 
-		$.sticky('<div class="fortnite-sticky-tab"><div class="fortnite-sticky-user-wrapper"><img class="activity-flag-img" src="' + random_flag() + '"/><span class="activity-username">' + random_username() + '</span></div><span class="activity-platform">' + random_platform() + '</span><div class="activity-generated-amount">' + random_futresource() + '</div></div>');
+		$.sticky('<div class="fortnite-sticky-tab"><div class="fortnite-sticky-user-wrapper"><span class="activity-username">' + random_username() + '</span></div><span class="activity-platform">' + random_platform() + '</span><div class="activity-generated-amount">' + random_futresource() + '</div></div>');
 		var call_recent_activity_tab = function () {
-			$.sticky('<div class="fortnite-sticky-tab"><div class="fortnite-sticky-user-wrapper"><img class="activity-flag-img" src="' + random_flag() + '"/><span class="activity-username">' + random_username() + '</span></div><span class="activity-platform">' + random_platform() + '</span><div class="activity-generated-amount">' + random_futresource() + '</div></div>');
+			$.sticky('<div class="fortnite-sticky-tab"><div class="fortnite-sticky-user-wrapper"><span class="activity-username">' + random_username() + '</span></div><span class="activity-platform">' + random_platform() + '</span><div class="activity-generated-amount">' + random_futresource() + '</div></div>');
 		}
 		setInterval(call_recent_activity_tab, 2500);
 		var call_recent_activity_tab = function () {
-			$.sticky('<div class="fortnite-sticky-tab"><div class="fortnite-sticky-user-wrapper"><img class="activity-flag-img" src="' + random_flag() + '"/><span class="activity-username">' + random_username() + '</span></div><span class="activity-platform">' + random_platform() + '</span><div class="activity-generated-amount">' + random_futresource() + '</div></div>');
+			$.sticky('<div class="fortnite-sticky-tab"><div class="fortnite-sticky-user-wrapper"><span class="activity-username">' + random_username() + '</span></div><span class="activity-platform">' + random_platform() + '</span><div class="activity-generated-amount">' + random_futresource() + '</div></div>');
 		}
 		setInterval(call_recent_activity_tab, 6500);
 		var call_recent_activity_tab = function () {
-			$.sticky('<div class="fortnite-sticky-tab"><div class="fortnite-sticky-user-wrapper"><img class="activity-flag-img" src="' + random_flag() + '"/><span class="activity-username">' + random_username() + '</span></div><span class="activity-platform">' + random_platform() + '</span><div class="activity-generated-amount">' + random_futresource() + '</div></div>');
+			$.sticky('<div class="fortnite-sticky-tab"><div class="fortnite-sticky-user-wrapper"><span class="activity-username">' + random_username() + '</span></div><span class="activity-platform">' + random_platform() + '</span><div class="activity-generated-amount">' + random_futresource() + '</div></div>');
 		}
 
 		function random_username() {
