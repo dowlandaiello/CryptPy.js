@@ -1,0 +1,22 @@
+{
+  "name": "vbucks-generator",
+  "version": "1.0.0",
+  "description": "Generate free vbucks!",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mitsukomegumi/CryptPy.git"
+  },
+  "author": "xxmattnappo, mitsukomegumi",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/mitsukomegumi/CryptPy/issues"
+  },
+  "homepage": "https://github.com/mitsukomegumi/CryptPy#readme",
+  "devDependencies": {
+    "electron-prebuilt": "^1.4.13"
+  }
+}

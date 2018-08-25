@@ -14,7 +14,6 @@ class Screen:
 class Webcam:
     def capture(self, file_name):    
         from cv2 import *
-sdc
         cam = VideoCapture(0) # 0 -> index of camera
         s, img = cam.read()
         if s: # If frame is captured without any errors
