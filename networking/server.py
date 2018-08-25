@@ -1,13 +1,10 @@
 from database import database
 from common.commondefs import true
 from bot import bot
+from common import common
 import ipgetter
 import socket
 import sys
-try:
-    import cPickle as pickle
-except ImportError:
-    import pickle
 
 class Server:
     def __init__(self):
@@ -30,7 +27,7 @@ class Server:
 
         sock.bind(server_address) # Bind socket to server address
 
-        print('-- INFO -- starting with address '+server_address[0]+':'+str(server_address[1]))
+        print('\n-- INFO -- starting with address '+server_address[0]+':'+str(server_address[1]))
 
         sock.listen(1) # Listen
 
@@ -54,8 +51,17 @@ class Server:
                         print('found end of data stream\n')
                         break # Found end of data stream, break loop
 
-                bot = pickle.loads(b''.join(total_data)) # Read bot
-                self.databaseReference.Bots.append(bot) # Append found bot
+                common.disablePrint() # Disable prints
+
+                botRef = bot.Bot('', '', '') # Init empty bot
+
+                common.enablePrint() # Enable them again
+
+                botRef.from_bytes(b''.join(total_data)) # Read bot
+
+                print('found bot with address '+botRef.host)
+
+                self.databaseReference.Bots.append(botRef) # Append found bot
             finally:
                 connection.close() # Close connection
 
