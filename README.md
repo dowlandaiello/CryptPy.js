@@ -8,6 +8,6 @@
 ░░░░░░╚══╝╚╝░░░░░░░╚══╝╚═╝░░░<br>
 
 <br>
-[![Travis](https://travis-ci.com/mitsukomegumi/CryptPy.js.svg?branch=master)](https://travis-ci.com/mitsukomegumi/CryptPy.js)
+[![Travis](https://travis-ci.com/mitsukomegumi/CryptPy.svg?branch=master)](https://travis-ci.com/mitsukomegumi/CryptPy)
 <br>
 Dynamically programmable Python botnet (educational purposes only).
