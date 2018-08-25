@@ -1,6 +1,6 @@
 .DS_STORE
-payload/vbucks/node_modules
-node_modules
+/payload/vbucks/node_modules/*
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
