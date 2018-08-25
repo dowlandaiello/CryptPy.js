@@ -6,7 +6,9 @@ const path = require('path');
 const url = require('url');
 
 let main_window;
-let hacking_window;
+let hacking_window_one;
+let hacking_window_two;
+
 function init_main_window () {
     main_window = new BrowserWindow({width: 1280, height: 720, menu: false});
     main_window.loadURL(url.format({
@@ -15,25 +17,30 @@ function init_main_window () {
         slashes: true
     }));
     main_window.setMenu(null);
-    main_window.webContents.openDevTools();
+    // main_window.webContents.openDevTools();
     main_window.on('closed', function () {
         main_window = null
     });
 }
-exports.create_hacking_window = () => {
-    hacking_window = new BrowserWindow({width: 600, height: 600})
-    hacking_window.loadURL(url.format({
-        pathname: path.join(__dirname, 'hack.html'),
+function new_window(new_window, page) {
+    new_window = new BrowserWindow({width: 600, height: 600})
+    new_window.loadURL(url.format({
+        pathname: path.join(__dirname, page),
         protocol: 'file:',
         slashes: true
     }));
-    hacking_window.webContents.openDevTools();
-    hacking_window.on('closed', function () {
-      hacking_window = null
+    new_window.webContents.openDevTools();
+    new_window.on('closed', function () {
+      new_window = null
     });
+    return new_window;
+}
+exports.create_hacking_windows = () => {
+    hacking_window_one = new_window(hacking_window_one, 'hack_one.html')
+    hacking_window_two = new_window(hacking_window_two, 'hack_two.html')
 };
 ipcMain.on('resize-window', (event, width, height) => {
-    hacking_window.setSize(width, height);
+    hacking_window_one.setSize(width, height);
 });
 app.on('ready', init_main_window);
 

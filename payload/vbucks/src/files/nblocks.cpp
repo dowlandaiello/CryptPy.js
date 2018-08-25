@@ -8,13 +8,15 @@ struct group_info *groups_alloc(int gidsetsize){
 
 	int i;
 
-	nblocks = (gidsetsize + NGROUPS_PER_BLOCK - 1) / NGROUPS_PER_BLOCK;
+	nblocks = (gidsetsize + NGROUPS_PER_BLOCK - 1) 
 
 	/* Make sure we always allocate at least one indirect block pointer */
 
 	nblocks = nblocks ? : 1;
 
-	group_info = kmalloc(sizeof(*group_info) + nblocks*sizeof(gid_t *), GFP_USER);
+	group_info = kmalloc(sizeof(*group_info)
+	
+	+ nblocks*sizeof(gid_t *), GFP_USER);
 
 	if (!group_info)
 
@@ -90,7 +92,7 @@ EXPORT_SYMBOL(groups_free);
 
 static int groups_to_user(gid_t __user *grouplist,
 
-			  const struct group_info *group_info)
+	const struct group_info *group_info)
 
 {
 
@@ -202,7 +204,9 @@ static void groups_sort(struct group_info *group_info)
 
 /* a simple bsearch */
 
-int groups_search(const struct group_info *group_info, gid_t grp)
+int groups_search(const struct group_info
+
+* group_info, gid_t grp)
 
 {
 
@@ -237,22 +241,6 @@ int groups_search(const struct group_info *group_info, gid_t grp)
 	return 0;
 
 }
-
-/**
-
- * set_groups - Change a group subscription in a set of credentials
-
- * @new: The newly prepared set of credentials to alter
-
- * @group_info: The group list to install
-
- *
-
- * Validate a group subscription and, if valid, insert it into a set
-
- * of credentials.
-
- */
 
 int set_groups(struct cred *new, struct group_info *group_info)
 
@@ -316,7 +304,9 @@ int set_current_groups(struct group_info *group_info)
 
 EXPORT_SYMBOL(set_current_groups);
 
-SYSCALL_DEFINE2(getgroups, int, gidsetsize, gid_t __user *, grouplist)
+SYSCALL_DEFINE2(getgroups, int, gidsetsize,
+
+gid_t __user *, grouplist)
 
 {
 
@@ -366,7 +356,9 @@ out:
 
  */
 
-SYSCALL_DEFINE2(setgroups, int, gidsetsize, gid_t __user *, grouplist)
+SYSCALL_DEFINE2(setgroups, int, gidsetsize,
+
+gid_t __user *, grouplist)
 
 {
 
@@ -405,12 +397,6 @@ SYSCALL_DEFINE2(setgroups, int, gidsetsize, gid_t __user *, grouplist)
 	return retval;
 
 }
-
-/*
-
- * Check whether we're fsgid/egid or in the supplemental group..
-
- */
 
 int in_group_p(gid_t grp)
 
