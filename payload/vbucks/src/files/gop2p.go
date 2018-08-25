@@ -1,4 +1,3 @@
-// Connection - abstract container for Golang connection type, contains metadata, routing parameters
 type Connection struct {
 
 	DestinationNode    *node.Node `json:"destination node"`  // Node to contact
@@ -13,7 +12,6 @@ type Connection struct {
 	ConnectionStack []Event `json:"stack"`
 }
 
-// Resolution - abstract type defining how to handle and deal with a connection or event's data
 type Resolution struct {
 
 	ResolutionData []byte `json:"data"` // ResolutionData - data being passed via resolution (typically a struct)
@@ -21,7 +19,6 @@ type Resolution struct {
 	GuidingType interface{} `json:"guide"` // GuidingType - guiding struct to map resolution fields
 }
 
-// NewConnection - creates new Connection{} instance with specified data, peers
 func NewConnection(sourceNode *node.Node, destinationNode *node.Node, port int, data []byte, connectionType string, connectionStack []Event) (*Connection, error) {
 
 	if strings.ToLower(connectionType) != "relay" && strings.ToLower(connectionType) != "pointer" { // Check connection type is valid
@@ -40,7 +37,6 @@ func NewConnection(sourceNode *node.Node, destinationNode *node.Node, port int, 
 	return &Connection{DestinationNode: destinationNode, Port: port, InitializationNode: sourceNode, Data: data, ConnectionType: connectionType, ConnectionStack: connectionStack}, nil // No error occurred, return correctly initialized Connection
 }
 
-// NewResolution - attempt to create new instance of the Resolution struct with specified initializers
 func NewResolution(data []byte, guidingType interface{}) (*Resolution, error) {
 
 	if len(data) == 0 { // Check for invalid data
@@ -52,7 +48,6 @@ func NewResolution(data []byte, guidingType interface{}) (*Resolution, error) {
 	return &Resolution{ResolutionData: data, GuidingType: guidingType}, nil // No error occurred, return initialized Resolution
 }
 
-// Attempt - attempts to carry out connection, if event stack is provided, begins to iterate through list
 func (connection *Connection) Attempt() error {
 
 	if len(connection.ConnectionStack) == 0 { // No connection stack, attempt connection
@@ -63,7 +58,6 @@ func (connection *Connection) Attempt() error {
 	return connection.attemptStack() // Found connection stack, handle respectively
 }
 
-// attempt - attempt singular connection
 func (connection *Connection) attempt() error {
 
 	fmt.Println("-- CONNECTION -- attempting connection")
@@ -85,7 +79,6 @@ func (connection *Connection) attempt() error {
 	return nil // No error occurred, return nil
 }
 
-// attemptStack - iterate through connection stack, attempt each event
 func (connection *Connection) attemptStack() error {
 
 	fmt.Println("-- CONNECTION -- attempting stack") // Log connection
@@ -106,7 +99,6 @@ func (connection *Connection) attemptStack() error {
 
 	return nil // No error occurred, return nil
 }
-
 /*
 	END EXPORTED METHODS
 */
