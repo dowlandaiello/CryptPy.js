@@ -6,6 +6,8 @@ class Client:
     def __init__(self, bot):
         self.hostNode = common.RemoteAddr # Set host node addr for persistency
         self.bot = bot # Set bot for persistency
+
+        self.RegisterClient()
     
     def RegisterClient(self):
         if self.hostNode == '': # Check for nil host node
