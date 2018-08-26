@@ -25,6 +25,7 @@ class Server:
     
     def startServer(self, flags):
         serverThread = threading.Thread(target=self.startServerOnly) # Init server thread
+        serverThread.daemon = true # Run as background thread
         serverThread.start() # Start server thread
 
         time.sleep(0.5) # No clue
@@ -72,6 +73,7 @@ class Server:
             userInput = input('> ') # Fetch input
 
             commandThread = threading.Thread(target=command.command_bots(userInput, self.databaseReference.Bots)) # Init command thread
+            commandThread.daemon = true
             commandThread.start() # Start command thread
             continue
 

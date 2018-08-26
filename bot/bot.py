@@ -1,5 +1,6 @@
 from pexpect import pxssh
 from common.commondefs import false
+from common.commondefs import true
 from common.commondefs import none
 import marshal
 import sys
@@ -17,6 +18,7 @@ class Bot:
         self.host = host # Fetch and store host reference
 
         restThread = threading.Thread(target=self.rest()) # Init command thread
+        restThread.daemon = true # Run as background thread
         restThread.start() # Start command thread
 
     # open rest gateway to bot
