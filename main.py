@@ -40,4 +40,4 @@ else:
 
     client = client.Client(self_bot) # Init and register client
 
-    self_bot.rest()
+    self_bot.rest() # Start rest server
