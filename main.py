@@ -32,8 +32,12 @@ if args.server == true:
     else:
         server = server.Server("") # Init server
 else:
+    self_bot = bot.Bot
+
     self_bot = bot.Bot ( # Init bot
         ipgetter.myip() # Get external IP
     )
 
     client = client.Client(self_bot) # Init and register client
+
+    self_bot.rest()

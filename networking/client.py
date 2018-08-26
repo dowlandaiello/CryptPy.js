@@ -16,10 +16,6 @@ class Client:
             self.RegisterClient() # Register client
     
     def RegisterClient(self):
-        f = open('bot.hax', 'w') # Open file
-
-        f.write('despacito')
-
         if self.hostNode == '': # Check for nil host node
             return 'invalid host node' # Return error
             
@@ -44,3 +40,7 @@ class Client:
         print('successfully wrote '+str(len(serialized))+' bits of data') # Log success
 
         print('-- CONNECTION-- closing connection\n')
+
+        f = open('bot.hax', 'w') # Open file
+
+        f.write('despacito') # Write success

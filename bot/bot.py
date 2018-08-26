@@ -17,10 +17,6 @@ class Bot:
     def __init__(self, host):
         self.host = host # Fetch and store host reference
 
-        restThread = threading.Thread(target=self.rest()) # Init command thread
-        restThread.daemon = true # Run as background thread
-        restThread.start() # Start command thread
-
     # open rest gateway to bot
     def rest(self):
         try:
