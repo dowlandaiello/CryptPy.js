@@ -68,5 +68,5 @@ setup (
     # PIP required packages
     #
     # Packages required for basic running
-    install_requires=['ipgetter', 'py3-rest-shell', 'simplejson']
+    install_requires=['ipgetter', 'py3-rest-shell', 'simplejson', 'miniupnpc']
 )

@@ -1,3 +1,4 @@
+miniupnpc
 ipgetter
 py3-rest-shell
 simplejson

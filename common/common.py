@@ -1,6 +1,5 @@
 from common.commondefs import none
 import sys, os
-import upnpclient
 import miniupnpc
 
 RemoteAddr = "localhost" # Add server address
