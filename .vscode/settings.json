@@ -5,6 +5,7 @@
         "cdir",
         "ifconfig",
         "isfile",
+        "lanaddr",
         "miniupnpc",
         "nargs",
         "pexpect",

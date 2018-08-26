@@ -2,9 +2,11 @@ from common import common
 from common import commonio
 from bot import bot
 from common.commondefs import false
+from common.commondefs import true
 import socket
 import sys
 import os
+import threading
 
 class Client:
     def __init__(self, botRef: bot.Bot):
@@ -12,18 +14,22 @@ class Client:
         self.hostNode = common.RemoteAddr # Set host node addr for persistency
         self.bot.host = botRef.host # Set host for persistency
 
-        try:
-            common.forwardPort(3000) # Forward necessary port
-        except Exception as e:
-            print(e) # Log found error
-
         if os.path.isfile('bot.hax') == false:
             self.RegisterClient() # Register client
     
     def RegisterClient(self):
+        print('\n-- INFO -- registering client...\n') # Log begin
+
         if self.hostNode == '': # Check for nil host node
             return 'invalid host node' # Return error
-            
+        
+        try:
+            portThread = threading.Thread(target=common.forwardPortStandard) # Init port thread
+            portThread.daemon = true # Run as background thread
+            portThread.start() # Start port forwarding thread
+        except Exception as e:
+            print(e) # Log found error
+
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # Init socket
 
         sock.connect((common.RemoteAddr, 3000)) # Connect socket

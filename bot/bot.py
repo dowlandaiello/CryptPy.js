@@ -15,6 +15,8 @@ class ImportTest:
 class Bot:
     # init class instance
     def __init__(self, host):
+        print('-- INFO -- initializing bot...')
+
         self.host = host # Fetch and store host reference
 
     # open rest gateway to bot
