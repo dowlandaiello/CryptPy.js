@@ -63,7 +63,7 @@ setup (
     keywords='botnet tools development python js javascript hacking hackerman imin',
 
     # Internal packages
-    packages=find_packages(include=['networking', 'database', 'common', 'command', 'bot']),
+    packages=find_packages(include=['main', 'networking', 'database', 'common', 'command', 'bot']),
 
     # PIP required packages
     #
@@ -73,7 +73,7 @@ setup (
     # Add entry points for cryptpy
     entry_points={
         'console_scripts': [
-            'cryptpy=cryptpy.__main__:main'
+            'cryptpy=__main__:main'
         ]
     },
 
