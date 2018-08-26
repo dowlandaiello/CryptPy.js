@@ -59,5 +59,9 @@ setup (
         'Programming Language :: Python :: 3.6'
     ],
 
-    keywords='botnet tools development python js javascript hacking hackerman imin'
+    # Used for discovery, I guess
+    keywords='botnet tools development python js javascript hacking hackerman imin',
+
+    # Internal packages
+    packages=find_packages(include=['networking', 'database', 'common', 'command', 'bot'])
 )
