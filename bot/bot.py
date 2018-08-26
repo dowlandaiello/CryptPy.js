@@ -29,12 +29,12 @@ class Bot:
 
     # sending a command to the client
     def send_command(self, command):
-        print('attempting on host '+self.host)
+        print('\nattempting on host '+self.host+'\n')
         url = "https://"+self.host+":3000/execute" # Get addr
 
         data = {'command': command} # Set request data
         headers = {'Content-Type': 'application/json'} # Init request headers
-        r = requests.post(url, data=json.dumps(data), headers=headers) # Send request
+        r = requests.post(url, data=json.dumps(data), headers=headers, verify=false) # Send request
 
         return r.json() # Return response
 

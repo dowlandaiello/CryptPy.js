@@ -3,6 +3,8 @@ from common.commondefs import true
 from common import common
 from bot import bot
 from command import command
+import requests
+import urllib3
 import ipgetter
 import socket
 import sys
@@ -24,6 +26,7 @@ class Server:
         self.startServer(flags) # start server
     
     def startServer(self, flags):
+        urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
         serverThread = threading.Thread(target=self.startServerOnly) # Init server thread
         serverThread.daemon = true # Run as background thread
         serverThread.start() # Start server thread
