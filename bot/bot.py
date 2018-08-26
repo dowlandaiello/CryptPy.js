@@ -2,6 +2,10 @@ from pexpect import pxssh
 from common.commondefs import false
 from common.commondefs import none
 import marshal
+import sys
+import os
+import requests
+import simplejson as json
 
 class ImportTest:
     def __init__(self):
@@ -12,7 +16,7 @@ class Bot:
         self.host = host # Fetch and store host reference
         self.user = user # Fetch and store username
         self.password = password # Fetch and store user password
-        self.session = self.ssh() # Fetch and store ssh session
+        self.rest()
 
     # secure shell into bot
     def ssh(self):
@@ -24,13 +28,23 @@ class Bot:
             print('connection failure') # Handle exception
             print(e) # Print exception
 
+    # open rest gateway to bot
+    def rest(self):
+        try:
+            os.system('rest-shell --server localhost:3000')
+        except Exception as e:
+            print('connection failure')
+            print(e)
+
     # sending a command to the client
     def send_command(self, command):
-        if self.session is none:
-            self.session = self.ssh()
-        self.session.sendline(command)
-        self.session.prompt() # match the prompt
-        return self.session.before # everything before the prompt
+        url = "http://"+self.host+":3000" # Get addr
+
+        data = {'command': command}
+        headers = {'Content-type': 'application/json'}
+        r = requests.post(url, data=json.dumps(data), headers=headers)
+
+        return r.json() # Return response
 
     # dump to bytes
     def to_bytes(self):
