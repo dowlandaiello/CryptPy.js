@@ -23,7 +23,6 @@ parser = argparse.ArgumentParser(description='start CryptPy.js') # Init parser
 
 parser.add_argument('--server', action='store_true', help='Starts CryptPy.js in server mode') # Add server argument
 parser.add_argument('--terminal', action='store_true', help='Starts server in terminal mode') # Add terminal argument
-parser.add_argument("--password", help="set bot password programmatically") # Add password flag
 
 args = parser.parse_args() # Fetch arguments
 
@@ -33,15 +32,8 @@ if args.server == true:
     else:
         server = server.Server("") # Init server
 else:
-    password = args.password # Attempt to fetch password from args
-
-    if password == "" or password is None:
-        password = getpass.getpass('password: ') # Password not provided, ask explicitly
-
     self_bot = bot.Bot ( # Init bot
-        ipgetter.myip(), # Get external IP
-        getpass.getuser(), # Get username
-        password # Get password
+        ipgetter.myip() # Get external IP
     )
 
     client = client.Client(self_bot) # Init and register client

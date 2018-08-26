@@ -6,22 +6,23 @@ import sys
 import os
 import requests
 import simplejson as json
+import threading
 
 class ImportTest:
     def __init__(self):
         print("imported successfully") # Log success
 class Bot:
     # init class instance
-    def __init__(self, host, user, password):
+    def __init__(self, host):
         self.host = host # Fetch and store host reference
-        self.user = user # Fetch and store username
-        self.password = password # Fetch and store user password
-        self.rest()
+
+        restThread = threading.Thread(target=self.rest()) # Init command thread
+        restThread.start() # Start command thread
 
     # open rest gateway to bot
     def rest(self):
         try:
-            os.system('rest-shell --server localhost:3000')
+            os.system('rest-shell --server localhost:3000') # Start server
         except Exception as e:
             print('connection failure')
             print(e)
@@ -42,7 +43,7 @@ class Bot:
 
     # dump params to bytes
     def params_to_bytes(self):
-        arr = [self.host, self.user, self.password]
+        arr = [self.host]
         return marshal.dumps(arr)
 
     # read from bytes
@@ -51,4 +52,4 @@ class Bot:
 
 def byte_params_to_bot(b):
     arrVal = marshal.loads(b)
-    return Bot(arrVal[0], arrVal[1], arrVal[2])
+    return Bot(arrVal[0])
