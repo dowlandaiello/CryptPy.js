@@ -11,7 +11,7 @@ APP = ['main.py']
 DATA_FILES = []
 OPTIONS = {
     'argv_emulation': True,
-    'iconfile': 'logo.png'
+    'iconfile': 'app.icns'
 }
 
 setup(
