@@ -50,7 +50,7 @@ setup (
         'Intended Audience :: Developers',
 
         # Ree, GPL
-        'License :: GPL-3.0 License',
+        'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
         
         # Python 3
         'Programming Language :: Python :: 3',
