@@ -73,7 +73,7 @@ setup (
     # Add entry points for cryptpy
     entry_points={
         'console_scripts': [
-            'cryptpy=main'
+            'cryptpy=__main__:main'
         ]
     },
 
