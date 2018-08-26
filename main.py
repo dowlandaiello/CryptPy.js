@@ -1,7 +1,6 @@
 from networking import server # Import server
 import argparse
 import ipgetter
-import getpass
 from common.commondefs import true
 from networking import server
 from bot import bot

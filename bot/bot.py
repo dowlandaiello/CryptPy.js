@@ -1,4 +1,3 @@
-from pexpect import pxssh
 from common.commondefs import false
 from common.commondefs import true
 from common.commondefs import none
