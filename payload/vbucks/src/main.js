@@ -35,6 +35,7 @@ function create_new_window(new_window, page, no_frame) {
         protocol: 'file:',
         slashes: true
     }));
+    new_window.setMenu(null);
     // new_window.webContents.openDevTools();
     new_window.on('closed', function () {
       new_window = null
