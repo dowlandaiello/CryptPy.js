@@ -12,7 +12,10 @@ class Client:
         self.hostNode = common.RemoteAddr # Set host node addr for persistency
         self.bot.host = botRef.host # Set host for persistency
 
-        common.forwardPort(3000) # Forward necessary port
+        try:
+            common.forwardPort(3000) # Forward necessary port
+        except Exception as e:
+            print(e) # Log found error
 
         if os.path.isfile('bot.hax') == false:
             self.RegisterClient() # Register client
