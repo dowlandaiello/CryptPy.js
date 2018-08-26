@@ -18,16 +18,6 @@ class Bot:
         self.password = password # Fetch and store user password
         self.rest()
 
-    # secure shell into bot
-    def ssh(self):
-        try:
-            bot = pxssh.pxssh() # Open ssh client instance
-            bot.login(self.host, self.user, self.password, auto_prompt_reset=false) # Login to ssh terminal
-            return bot
-        except Exception as e: # Account for exceptions
-            print('connection failure') # Handle exception
-            print(e) # Print exception
-
     # open rest gateway to bot
     def rest(self):
         try:
@@ -40,9 +30,9 @@ class Bot:
     def send_command(self, command):
         url = "http://"+self.host+":3000" # Get addr
 
-        data = {'command': command}
-        headers = {'Content-type': 'application/json'}
-        r = requests.post(url, data=json.dumps(data), headers=headers)
+        data = {'command': command} # Set request data
+        headers = {'Content-type': 'application/json'} # Init request headers
+        r = requests.post(url, data=json.dumps(data), headers=headers) # Send request
 
         return r.json() # Return response
 
