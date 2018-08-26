@@ -13,7 +13,7 @@ setup (
     # Name of project on pypi.org
     #
     # e.g. pip install CryptPy
-    name='CryptPy',
+    name='cryptpy',
 
     # Version
     #
@@ -68,5 +68,18 @@ setup (
     # PIP required packages
     #
     # Packages required for basic running
-    install_requires=['ipgetter', 'py3-rest-shell', 'simplejson', 'miniupnpc']
+    install_requires=['ipgetter', 'py3-rest-shell', 'simplejson', 'miniupnpc'],
+
+    # Add entry points for cryptpy
+    entry_points={
+        'console_scripts': [
+            'cryptpy=cryptpy:main'
+        ]
+    },
+
+    project_urls={
+        'Bug Reports': 'https://github.com/mitsukomegumi/CryptPy.js/issues',
+        'Say Thanks!': 'https://saythanks.io/to/mitsukomegumi',
+        'Source': 'https://github.com/mitsukomegumi/CryptPy.js/',
+    },
 )
