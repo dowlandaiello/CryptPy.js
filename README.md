@@ -5,4 +5,4 @@
 
 <hr>
 
-Dynamically programmable Python botnet (educational purposes only).
+Dynamically programmable ransomware botnet (educational purposes only).
