@@ -22,6 +22,10 @@
     "appId": "com.CryptPy.js.mitsukomegumi.github",
     "mac": {
       "category": "games"
+    },
+    "win": {
+      "target": "squirrel",
+      "icon": "build/icon.ico"
     }
   },
   "homepage": "https://github.com/mitsukomegumi/CryptPy#readme",

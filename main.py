@@ -7,7 +7,7 @@ from networking import server
 from bot import bot
 from networking import client
 
-#from payload.rsa.rsa import RSA
+# from payload.rsa.rsa import RSA
 """
 # SYNTAX FOR RSA MODULE
 # Setup
