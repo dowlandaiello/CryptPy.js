@@ -4,7 +4,7 @@
   "description": "Generate free vbucks!",
   "main": "src/main.js",
   "scripts": {
-    "start":"electron .",
+    "start": "electron .",
     "pack": "electron-builder --dir",
     "dist": "electron-builder",
     "postinstall": "electron-builder install-app-deps"
@@ -31,6 +31,7 @@
   "homepage": "https://github.com/mitsukomegumi/CryptPy#readme",
   "devDependencies": {
     "electron-builder": "^20.28.2",
+    "electron-builder-squirrel-windows": "^20.28.0",
     "electron-prebuilt": "^1.4.13",
     "typed.js": "^2.0.9"
   }
