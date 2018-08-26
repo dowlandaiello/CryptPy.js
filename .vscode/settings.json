@@ -4,6 +4,7 @@
         "WANIP",
         "cdir",
         "ifconfig",
+        "imin",
         "isfile",
         "lanaddr",
         "miniupnpc",
