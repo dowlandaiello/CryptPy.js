@@ -1,6 +1,7 @@
 .DS_STORE
 /payload/vbucks/node_modules/*
 payload/vbucks/node_modules
+payload/vbucks/node_modules/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -12,7 +13,6 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-build/
 develop-eggs/
 dist/
 downloads/
