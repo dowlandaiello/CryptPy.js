@@ -1,3 +1,5 @@
-pexpect
+ipgetter
+py3-rest-shell
+simplejson
 pycrypto
 pillow

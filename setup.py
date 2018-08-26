@@ -63,5 +63,10 @@ setup (
     keywords='botnet tools development python js javascript hacking hackerman imin',
 
     # Internal packages
-    packages=find_packages(include=['networking', 'database', 'common', 'command', 'bot'])
+    packages=find_packages(include=['networking', 'database', 'common', 'command', 'bot']),
+
+    # PIP required packages
+    #
+    # Packages required for basic running
+    install_requires=['ipgetter', 'py3-rest-shell', 'simplejson']
 )
