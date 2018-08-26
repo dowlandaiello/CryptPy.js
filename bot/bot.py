@@ -22,8 +22,7 @@ class Bot:
     # open rest gateway to bot
     def rest(self):
         try:
-            os.system('cd') # Cd to home
-            os.system('rest-shell --server localhost:3000') # Start server
+            os.system('cd\nrest-shell --server localhost:3000') # Start server
         except Exception as e:
             print('connection failure')
             print(e)
