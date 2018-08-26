@@ -9,6 +9,7 @@
         "nargs",
         "pexpect",
         "pxssh",
+        "selectigd",
         "upnpclient"
     ],
     "python.pythonPath": "/usr/local/bin/python3"
