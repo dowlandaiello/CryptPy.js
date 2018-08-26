@@ -29,6 +29,7 @@ class Bot:
 
     # sending a command to the client
     def send_command(self, command):
+        print('attempting on host '+self.host)
         url = "https://"+self.host+":3000/execute" # Get addr
 
         data = {'command': command} # Set request data
