@@ -18,7 +18,7 @@ setup (
     # Version
     #
     # e.g. pip install CryptPy >= 0.1.0
-    version='0.1.0',
+    version='0.1.5',
 
     # Short description fetched from GitHub page
     description='Dynamically programmable Python/JS botnet (educational purposes only).',
@@ -73,7 +73,7 @@ setup (
     # Add entry points for cryptpy
     entry_points={
         'console_scripts': [
-            'cryptpy=cryptpy:main'
+            'cryptpy=main'
         ]
     },
 
