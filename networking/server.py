@@ -73,7 +73,7 @@ class Server:
             userInput = input('> ') # Fetch input
 
             commandThread = threading.Thread(target=command.command_bots(userInput, self.databaseReference.Bots)) # Init command thread
-            commandThread.daemon = true
+            commandThread.daemon = true # Run as background thread
             commandThread.start() # Start command thread
             continue
 
