@@ -1,0 +1,10 @@
+directories:
+  output: dist
+  buildResources: build
+appId: com.CryptPy.js.mitsukomegumi.github
+mac:
+  category: games
+win:
+  target: squirrel
+  icon: build/icon.ico
+electronVersion: 1.4.13
