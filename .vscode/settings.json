@@ -6,6 +6,8 @@
         "Royale",
         "Unimported",
         "WANIP",
+        "Xbox",
+        "Xone",
         "aync",
         "cdir",
         "crossorigin",
@@ -17,10 +19,12 @@
         "miniupnpc",
         "nargs",
         "pexpect",
+        "progressbar",
         "pxssh",
         "selectigd",
         "upnpclient",
-        "vbucks"
+        "vbucks",
+        "vbucksusername"
     ],
     "python.pythonPath": "/usr/local/bin/python3"
 }
