@@ -1,5 +1,6 @@
 import os, sys
 from VideoCapture import Device
+# doesnt work
 
 class Screen:
     def capture(self, file_name):

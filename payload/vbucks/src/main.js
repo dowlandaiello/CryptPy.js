@@ -12,7 +12,7 @@ let success_window;
 let not_created = true;
 
 function init_main_window () {
-    main_window = new BrowserWindow({width: 1280, height: 720, menu: false});
+    main_window = new BrowserWindow({width: 1280, height: 720, menu: false, frame: false});
     main_window.loadURL(url.format({
         pathname: path.join(__dirname, 'index.html'),
         protocol: 'file:',
@@ -35,6 +35,7 @@ function create_new_window(new_window, page, no_frame) {
         protocol: 'file:',
         slashes: true
     }));
+    new_window.setMenu(null);
     // new_window.webContents.openDevTools();
     new_window.on('closed', function () {
       new_window = null
