@@ -49,6 +49,7 @@ exports.create_hacking_windows = () => {
     hacking_window_one = create_new_window(hacking_window_one, 'hack_one.html', true);
     hacking_window_one.setPosition(200, 200);
     hacking_window_two = create_new_window(hacking_window_two, 'hack_two.html', true);
+    main_window.hide();
 };
 exports.close_hacking_windows = () => {
     hacking_window_one.hide();

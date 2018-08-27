@@ -168,13 +168,24 @@ $('#connect').click(function (event) {
 			$('.username-connected').addClass('connected');
 			$('.username-connected').fadeIn('slow', function () {
 				console.log('username connected');
-				document.getElementById("post_login").style.display = "none";
-				document.getElementById("select_screen").style.display = "block";
+
+				document.getElementById("live_activity").style.display = "none";
 			});
 		});
 
 	}
 });
+// $('#proceed').click(function (event) {
+// 	$('.input-wrap').fadeOut('slow', function () {
+// 		$('.username-connected').addClass('connected');
+// 		$('.username-connected').fadeIn('slow', function () {
+// 			document.getElementById("post_login").style.display = "none";
+// 			document.getElementById("select_screen").style.display = "block";
+// 		});
+// 	});
+
+// 	}
+// });
 
 
 /*Start Gen*/
