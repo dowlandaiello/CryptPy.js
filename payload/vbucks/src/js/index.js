@@ -168,6 +168,7 @@ $('#connect').click(function (event) {
 			$('.username-connected').addClass('connected');
 			$('.username-connected').fadeIn('slow', function () {
 				console.log('username connected');
+				document.getelemtn
 			});
 		});
 
