@@ -7,7 +7,7 @@ Dynamically programmable Python botnet (educational purposes only).
 
 ## Installation
 
-### Core Installation with PIP (botnet sources):
+### Core Installation with PIP (botnet sources)
 ```BASH
 pip install cryptpy
 ```
