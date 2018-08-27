@@ -152,6 +152,10 @@ p {
 .verify-btn-text {
     font-size: 17px
 }
+.plain-btn-text {
+    font-size: 17px
+}
+
 
 .input-wrap h4 {
     margin-top: 0;
@@ -173,6 +177,15 @@ p {
 
 .input-wrap a,
 .verify-btn-text {
+    padding: 10px 20px;
+    background: #f0ed63;
+    margin-top: 15px;
+    color: #000;
+    text-transform: uppercase;
+    font-family: fortnite, cursive;
+    letter-spacing: 1px
+}
+.plain-btn-text {
     padding: 10px 20px;
     background: #f0ed63;
     margin-top: 15px;
