@@ -7,13 +7,13 @@ Dynamically programmable Python botnet (educational purposes only).
 
 ## Installation
 
-### Installing the Python Source via Pip
+### Installing the Python Source via Pip (Core Components)
 
 ```BASH
 pip install cryptpy
 ```
 
-### Building the Node Source
+### Building the Node Source (GUI Implementation)
 
 First, `cd payload/vbucks`.
 
