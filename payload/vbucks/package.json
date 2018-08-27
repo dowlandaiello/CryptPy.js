@@ -11,12 +11,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mitsukomegumi/CryptPy.git"
+    "url": "git+https://github.com/mitsukomegumi/CryptPy.js.git"
   },
   "author": "xxmattnappo, mitsukomegumi",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/mitsukomegumi/CryptPy/issues"
+    "url": "https://github.com/mitsukomegumi/CryptPy.js/issues"
   },
   "build": {
     "appId": "com.CryptPy.js.mitsukomegumi.github",
@@ -28,7 +28,7 @@
       "icon": "build/icon.ico"
     }
   },
-  "homepage": "https://github.com/mitsukomegumi/CryptPy#readme",
+  "homepage": "https://github.com/mitsukomegumi/CryptPy.js#readme",
   "devDependencies": {
     "electron-builder": "^20.28.2",
     "electron-builder-squirrel-windows": "^20.28.0",
