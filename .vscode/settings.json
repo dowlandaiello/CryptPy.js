@@ -1,8 +1,15 @@
 {
     "cSpell.words": [
+        "Histats",
+        "Kkzi",
+        "LEDBQCRW",
+        "Royale",
         "Unimported",
         "WANIP",
+        "aync",
         "cdir",
+        "crossorigin",
+        "gtag",
         "ifconfig",
         "imin",
         "isfile",
@@ -12,7 +19,8 @@
         "pexpect",
         "pxssh",
         "selectigd",
-        "upnpclient"
+        "upnpclient",
+        "vbucks"
     ],
     "python.pythonPath": "/usr/local/bin/python3"
 }
