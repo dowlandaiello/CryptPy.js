@@ -1,6 +1,7 @@
 from networking import server # Import server
 import argparse
 import ipgetter
+import sys
 from common.commondefs import true
 from common.commondefs import none
 from networking import server
@@ -24,12 +25,16 @@ def main():
 
     parser.add_argument('--server', action='store_true', help='Starts CryptPy.js in server mode') # Add server argument
     parser.add_argument('--terminal', action='store_true', help='Starts server in terminal mode') # Add terminal argument
+    parser.add_argument('--test', action='store_true', help='Starts server in test mode') # Add test arg
 
     args = parser.parse_args() # Fetch arguments
 
     if args.server == true:
         if args.terminal == true:
             server.Server("terminal") # Init server
+
+            if args.test == true:
+                sys.exit() # Success
         else:
             server.Server("") # Init server
     else:
