@@ -45,5 +45,4 @@ def main():
 
     # TODO: fix db serialization
 
-if __name__ == "__main__":
-    main()
+main()
