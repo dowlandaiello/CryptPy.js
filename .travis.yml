@@ -5,7 +5,7 @@ install:
   - pip install -r requirements.txt
 
 script:
-  - python src/main.py
+  - python src/main.py --server --terminal
 
 notifications:
   email:
