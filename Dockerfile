@@ -7,5 +7,5 @@ RUN pip install ipgetter
 RUN pip install pycrypto
 RUN pip install pillow
 
-CMD [ "python3", "./src/main.py --server --terminal" ]
+CMD [ "python3", "./src/main.py --server --terminal --test" ]
 # Run main tests

@@ -1,7 +1,6 @@
 from networking import server # Import server
 import argparse
 import ipgetter
-import sys
 from common.commondefs import true
 from common.commondefs import none
 from networking import server
@@ -34,9 +33,12 @@ def main():
             server.Server("terminal") # Init server
 
             if args.test == true:
-                sys.exit() # Success
+                raise SystemExit(0) # Success
         else:
             server.Server("") # Init server
+
+            if args.test == true:
+                raise SystemExit(0) # Success
     else:
         self_bot = bot.Bot
 
