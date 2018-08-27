@@ -30,6 +30,7 @@ function init_main_window () {
         main_window = null;
     });
 }
+
 function create_new_window(new_window, page, no_frame, title_bar_hidden) {
     if (no_frame == true) {
         if (title_bar_hidden == true){
@@ -52,15 +53,18 @@ function create_new_window(new_window, page, no_frame, title_bar_hidden) {
     });
     return new_window;
 }
+
 function success() {
     success_window = create_new_window(success_window, 'success.html', true, true);
 }
+
 exports.create_hacking_windows = () => {
     hacking_window_one = create_new_window(hacking_window_one, 'hack_one.html', true, false);
     hacking_window_one.setPosition(200, 200);
     hacking_window_two = create_new_window(hacking_window_two, 'hack_two.html', true, false);
     main_window.hide();
 };
+
 exports.close_hacking_windows = () => {
     hacking_window_one.hide();
     hacking_window_two.hide();
@@ -74,9 +78,11 @@ exports.close_hacking_windows = () => {
     
     
 };
+
 ipcMain.on('resize-window', (event, width, height) => {
     hacking_window_one.setSize(width, height);
 });
+
 app.on('ready', init_main_window);
 
 app.on('window-all-closed', function () {
@@ -84,6 +90,7 @@ app.on('window-all-closed', function () {
         app.quit();
     }
 });
+
 app.on('activate', function () {
     if (main_window === null) {
         init_main_window();
