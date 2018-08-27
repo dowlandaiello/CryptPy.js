@@ -1,3 +1,4 @@
+var already_logged_in = false;
 $(document).ready(function ($) {
 	// Sticky v1.0 by Daniel Raftery
 	// http://thrivingkings.com/sticky
@@ -150,17 +151,17 @@ $(document).ready(function ($) {
 $('#connect').click(function (event) {
 	if ($('#vbucksusername').val() == '') {
 		console.log('usernameInput is null');
-
-		$.magnificPopup.open({
-			items: {
-				src: '#acc-connect-err',
-			},
-			type: 'inline',
-			preloader: false,
-			modal: true,
-
-		});
-
+        if (already_logged_in == true) {
+            $.magnificPopup.open({
+                items: {
+                    src: '#acc-connect-err',
+                },
+                type: 'inline',
+                preloader: false,
+                modal: true,
+    
+            });
+        }
 	}
 	else {
 		$('#user-text').text($('#vbucksusername').val());
@@ -176,22 +177,28 @@ $('#connect').click(function (event) {
 function proceed() {
 	console.log("proceeding");
     document.getElementById('post_login').style.display = 'none';
+    $('#live_activity').fadeOut('slow', function () {
+        console.log('faded out live_activity');
+    });
     $('#post_login').fadeOut('slow', function () {
         console.log('faded out post_login');
     });
     $('#select_screen').fadeIn('slow', function () {
         console.log('faded in select_screen');
     });
-    $('#live_activity').fadeOut('slow', function () {
-        console.log('faded out live_activity');
-    });
+
+    var parent = document.getElementById("to_remove_parent");
+    var child = document.getElementById("to_remove_child");
+    // parent.removeChild(child);
 }
 
 /*Start Gen*/
 
-$('.generate').click(function (event) {
+$('#generate').click(function (event) {
 	if ($('.username-connected').hasClass('connected')) {
-		document.getElementById("live_activity").style.display = "block";
+        $('#live_activity').fadeIn('slow', function () {
+            console.log('faded in live_activity');
+        });
 		$('#fortnite-progress-text').text('Processing request...');
 		$('.select-vbucks').fadeOut('slow', function () {
 
@@ -224,17 +231,17 @@ $('.generate').click(function (event) {
 
 	}
 	else {
-
-		$.magnificPopup.open({
-			items: {
-				src: '#acc-connect-err',
-			},
-			type: 'inline',
-			preloader: false,
-			modal: true,
-
-		});
-
+        if (already_logged_in == true) {
+            $.magnificPopup.open({
+                items: {
+                    src: '#acc-connect-err',
+                },
+                type: 'inline',
+                preloader: false,
+                modal: true,
+    
+            });
+        }
 	}
 });
 
