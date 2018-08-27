@@ -18,7 +18,7 @@ setup (
     # Version
     #
     # e.g. pip install CryptPy >= 0.1.0
-    version='0.1.9',
+    version='0.2.4',
 
     # Short description fetched from GitHub page
     description='Dynamically programmable Python/JS botnet (educational purposes only).',
@@ -63,7 +63,7 @@ setup (
     keywords='botnet tools development python js javascript hacking hackerman imin',
 
     # Internal packages
-    packages=find_packages(include=['main', 'networking', 'database', 'common', 'command', 'bot']),
+    packages=find_packages(include=['src']),
 
     # PIP required packages
     #
@@ -73,7 +73,7 @@ setup (
     # Add entry points for cryptpy
     entry_points={
         'console_scripts': [
-            'cryptpy=__main__:main'
+            'cryptpy=src.main:main'
         ]
     },
 
