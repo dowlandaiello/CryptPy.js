@@ -12,7 +12,7 @@ Build for MacOS:
 1. `npm i`<br>
 2. `yarn dist`
 
-Build for Windows (not tested):
+Build for Windows:
 1. `npm i`<br>
 2. `npm run dist`
 
