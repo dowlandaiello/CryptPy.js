@@ -14,6 +14,8 @@ pip install cryptpy
 
 ### Building the Node Source (GUI Implementation)
 
+Note: requires installation of cryptpy
+
 First, `cd payload/vbucks`.
 
 Build for MacOS:
