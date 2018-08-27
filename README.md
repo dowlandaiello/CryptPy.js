@@ -7,8 +7,7 @@ Dynamically programmable Python botnet (educational purposes only).
 
 ## Installation
 
-### Installing the Python Source via Pip (Core Components)
-
+### Core Installation with PIP (botnet sources)
 ```BASH
 pip install cryptpy
 ```
@@ -24,3 +23,17 @@ Build for MacOS:
 Build for Windows:
 1. `npm i`<br>
 2. `npm run dist`
+
+## Usage
+
+Start a Server:
+
+```
+cryptpy --server --terminal
+```
+
+Start and Register a Bot:
+
+```
+cryptpy
+```
