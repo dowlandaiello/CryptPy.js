@@ -5,7 +5,16 @@
 
 Dynamically programmable Python botnet (educational purposes only).
 
-## Building Some Stuff
+## Installation
+
+### Installing the Python Source via Pip (Core Components)
+
+```BASH
+pip install cryptpy
+```
+
+### Building the Node Source (GUI Implementation)
+
 First, `cd payload/vbucks`.
 
 Build for MacOS:
@@ -15,5 +24,3 @@ Build for MacOS:
 Build for Windows:
 1. `npm i`<br>
 2. `npm run dist`
-
-This will build the V-Bucks Node app.
