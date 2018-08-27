@@ -19,7 +19,7 @@ function init_main_window () {
         slashes: true
     }));
     main_window.setMenu(null);
-    // main_window.webContents.openDevTools();
+    main_window.webContents.openDevTools();
     main_window.on('closed', function () {
         main_window = null
     });

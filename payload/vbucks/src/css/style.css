@@ -175,6 +175,8 @@ p {
     padding-bottom: 48px
 }
 
+
+
 .input-wrap a,
 .verify-btn-text {
     padding: 10px 20px;
@@ -476,9 +478,19 @@ a.generate {
     margin-top: 15px;
     color: #000;
     font-size: 22px;
-    text-transform: uppercase
+    text-transform: uppercase;
 }
 
+a.proceed {
+    padding: 10px 20px;
+    background: #f0ed63;
+    font-family: fortnite, cursive;
+    letter-spacing: 1px;
+    margin-top: 15px;
+    color: #000;
+    font-size: 22px;
+    text-transform: uppercase;
+}
 .progress-title,
 .verification h4 {
     font-family: fortnite
