@@ -3,15 +3,11 @@ python:
   - "3.6"
 install:
   - pip install -r requirements.txt
-script:
-  - python payload/rsa/encrypt.py
-  - python payload/rsa/decrypt.py
-  - python payload/rsa/key.py
-  - python payload/rsa/rsa.py
 
-  - python command/command.py
+script:
+  - python src/main.py --server --test
 
 notifications:
   email:
-    on_success: never
-    on_failure: never
+    on_success: always
+    on_failure: always
