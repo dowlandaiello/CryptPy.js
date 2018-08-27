@@ -1,1 +1,568 @@
-.fortnite-content,body{background-size:cover;background-repeat:no-repeat}.fortnite-content,.fortnite-content-layer,body{background-repeat:no-repeat}.button-wrapp p,.title,.title-wrap h3{font-weight:600}.fortnite-wrap,.input-wrap,.verification{float:none}.input-wrap a:hover,a.generate:hover,a.verify:hover,a:hover{text-decoration:none}@font-face{font-family:fortnite;src:url(fortnite.woff) format('woff')}html{height:100%}body{background-image:url(../img/bg.jpg);background-attachment:fixed;background-position:center center}p{font-size:17px}.cont-wrap{background-color:#fff;margin-top:5%;margin-bottom:5%;position:relative;border-radius:5px}.logo{height:50px;margin-top:20px}.cards-article{padding-left:0;margin-bottom:0}.cards-article li{display:inline-block;list-style-type:none}.cards-article li img{max-height:300px}.button-wrapp a{display:inline-block;padding:10px 20px;border:2px solid;border-radius:5px;font-family:fortnite;color:#fff;background-image:linear-gradient(to bottom,#0CB00D 0,#007101 100%)}.powerd-img{height:20px}.fortnite-wrap{max-width:620px;border-radius:5px;margin-top:3%;padding-right:0;padding-left:0;overflow:auto;border:10px solid #707061}.title-wrap{background-image:radial-gradient(ellipse farthest-corner at center,#383838 0,#222 100%);overflow:auto}.title-wrap img{height:50px;padding-top:10px}.title-wrap h3{margin-top:5px;font-size:27px;color:#fff;font-family:fortnite,cursive;letter-spacing:1px;text-transform:uppercase}.fortnite-content{background-color:rgba(25,25,25,.6392156862745098);color:#fff}.wrap-wrap{background-color:rgba(0,0,0,.41);padding-bottom:20px}.input-wrap input,.input-wrap select{height:40px;padding-left:5px;font-family:fortnite,cursive;background-color:transparent;border:2px solid #fff;outline:0;width:100%}.input-wrap input{margin-bottom:5px}.input-wrap select{margin-bottom:20px;font-size:20px}.input-wrap h4,.verify-btn-text{font-size:17px}.input-wrap h4{margin-top:0;padding-top:35px}.fortnite-content-layer{background-image:url(../img/content-img.png);background-position:center 3px;height:100%}.fortnite-content-layer2{background-color:rgba(25,25,25,.7);height:100%;overflow:auto;padding-bottom:48px}.input-wrap a,.verify-btn-text{padding:10px 20px;background:#f0ed63;margin-top:15px;color:#000;text-transform:uppercase;font-family:fortnite,cursive;letter-spacing:1px}.input-wrap a{font-size:22px;position:relative;z-index:2}.get-vbucks,.select-vbucks{background:rgba(0,0,0,.41);margin-top:40px;cursor:pointer}.input-wrap a span{z-index:10}.input-wrap a:hover{color:#333}.get-vbucks{margin-bottom:40px;padding:10px 0}.select-vbucks{margin-bottom:15px;padding:25px 0}.fortnite-content-layer2 p.get-p{font-size:20px;text-transform:uppercase;font-weight:600;margin-bottom:0}.fortnite-content-layer2 img.free{height:50px;padding-left:5px}.fortnite-sticky{height:130px;overflow-y:scroll;width:100%;overflow-x:hidden;background:rgba(0,0,0,.5);padding:15px}div.sticky-queue{display:block;left:0;top:0;margin:0;position:relative;width:100%}div.sticky,img.sticky-close{display:none}.click,.sticky{margin-bottom:5px}.sticky{-webkit-box-shadow:inset 0 1px 1px 0 rgba(0,0,0,.75);-moz-box-shadow:inset 0 1px 1px 0 rgba(0,0,0,.75);box-shadow:inset 0 1px 1px 0 rgba(0,0,0,.75);background:rgba(255,255,255,.1);border-radius:2px;padding:0 10px 10px}div.fortnite-sticky-tab{padding:5px 0}.activity-flag-img{max-width:25px;margin-right:10px}div.sticky{font-size:12px;color:#555;position:relative}.activity-username{color:#fff;font-size:1.3em;position:relative;top:2px}.platfrom-append{color:#999}.activity-platform{color:#fff;font-weight:300}.activity-generated-amount{font-size:1.4em;line-height:1}.activity-generated-amount .activity-vbucks{color:#56c4c7;position:relative;display:block}.activity-generated-amount .activity-tix{color:#cc9e71;position:relative;display:block;margin-top:5px}.activity-generated-amount .activity-vbucks:before{width:20px;height:20px;background:url(../img/vbucks.png) center center no-repeat;background-size:100%;content:'';position:relative;display:inline-block;margin-right:5px;top:5px}.activity-generated-amount .activity-tix:before{width:22px;height:22px;background:url(../img/tix.html) center center no-repeat;background-size:100%;content:'';position:relative;display:inline-block;margin-right:5px;top:3px}.sticky-alert{padding-right:0;padding-left:0}.click{font-size:14px}#fortnite-sticky::-webkit-scrollbar-track{-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,.3);background-color:#F5F5F5}#fortnite-sticky::-webkit-scrollbar{width:10px;background-color:#181818}#fortnite-sticky::-webkit-scrollbar-thumb{background-color:#181818;border:2px solid #333}.username-connected{padding-top:35px;font-family:fortnite,cursive;padding-bottom:20px;background-color:rgba(0,0,0,.61);letter-spacing:1px;font-size:19px}.username-connected p{font-size:18px;margin-bottom:5px}#user-text{padding-left:5px;color:#f0ed63;font-weight:800;text-transform:uppercase}.conn,.select-vbucks ul li p{color:#c272d9;text-transform:uppercase}.conn{font-weight:600}.select-vbucks ul{padding-left:0;margin-bottom:0}.select-vbucks ul li img{height:252px;margin-bottom:3px;padding-right:0}.select-vbucks ul li p{margin-bottom:10px;font-family:fortnite,cursive;letter-spacing:1px;font-size:22px}select.tix-value,select.vbucks-value{border-radius:4px;background-color:transparent;font-size:18px;outline:0}ul>li>a>img{opacity:.4}ul>li.active>a>img{opacity:1!important}.select-vbucks ul li{display:inline-block;list-style-type:none}.select-vbucks-wrap{float:none;padding:0}.select-vbucks select{height:35px;width:76%;margin-bottom:10px}select.vbucks-value{color:#02b757;border:1px solid #02b757}select.tix-value{color:#cc9e71;border:1px solid #cc9e71;margin-bottom:20px}select>option{background-color:#333}a.generate{padding:10px 20px;background:#f0ed63;font-family:fortnite,cursive;letter-spacing:1px;margin-top:15px;color:#000;font-size:22px;text-transform:uppercase}.progress-title,.verification h4{font-family:fortnite}.mfp-close,a.verify{color:#fff}.fortnite-progress-wrap{background:rgba(0,0,0,.41);margin-top:40px;margin-bottom:40px;padding:25px 0}.progress-bar-striped,.progress-striped .progress-bar{background-image:-o-linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);background-image:linear-gradient(45deg,#4CAF50 25%,#4CAF50 25%,transparent 50%,#4CAF50 50%,rgba(139,195,74,0) 75%,#4CAF50 75%,transparent);-webkit-background-size:40px 40px;background-size:40px 40px}.progress{margin-bottom:10px}.progress-bar{background-color:#673AB7}.progress-title{font-size:18px}.verification-wrap{background:rgba(0,0,0,.41);margin-top:40px;margin-bottom:40px;padding:25px 0}a.verify{padding:7px 10px;background-image:linear-gradient(to bottom,#0D6EF6 0,#0853b7 100%);border-color:#0853b7;border-radius:4px;margin-top:20px;text-transform:uppercase}#acc-connect-err{background-color:#333;color:#fff}#user-text2{padding-right:5px;padding-left:5px;color:#e2d61a}@media screen and (max-width:414px){.select-vbucks ul li img{height:275px}}@media screen and (max-width:360px){.select-vbucks ul li img{height:247px}}
+.fortnite-content,
+body {
+    background-size: cover;
+    background-repeat: no-repeat
+}
+
+.fortnite-content,
+.fortnite-content-layer,
+body {
+    background-repeat: no-repeat
+}
+
+.button-wrapp p,
+.title,
+.title-wrap h3 {
+    font-weight: 600
+}
+
+.fortnite-wrap,
+.input-wrap,
+.verification {
+    float: none
+}
+
+.input-wrap a:hover,
+a.generate:hover,
+a.verify:hover,
+a:hover {
+    text-decoration: none
+}
+
+@font-face {
+    font-family: fortnite;
+    src: url(fortnite.woff) format('woff')
+}
+
+html {
+    height: 100%
+}
+
+body {
+    background-image: url(../img/bg.jpg);
+    background-attachment: fixed;
+    background-position: center center
+}
+
+p {
+    font-size: 17px
+}
+
+.cont-wrap {
+    background-color: #fff;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    position: relative;
+    border-radius: 5px
+}
+
+.logo {
+    height: 50px;
+    margin-top: 20px
+}
+
+.cards-article {
+    padding-left: 0;
+    margin-bottom: 0
+}
+
+.cards-article li {
+    display: inline-block;
+    list-style-type: none
+}
+
+.cards-article li img {
+    max-height: 300px
+}
+
+.button-wrapp a {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid;
+    border-radius: 5px;
+    font-family: fortnite;
+    color: #fff;
+    background-image: linear-gradient(to bottom, #0CB00D 0, #007101 100%)
+}
+
+.powerd-img {
+    height: 20px
+}
+
+.fortnite-wrap {
+    max-width: 620px;
+    border-radius: 5px;
+    margin-top: 3%;
+    padding-right: 0;
+    padding-left: 0;
+    overflow: auto;
+    border: 10px solid #707061
+}
+
+.title-wrap {
+    background-image: radial-gradient(ellipse farthest-corner at center, #383838 0, #222 100%);
+    overflow: auto
+}
+
+.title-wrap img {
+    height: 50px;
+    padding-top: 10px
+}
+
+.title-wrap h3 {
+    margin-top: 5px;
+    font-size: 27px;
+    color: #fff;
+    font-family: fortnite, cursive;
+    letter-spacing: 1px;
+    text-transform: uppercase
+}
+
+.fortnite-content {
+    background-color: rgba(25, 25, 25, .6392156862745098);
+    color: #fff
+}
+
+.wrap-wrap {
+    background-color: rgba(0, 0, 0, .41);
+    padding-bottom: 20px
+}
+
+.input-wrap input,
+.input-wrap select {
+    height: 40px;
+    padding-left: 5px;
+    font-family: fortnite, cursive;
+    background-color: transparent;
+    border: 2px solid #fff;
+    outline: 0;
+    width: 100%
+}
+
+.input-wrap input {
+    margin-bottom: 5px
+}
+
+.input-wrap select {
+    margin-bottom: 20px;
+    font-size: 20px
+}
+
+.input-wrap h4,
+.verify-btn-text {
+    font-size: 17px
+}
+.plain-btn-text {
+    font-size: 17px
+}
+
+
+.input-wrap h4 {
+    margin-top: 0;
+    padding-top: 35px
+}
+
+.fortnite-content-layer {
+    background-image: url(../img/content-img.png);
+    background-position: center 3px;
+    height: 100%
+}
+
+.fortnite-content-layer2 {
+    background-color: rgba(25, 25, 25, .7);
+    height: 100%;
+    overflow: auto;
+    padding-bottom: 48px
+}
+
+
+
+.input-wrap a,
+.verify-btn-text {
+    padding: 10px 20px;
+    background: #f0ed63;
+    margin-top: 15px;
+    color: #000;
+    text-transform: uppercase;
+    font-family: fortnite, cursive;
+    letter-spacing: 1px
+}
+.plain-btn-text {
+    padding: 10px 20px;
+    background: #f0ed63;
+    margin-top: 15px;
+    color: #000;
+    text-transform: uppercase;
+    font-family: fortnite, cursive;
+    letter-spacing: 1px
+}
+
+.input-wrap a {
+    font-size: 22px;
+    position: relative;
+    z-index: 2
+}
+
+.get-vbucks,
+.select-vbucks {
+    background: rgba(0, 0, 0, .41);
+    margin-top: 40px;
+    cursor: pointer
+}
+
+.input-wrap a span {
+    z-index: 10
+}
+
+.input-wrap a:hover {
+    color: #333
+}
+
+.get-vbucks {
+    margin-bottom: 40px;
+    padding: 10px 0
+}
+
+.select-vbucks {
+    margin-bottom: 15px;
+    padding: 25px 0
+}
+
+.fortnite-content-layer2 p.get-p {
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 0
+}
+
+.fortnite-content-layer2 img.free {
+    height: 50px;
+    padding-left: 5px
+}
+
+.fortnite-sticky {
+    height: 130px;
+    overflow-y: scroll;
+    width: 100%;
+    overflow-x: hidden;
+    background: rgba(0, 0, 0, .5);
+    padding: 15px
+}
+
+div.sticky-queue {
+    display: block;
+    left: 0;
+    top: 0;
+    margin: 0;
+    position: relative;
+    width: 100%
+}
+
+div.sticky,
+img.sticky-close {
+    display: none
+}
+
+.click,
+.sticky {
+    margin-bottom: 5px
+}
+
+.sticky {
+    -webkit-box-shadow: inset 0 1px 1px 0 rgba(0, 0, 0, .75);
+    -moz-box-shadow: inset 0 1px 1px 0 rgba(0, 0, 0, .75);
+    box-shadow: inset 0 1px 1px 0 rgba(0, 0, 0, .75);
+    background: rgba(255, 255, 255, .1);
+    border-radius: 2px;
+    padding: 0 10px 10px
+}
+
+div.fortnite-sticky-tab {
+    padding: 5px 0
+}
+
+.activity-flag-img {
+    max-width: 25px;
+    margin-right: 10px
+}
+
+div.sticky {
+    font-size: 12px;
+    color: #555;
+    position: relative
+}
+
+.activity-username {
+    color: #fff;
+    font-size: 1.3em;
+    position: relative;
+    top: 2px
+}
+
+.platfrom-append {
+    color: #999
+}
+
+.activity-platform {
+    color: #fff;
+    font-weight: 300
+}
+
+.activity-generated-amount {
+    font-size: 1.4em;
+    line-height: 1
+}
+
+.activity-generated-amount .activity-vbucks {
+    color: #56c4c7;
+    position: relative;
+    display: block
+}
+
+.activity-generated-amount .activity-tix {
+    color: #cc9e71;
+    position: relative;
+    display: block;
+    margin-top: 5px
+}
+
+.activity-generated-amount .activity-vbucks:before {
+    width: 20px;
+    height: 20px;
+    background: url(../img/vbucks.png) center center no-repeat;
+    background-size: 100%;
+    content: '';
+    position: relative;
+    display: inline-block;
+    margin-right: 5px;
+    top: 5px
+}
+
+.activity-generated-amount .activity-tix:before {
+    width: 22px;
+    height: 22px;
+    background: url(../img/tix.html) center center no-repeat;
+    background-size: 100%;
+    content: '';
+    position: relative;
+    display: inline-block;
+    margin-right: 5px;
+    top: 3px
+}
+
+.sticky-alert {
+    padding-right: 0;
+    padding-left: 0
+}
+
+.click {
+    font-size: 14px
+}
+
+#fortnite-sticky::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #F5F5F5
+}
+
+#fortnite-sticky::-webkit-scrollbar {
+    width: 10px;
+    background-color: #181818
+}
+
+#fortnite-sticky::-webkit-scrollbar-thumb {
+    background-color: #181818;
+    border: 2px solid #333
+}
+
+.username-connected {
+    padding-top: 35px;
+    font-family: fortnite, cursive;
+    padding-bottom: 20px;
+    background-color: rgba(0, 0, 0, .61);
+    letter-spacing: 1px;
+    font-size: 19px
+}
+
+.username-connected p {
+    font-size: 18px;
+    margin-bottom: 5px
+}
+
+#user-text {
+    padding-left: 5px;
+    color: #f0ed63;
+    font-weight: 800;
+    text-transform: uppercase
+}
+
+.conn,
+.select-vbucks ul li p {
+    color: #c272d9;
+    text-transform: uppercase
+}
+
+.conn {
+    font-weight: 600
+}
+
+.select-vbucks ul {
+    padding-left: 0;
+    margin-bottom: 0
+}
+
+.select-vbucks ul li img {
+    height: 252px;
+    margin-bottom: 3px;
+    padding-right: 0
+}
+
+.select-vbucks ul li p {
+    margin-bottom: 10px;
+    font-family: fortnite, cursive;
+    letter-spacing: 1px;
+    font-size: 22px
+}
+
+select.tix-value,
+select.vbucks-value {
+    border-radius: 4px;
+    background-color: transparent;
+    font-size: 18px;
+    outline: 0
+}
+
+ul>li>a>img {
+    opacity: .4
+}
+
+ul>li.active>a>img {
+    opacity: 1!important
+}
+
+.select-vbucks ul li {
+    display: inline-block;
+    list-style-type: none
+}
+
+.select-vbucks-wrap {
+    float: none;
+    padding: 0
+}
+
+.select-vbucks select {
+    height: 35px;
+    width: 76%;
+    margin-bottom: 10px
+}
+
+select.vbucks-value {
+    color: #02b757;
+    border: 1px solid #02b757
+}
+
+select.tix-value {
+    color: #cc9e71;
+    border: 1px solid #cc9e71;
+    margin-bottom: 20px
+}
+
+select>option {
+    background-color: #333
+}
+
+a.generate {
+    padding: 10px 20px;
+    background: #f0ed63;
+    font-family: fortnite, cursive;
+    letter-spacing: 1px;
+    margin-top: 15px;
+    color: #000;
+    font-size: 22px;
+    text-transform: uppercase;
+}
+
+a.proceed {
+    padding: 10px 20px;
+    background: #f0ed63;
+    font-family: fortnite, cursive;
+    letter-spacing: 1px;
+    margin-top: 15px;
+    color: #000;
+    font-size: 22px;
+    text-transform: uppercase;
+}
+.progress-title,
+.verification h4 {
+    font-family: fortnite
+}
+
+.mfp-close,
+a.verify {
+    color: #fff
+}
+
+.fortnite-progress-wrap {
+    background: rgba(0, 0, 0, .41);
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 25px 0
+}
+
+.progress-bar-striped,
+.progress-striped .progress-bar {
+    background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+    background-image: linear-gradient(45deg, #4CAF50 25%, #4CAF50 25%, transparent 50%, #4CAF50 50%, rgba(139, 195, 74, 0) 75%, #4CAF50 75%, transparent);
+    -webkit-background-size: 40px 40px;
+    background-size: 40px 40px
+}
+
+.progress {
+    margin-bottom: 10px
+}
+
+.progress-bar {
+    background-color: #673AB7
+}
+
+.progress-title {
+    font-size: 18px
+}
+
+.verification-wrap {
+    background: rgba(0, 0, 0, .41);
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 25px 0
+}
+
+a.verify {
+    padding: 7px 10px;
+    background-image: linear-gradient(to bottom, #0D6EF6 0, #0853b7 100%);
+    border-color: #0853b7;
+    border-radius: 4px;
+    margin-top: 20px;
+    text-transform: uppercase
+}
+
+#acc-connect-err {
+    background-color: #333;
+    color: #fff
+}
+
+#user-text2 {
+    padding-right: 5px;
+    padding-left: 5px;
+    color: #e2d61a
+}
+
+@media screen and (max-width:414px) {
+    .select-vbucks ul li img {
+        height: 275px
+    }
+}
+
+@media screen and (max-width:360px) {
+    .select-vbucks ul li img {
+        height: 247px
+    }
+}

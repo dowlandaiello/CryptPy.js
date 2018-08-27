@@ -3,6 +3,8 @@ from common.commondefs import true
 from common import common
 from bot import bot
 from command import command
+import requests
+import urllib3
 import ipgetter
 import socket
 import sys
@@ -24,7 +26,9 @@ class Server:
         self.startServer(flags) # start server
     
     def startServer(self, flags):
+        urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
         serverThread = threading.Thread(target=self.startServerOnly) # Init server thread
+        serverThread.daemon = true # Run as background thread
         serverThread.start() # Start server thread
 
         time.sleep(0.5) # No clue
@@ -72,6 +76,7 @@ class Server:
             userInput = input('> ') # Fetch input
 
             commandThread = threading.Thread(target=command.command_bots(userInput, self.databaseReference.Bots)) # Init command thread
+            commandThread.daemon = true # Run as background thread
             commandThread.start() # Start command thread
             continue
 

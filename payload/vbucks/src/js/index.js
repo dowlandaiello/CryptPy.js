@@ -168,19 +168,37 @@ $('#connect').click(function (event) {
 			$('.username-connected').addClass('connected');
 			$('.username-connected').fadeIn('slow', function () {
 				console.log('username connected');
-				document.getElementById("post_login").style.display = "none";
-				document.getElementById("select_screen").style.display = "block";
+				
 			});
 		});
 
 	}
 });
+function proceed() {
+	console.log("proceeding");
+	document.getElementById('post_login').style.display = 'none';
+	document.getElementById('select_screen').style.display = 'block';
+	document.getElementById('live_activity').style.display = 'none';
+	
+}
+// $('#proceed').click(function (event) {
+// 	$('.input-wrap').fadeOut('slow', function () {
+// 		$('.username-connected').addClass('connected');
+// 		$('.username-connected').fadeIn('slow', function () {
+// 			document.getElementById("post_login").style.display = "none";
+// 			document.getElementById("select_screen").style.display = "block";
+// 		});
+// 	});
+
+// 	}
+// });
 
 
 /*Start Gen*/
 
 $('.generate').click(function (event) {
 	if ($('.username-connected').hasClass('connected')) {
+		document.getElementById("live_activity").style.display = "block";
 		$('#fortnite-progress-text').text('Processing request...');
 		$('.select-vbucks').fadeOut('slow', function () {
 
