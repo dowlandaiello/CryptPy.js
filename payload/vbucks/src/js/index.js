@@ -196,14 +196,14 @@ function proceed() {
 
 $('#generate').click(function (event) {
 	if ($('.username-connected').hasClass('connected')) {
-        $('#live_activity').fadeIn('slow', function () {
-            console.log('faded in live_activity');
-        });
+
 		$('#fortnite-progress-text').text('Processing request...');
 		$('.select-vbucks').fadeOut('slow', function () {
 
 			$('.fortnite-progress-wrap').fadeIn('slow', function () {
-
+                $('#live_activity').fadeIn('slow', function () {
+                    console.log('faded in live_activity');
+                });
 			});
 		});
 		progress_snap(function () {
