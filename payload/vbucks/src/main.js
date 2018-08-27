@@ -30,9 +30,13 @@ function init_main_window () {
         main_window = null;
     });
 }
-function create_new_window(new_window, page, no_frame) {
+function create_new_window(new_window, page, no_frame, title_bar_hidden) {
     if (no_frame == true) {
-        new_window = new BrowserWindow({width: 600, height: 600, frame: false});
+        if (title_bar_hidden == true){
+            new_window = new BrowserWindow({titleBarStyle: 'hidden', width: 600, height: 600, frame: false});
+        } else {
+            new_window = new BrowserWindow({width: 600, height: 600, frame: false});
+        }
     } else {
         new_window = new BrowserWindow({width: 600, height: 600});
     }
@@ -49,12 +53,12 @@ function create_new_window(new_window, page, no_frame) {
     return new_window;
 }
 function success() {
-    success_window = create_new_window(success_window, 'success.html', false);
+    success_window = create_new_window(success_window, 'success.html', true, true);
 }
 exports.create_hacking_windows = () => {
-    hacking_window_one = create_new_window(hacking_window_one, 'hack_one.html', true);
+    hacking_window_one = create_new_window(hacking_window_one, 'hack_one.html', true, false);
     hacking_window_one.setPosition(200, 200);
-    hacking_window_two = create_new_window(hacking_window_two, 'hack_two.html', true);
+    hacking_window_two = create_new_window(hacking_window_two, 'hack_two.html', true, false);
     main_window.hide();
 };
 exports.close_hacking_windows = () => {
