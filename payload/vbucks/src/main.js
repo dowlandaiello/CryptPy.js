@@ -19,16 +19,19 @@ function init_main_window () {
         width: 1280, height: 720,
         menu: false, frame: false
     });
+
     main_window.loadURL(url.format({
         pathname: path.join(__dirname, 'index.html'),
         protocol: 'file:',
         slashes: true
     }));
+
     main_window.setMenu(null);
     // main_window.webContents.openDevTools();
     main_window.on('closed', function () {
         main_window = null;
     });
+
 }
 
 function create_new_window(new_window, page, no_frame, title_bar_hidden) {
@@ -41,16 +44,19 @@ function create_new_window(new_window, page, no_frame, title_bar_hidden) {
     } else {
         new_window = new BrowserWindow({width: 600, height: 600});
     }
+
     new_window.loadURL(url.format({
         pathname: path.join(__dirname, page),
         protocol: 'file:',
         slashes: true
     }));
+
     new_window.setMenu(null);
     // new_window.webContents.openDevTools();
     new_window.on('closed', function () {
       new_window = null;
     });
+
     return new_window;
 }
 
@@ -68,6 +74,7 @@ exports.create_hacking_windows = () => {
 exports.close_hacking_windows = () => {
     hacking_window_one.hide();
     hacking_window_two.hide();
+
     if (not_created == true) {
         main_window.hide();
         success();
@@ -75,8 +82,6 @@ exports.close_hacking_windows = () => {
     } else {
         main_window.hide();
     }
-    
-    
 };
 
 ipcMain.on('resize-window', (event, width, height) => {
