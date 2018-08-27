@@ -168,7 +168,7 @@ $('#connect').click(function (event) {
 			$('.username-connected').addClass('connected');
 			$('.username-connected').fadeIn('slow', function () {
 				console.log('username connected');
-				document.getelemtn
+				document.getElementById("select_screen").style.display = "block";
 			});
 		});
 
