@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 const electron = require('electron');
 const {ipcMain} = require('electron');
 const app = electron.app;
@@ -25,7 +27,7 @@ function init_main_window () {
     main_window.setMenu(null);
     // main_window.webContents.openDevTools();
     main_window.on('closed', function () {
-        main_window = null
+        main_window = null;
     });
 }
 function create_new_window(new_window, page, no_frame) {
@@ -42,7 +44,7 @@ function create_new_window(new_window, page, no_frame) {
     new_window.setMenu(null);
     // new_window.webContents.openDevTools();
     new_window.on('closed', function () {
-      new_window = null
+      new_window = null;
     });
     return new_window;
 }
