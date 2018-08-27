@@ -12,7 +12,11 @@ let success_window;
 let not_created = true;
 
 function init_main_window () {
-    main_window = new BrowserWindow({width: 1280, height: 720, menu: false, frame: false});
+    main_window = new BrowserWindow({
+        titleBarStyle: 'hidden', 
+        width: 1280, height: 720,
+        menu: false, frame: false
+    });
     main_window.loadURL(url.format({
         pathname: path.join(__dirname, 'index.html'),
         protocol: 'file:',
