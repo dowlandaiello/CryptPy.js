@@ -168,7 +168,6 @@ $('#connect').click(function (event) {
 			$('.username-connected').addClass('connected');
 			$('.username-connected').fadeIn('slow', function () {
 				console.log('username connected');
-				
 			});
 		});
 
@@ -176,23 +175,17 @@ $('#connect').click(function (event) {
 });
 function proceed() {
 	console.log("proceeding");
-	document.getElementById('post_login').style.display = 'none';
-	document.getElementById('select_screen').style.display = 'block';
-	document.getElementById('live_activity').style.display = 'none';
-	
+    document.getElementById('post_login').style.display = 'none';
+    $('#post_login').fadeOut('slow', function () {
+        console.log('faded out post_login');
+    });
+    $('#select_screen').fadeIn('slow', function () {
+        console.log('faded in select_screen');
+    });
+    $('#live_activity').fadeOut('slow', function () {
+        console.log('faded out live_activity');
+    });
 }
-// $('#proceed').click(function (event) {
-// 	$('.input-wrap').fadeOut('slow', function () {
-// 		$('.username-connected').addClass('connected');
-// 		$('.username-connected').fadeIn('slow', function () {
-// 			document.getElementById("post_login").style.display = "none";
-// 			document.getElementById("select_screen").style.display = "block";
-// 		});
-// 	});
-
-// 	}
-// });
-
 
 /*Start Gen*/
 
