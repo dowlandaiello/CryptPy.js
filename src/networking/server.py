@@ -26,6 +26,10 @@ class Server:
         self.startServer(flags) # start server
     
     def startServer(self, flags):
+        portThread = threading.Thread(target=common.forwardPortStandard) # Init port thread
+        portThread.daemon = true # Run as background thread
+        portThread.start() # Start port forwarding thread
+
         urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
         serverThread = threading.Thread(target=self.startServerOnly) # Init server thread
         serverThread.daemon = true # Run as background thread
