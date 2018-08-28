@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 const fs = require('fs');
 const path = require('path');
 var file_path = path.join(__dirname, "files/gop2p.go");
