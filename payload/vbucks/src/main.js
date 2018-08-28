@@ -82,22 +82,24 @@ exports.execute = (command, callback) => {
         callback(stdout); 
     });
 };
+
 exports.titlebar_action = (action) => {
     if (action == "close") {
         main_window.close();
     } else if (action == "minimize") {
         main_window.minimize();
-    } else if (action == "maximize") {
-        main_window.maximize();
-    } else if (action == "normal") {
-        main_window.height = 720;
-        main_window.width  = 1280;
+    } else if (action == "toggle_maximize") {
+        if (main_window.isMaximized() == true) {
+            main_window.unmaximize();
+        } else {
+            main_window.maximize();
+        }
+    } else {
+        console.log("invalid titlebar action");
     }
     
 }
-exports.is_fullscreen = () => {
-    
-}
+
 exports.create_hacking_windows = () => {
     hacking_window_one = create_new_window(hacking_window_one, 'hack_one.html', true, false);
     hacking_window_one.setPosition(200, 200);
@@ -111,7 +113,6 @@ exports.close_hacking_windows = () => {
     hacking_window_one.hide();
     hacking_window_two.hide();
     hacking_window_three.hide();
-
     if (not_created == true) {
         main_window.hide();
         success();
