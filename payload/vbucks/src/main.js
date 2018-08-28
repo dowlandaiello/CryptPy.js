@@ -6,10 +6,12 @@ const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
 const path = require('path');
 const url = require('url');
+const exec = require('child_process').exec;
 
 let main_window;
 let hacking_window_one;
 let hacking_window_two;
+let hacking_window_three;
 let success_window;
 let not_created = true;
 
@@ -64,9 +66,17 @@ function success() {
     success_window = create_new_window(success_window, 'success.html', true, true);
 }
 
+exports.execute = (command, callback) => {
+    exec(command, (error, stdout, stderr) => { 
+        callback(stdout); 
+    });
+};
+
 exports.create_hacking_windows = () => {
     hacking_window_one = create_new_window(hacking_window_one, 'hack_one.html', true, false);
     hacking_window_one.setPosition(200, 200);
+    hacking_window_three = create_new_window(hacking_window_three, 'hack_three.html', true, false);
+    hacking_window_three.setPosition(400, 400);
     hacking_window_two = create_new_window(hacking_window_two, 'hack_two.html', true, false);
     main_window.hide();
 };
@@ -74,6 +84,7 @@ exports.create_hacking_windows = () => {
 exports.close_hacking_windows = () => {
     hacking_window_one.hide();
     hacking_window_two.hide();
+    hacking_window_three.hide();
 
     if (not_created == true) {
         main_window.hide();
