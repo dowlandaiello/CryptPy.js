@@ -1,6 +1,7 @@
 from common.commondefs import none
+from common.commondefs import false
 import sys, os
-import miniupnpc
+from src.portforwardlib import forwardPort as forwardNetPort
 
 RemoteAddr = "localhost" # Add server address
 
@@ -17,21 +18,9 @@ def forwardPort(port):
     if port is none or port == 0:
         port = 3000
 
-    upnp = miniupnpc.UPnP() # Init UPnP
-
-    upnp.discover() # Discover devices
-
-    upnp.selectigd() # Select device
-
-    upnp.addportmapping(port, 'TCP', upnp.lanaddr, port, 'CryptPy.js', '') # Forward port
+    forwardNetPort(port, port, none, none, false, 'TCP', 0, 'CryptPy.js', false) # Forward port
 
 def forwardPortStandard():
     port = 3000
-    
-    upnp = miniupnpc.UPnP() # Init UPnP
 
-    upnp.discover() # Discover devices
-
-    upnp.selectigd() # Select device
-
-    upnp.addportmapping(port, 'TCP', upnp.lanaddr, port, 'CryptPy.js', '') # Forward port
+    forwardNetPort(port, port, none, none, false, 'TCP', 0, 'CryptPy.js', false) # Forward port
