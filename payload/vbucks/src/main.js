@@ -8,15 +8,20 @@ const path = require('path');
 const url = require('url');
 const exec = require('child_process').exec;
 const getos = require('getos');
+const ElectronTitlebarWindows = require('electron-titlebar-windows');
 
+let title_bar;
 let main_window;
 let hacking_window_one;
 let hacking_window_two;
 let hacking_window_three;
 let success_window;
 let not_created = true;
+let os;
 
 function init_main_window () {
+    os = exports.get_os();
+
     main_window = new BrowserWindow({
         titleBarStyle: 'hidden', 
         width: 1280, height: 720,
@@ -28,6 +33,11 @@ function init_main_window () {
         protocol: 'file:',
         slashes: true
     }));
+
+    if(os.includes("win")) {
+        title_bar = new ElectronTitlebarWindows("darkMode");
+        title_bar.appendTo(main_window.webContents);
+    }
 
     main_window.setMenu(null);
     // main_window.webContents.openDevTools();
