@@ -68,7 +68,7 @@ setup (
     # PIP required packages
     #
     # Packages required for basic running
-    install_requires=['ipgetter', 'py3-rest-shell', 'simplejson', 'miniupnpc'],
+    install_requires=['ipgetter', 'py3-rest-shell', 'simplejson'],
 
     # Add entry points for cryptpy
     entry_points={
