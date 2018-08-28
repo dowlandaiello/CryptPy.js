@@ -1,4 +1,14 @@
 var already_logged_in = false;
+function titlebar() {
+    let os = process.platform;
+    const ElectronTitlebarWindows = require('electron-titlebar-windows');
+    let title_bar;
+    if(os == "win32") {
+        title_bar = new ElectronTitlebarWindows("darkMode");
+        title_bar.appendTo(document.body);
+        console.log("added");
+    }
+}
 $(document).ready(function ($) {
 	// Sticky v1.0 by Daniel Raftery
 	// http://thrivingkings.com/sticky
