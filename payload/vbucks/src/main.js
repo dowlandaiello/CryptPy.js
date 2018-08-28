@@ -19,7 +19,8 @@ function init_main_window () {
     main_window = new BrowserWindow({
         titleBarStyle: 'hidden', 
         width: 1280, height: 720,
-        menu: false, frame: false
+        menu: false, frame: false,
+        show: false
     });
 
     main_window.loadURL(url.format({
@@ -30,6 +31,10 @@ function init_main_window () {
 
     main_window.setMenu(null);
     main_window.webContents.openDevTools();
+    main_window.on('ready-to-show', function () {
+        main_window.show();
+        main_window.focus();
+    });
     main_window.on('closed', function () {
         main_window = null;
     });
@@ -58,7 +63,6 @@ function create_new_window(new_window, page, no_frame, title_bar_hidden) {
     new_window.on('closed', function () {
       new_window = null;
     });
-
     return new_window;
 }
 
