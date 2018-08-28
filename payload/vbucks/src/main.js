@@ -87,9 +87,15 @@ exports.titlebar_action = (action) => {
         main_window.close();
     } else if (action == "minimize") {
         main_window.minimize();
-    } else if (action == "toggle_fullscreen") {
-        
+    } else if (action == "maximize") {
+        main_window.maximize();
+    } else if (action == "normal") {
+        main_window.height = 720;
+        main_window.width  = 1280;
     }
+    
+}
+exports.is_fullscreen = () => {
     
 }
 exports.create_hacking_windows = () => {
