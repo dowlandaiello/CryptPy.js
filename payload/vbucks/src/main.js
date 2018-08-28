@@ -82,21 +82,28 @@ exports.execute = (command, callback) => {
         callback(stdout); 
     });
 };
-
-exports.titlebar_action = (action) => {
+function handle_titlebar_actions(window, action) {
     if (action == "close") {
-        main_window.close();
+        window.close();
     } else if (action == "minimize") {
-        main_window.minimize();
+        window.minimize();
     } else if (action == "toggle_maximize") {
-        if (main_window.isMaximized() == true) {
-            main_window.unmaximize();
+        if (window.isMaximized() == true) {
+            window.unmaximize();
         } else {
-            main_window.maximize();
+            window.maximize();
         }
     } else {
         console.log("invalid titlebar action");
     }
+} 
+exports.titlebar_action = (window, action) => {
+    if (window == "main_window") {
+        handle_titlebar_actions(main_window, action);
+    } else if (window == "success_window") {
+        handle_titlebar_actions(success_window, action);
+    }
+
     
 }
 
