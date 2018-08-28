@@ -2,14 +2,14 @@
 
 const fs = require('fs');
 const path = require('path');
-var file_path = path.join(__dirname, "files/nblocks.cpp");
-fs.readFile(file_path, 'utf8', function(err, code) {
-    if (err) throw err;
-    var typed = new Typed('.typed', {
-        strings: [code],
-        typeSpeed: 0
+const exec = require('child_process').exec;
+
+function execute(command, callback) {
+    exec(command, (error, stdout, stderr) => { 
+        callback(stdout); 
     });
-});
+}
+
 function close() {
     console.log("before closing");
     main.close_hacking_windows();
