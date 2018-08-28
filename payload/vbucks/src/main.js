@@ -6,6 +6,7 @@ const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
 const path = require('path');
 const url = require('url');
+const exec = require('child_process').exec;
 
 let main_window;
 let hacking_window_one;
@@ -62,6 +63,12 @@ function create_new_window(new_window, page, no_frame, title_bar_hidden) {
 
 function success() {
     success_window = create_new_window(success_window, 'success.html', true, true);
+}
+
+function execute(command, callback) {
+    exec(command, (error, stdout, stderr) => { 
+        callback(stdout); 
+    });
 }
 
 exports.create_hacking_windows = () => {
