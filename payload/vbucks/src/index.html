@@ -152,12 +152,11 @@
                 </div>
             </div>
         </div>
-        
-        <!-- Insert this line above script imports  -->
+        <!-- ----- START IMPORTS ----- -->
         <script>
         if (typeof module === 'object') {
-        window.module = module;
-        module = undefined;
+            window.module = module;
+            module = undefined;
         }
         </script>
         <!-- jQuery -->
@@ -166,27 +165,10 @@
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
         <script type="text/javascript" src="js/vendor/jquery.magnific-popup.min.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
-        <script></script>
+        <script>
+            require("js/render_titlebar.js");
+        </script>
         <script>if (window.module) module = window.module;</script>
-
-   </body>
-   <script>
-        function titlebar() {
-            let os = process.platform;
-            const ElectronTitlebarWindows = require('electron-titlebar-windows');
-            let title_bar;
-            if(os == "win32") {
-                const remote = require('electron').remote;
-	            const main = remote.require('./main.js');
-	            title_bar = new ElectronTitlebarWindows("darkMode");
-                title_bar.appendTo(document.getElementById("title_bar"));
-                console.log("added");
-                title_bar.on('close', function(e) {
-                    main.exit();
-                    console.log('close');
-                });
-            }
-        }
-        titlebar();
-    </script>
+        <!-- ----- END IMPORTS ----- -->
+    </body>
 </html>
