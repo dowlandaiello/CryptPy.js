@@ -43,7 +43,7 @@ class Server:
     def startServerOnly(self):
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # Init socket
 
-        server_address = ('localhost', 3000)
+        server_address = ('', 3000)
 
         sock.bind(server_address) # Bind socket to server address
 
