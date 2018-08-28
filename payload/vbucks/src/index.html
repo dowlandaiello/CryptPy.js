@@ -18,14 +18,31 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="css/magnific-popup.css">
-        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/titlebar.css">
         <script type='text/javascript' src='http://platform-api.sharethis.com/js/sharethis.js#property=5ab5818ece89f000136417ff&product=social-ab' async='async'></script>
 
     </head>
    
    <body>
-       <div class="title_bar" id="title_bar"></div>
-        <div class="layout">
+        <header id="titlebar">
+                <div id="drag-region">
+                        <div id="window-controls">
+                          <div class="button" id="min-button">
+                            <span>&#xE921;</span>
+                          </div>
+                          <div class="button" id="max-button">
+                            <span>&#xE922;</span>
+                          </div>
+                          <div class="button" id="restore-button">
+                            <span>&#xE923;</span>
+                          </div>
+                          <div class="button" id="close-button">
+                            <span>&#xE8BB;</span>
+                          </div>
+                        </div>
+                      </div>
+        </header>
+        <div class="layout" id="main">
             <div class="generator-wrap1" >
                 <div class="fortnite-wrap col-lg-6 center-block">
                     
@@ -171,16 +188,6 @@
 
    </body>
    <script>
-        function titlebar() {
-            let os = process.platform;
-            const ElectronTitlebarWindows = require('electron-titlebar-windows');
-            let title_bar;
-            if(os == "win32") {
-                title_bar = new ElectronTitlebarWindows("darkMode");
-                title_bar.appendTo(document.getElementById("title_bar"));
-                console.log("added");
-            }
-        }
-        titlebar();
+        require("js/render_titlebar.js");
     </script>
 </html>
