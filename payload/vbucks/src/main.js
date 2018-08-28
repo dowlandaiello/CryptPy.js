@@ -29,6 +29,7 @@ function init_main_window () {
     main_window.on('closed', function () {
         main_window = null;
     });
+
 }
 function create_new_window(new_window, page, no_frame) {
     if (no_frame == true) {
@@ -46,6 +47,7 @@ function create_new_window(new_window, page, no_frame) {
     new_window.on('closed', function () {
       new_window = null;
     });
+    
     return new_window;
 }
 function success() {
@@ -57,6 +59,7 @@ exports.create_hacking_windows = () => {
     hacking_window_two = create_new_window(hacking_window_two, 'hack_two.html', true);
     main_window.hide();
 };
+
 exports.close_hacking_windows = () => {
     hacking_window_one.hide();
     hacking_window_two.hide();
