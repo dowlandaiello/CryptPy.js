@@ -28,5 +28,5 @@
         "vbucks",
         "vbucksusername"
     ],
-    "python.pythonPath": "C:\\Users\\dnalw\\AppData\\Local\\Programs\\Python\\Python36\\python.exe"
+    "python.pythonPath": "/usr/local/bin/python3"
 }
