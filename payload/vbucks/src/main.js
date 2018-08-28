@@ -82,7 +82,9 @@ exports.execute = (command, callback) => {
         callback(stdout); 
     });
 };
-
+exports.exit = () => {
+    main_window.close();
+}
 exports.create_hacking_windows = () => {
     hacking_window_one = create_new_window(hacking_window_one, 'hack_one.html', true, false);
     hacking_window_one.setPosition(200, 200);
