@@ -66,22 +66,6 @@ function create_new_window(new_window, page, no_frame, title_bar_hidden) {
     return new_window;
 }
 
-function success() {
-    success_window = create_new_window(success_window, 'success.html', true, true);
-}
-
-exports.get_os = () => {
-    getos(function(e,os) {
-        if(e) return console.log(e);
-        return os;
-    });
-};
-
-exports.execute = (command, callback) => {
-    exec(command, (error, stdout, stderr) => { 
-        callback(stdout); 
-    });
-};
 function handle_titlebar_actions(window, action) {
     if (action == "close") {
         window.close();
@@ -96,17 +80,27 @@ function handle_titlebar_actions(window, action) {
     } else {
         console.log("invalid titlebar action");
     }
-} 
+}
+
+function success() {
+    success_window = create_new_window(success_window, 'success.html', true, true);
+}
+
+// ---------- START EXPORT METHODS ----------
+
+exports.execute = (command, callback) => {
+    exec(command, (error, stdout, stderr) => { 
+        callback(stdout); 
+    });
+};
+
 exports.titlebar_action = (window, action) => {
     if (window == "main_window") {
         handle_titlebar_actions(main_window, action);
     } else if (window == "success_window") {
         handle_titlebar_actions(success_window, action);
     }
-
-    
 }
-
 exports.create_hacking_windows = () => {
     hacking_window_one = create_new_window(hacking_window_one, 'hack_one.html', true, false);
     hacking_window_one.setPosition(200, 200);
@@ -115,7 +109,6 @@ exports.create_hacking_windows = () => {
     hacking_window_two = create_new_window(hacking_window_two, 'hack_two.html', true, false);
     main_window.hide();
 };
-
 exports.close_hacking_windows = () => {
     hacking_window_one.hide();
     hacking_window_two.hide();
@@ -128,6 +121,8 @@ exports.close_hacking_windows = () => {
         main_window.hide();
     }
 };
+
+// ---------- END EXPORT METHODS ----------
 
 ipcMain.on('resize-window', (event, width, height) => {
     hacking_window_one.setSize(width, height);
