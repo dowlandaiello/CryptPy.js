@@ -112,3 +112,4 @@ database.hax
 # Best Folder, but I guess so
 /payload/vbucks/node_modules
 bot.hax
+.vscode/settings.json
