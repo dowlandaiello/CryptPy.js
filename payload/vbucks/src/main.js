@@ -1,13 +1,12 @@
 /*jshint esversion: 6 */
 
 const electron = require('electron');
-const {ipcMain} = require('electron');
+const {ipcMain} = require('electron'); // For exports
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
 const path = require('path');
 const url = require('url');
 const exec = require('child_process').exec;
-const getos = require('getos');
 const ElectronTitlebarWindows = require('electron-titlebar-windows');
 
 let title_bar;
@@ -17,11 +16,9 @@ let hacking_window_two;
 let hacking_window_three;
 let success_window;
 let not_created = true;
-let os;
+let os = process.platform;;
 
 function init_main_window () {
-    os = exports.get_os();
-
     main_window = new BrowserWindow({
         titleBarStyle: 'hidden', 
         width: 1280, height: 720,
@@ -34,9 +31,9 @@ function init_main_window () {
         slashes: true
     }));
 
-    if(os.includes("win")) {
-        title_bar = new ElectronTitlebarWindows("darkMode");
-        title_bar.appendTo(main_window.webContents);
+    if(os == "win32") {
+        title_bar = new ElectronTitlebarWindows();
+        //title_bar.appendTo(main_window.webContents);
     }
 
     main_window.setMenu(null);
