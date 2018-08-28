@@ -1,7 +1,7 @@
 from common.commondefs import none
 from common.commondefs import false
+from common.portforwardlib import forwardPort as forwardNetPort
 import sys, os
-from src.portforwardlib import forwardPort as forwardNetPort
 
 RemoteAddr = "108.27.18.36" # Add server address
 
