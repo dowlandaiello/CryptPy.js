@@ -7,7 +7,7 @@ install:
   - npm i
   - cd ../../
 script:
-  - python src/main.py --server --test
+  - python main.py --server --test
   - cd payload/vbucks
   - npm start
   - cd ../../
@@ -24,9 +24,8 @@ node_js:
   - "7"
 before_install:
   - cd payload/vbucks
-install: npm install
-script:
-  - npm start
+# install: npm install
+script: npm start
 notifications:
   email:
     recipients:
