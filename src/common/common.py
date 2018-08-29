@@ -3,7 +3,7 @@ from common.commondefs import false
 from common.portforwardlib import forwardPort as forwardNetPort # Runs anyway
 import sys, os
 
-RemoteAddr = '142.93.183.166' # Add server address
+RemoteAddr = '104.248.4.185' # Add server address
 
 # Disable calls to print()
 def disablePrint():
