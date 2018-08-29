@@ -1,4 +1,4 @@
-missing module named 'multiprocessing.forking' - imported by c:\users\dnalw\appdata\local\programs\python\python36\lib\site-packages\PyInstaller\loader\rthooks\pyi_rth_multiprocessing.py
+missing module named 'multiprocessing.forking' - imported by /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/PyInstaller/loader/rthooks/pyi_rth_multiprocessing.py
 missing module named multiprocessing.get_context - imported by multiprocessing, multiprocessing.pool, multiprocessing.managers, multiprocessing.sharedctypes
 missing module named multiprocessing.TimeoutError - imported by multiprocessing, multiprocessing.pool
 missing module named multiprocessing.BufferTooShort - imported by multiprocessing, multiprocessing.connection
@@ -6,42 +6,32 @@ missing module named multiprocessing.AuthenticationError - imported by multiproc
 missing module named multiprocessing.set_start_method - imported by multiprocessing, multiprocessing.spawn
 missing module named multiprocessing.get_start_method - imported by multiprocessing, multiprocessing.spawn
 missing module named multiprocessing.SimpleQueue - imported by multiprocessing, concurrent.futures.process
-missing module named 'win32com.gen_py' - imported by win32com, c:\users\dnalw\appdata\local\programs\python\python36\lib\site-packages\PyInstaller\loader\rthooks\pyi_rth_win32comgenpy.py
-missing module named pyimod03_importers - imported by PyInstaller.loader.pyimod02_archive, c:\users\dnalw\appdata\local\programs\python\python36\lib\site-packages\PyInstaller\loader\rthooks\pyi_rth_pkgres.py
-missing module named 'com.sun' - imported by pkg_resources._vendor.appdirs
-missing module named 'pkg_resources.extern.pyparsing' - imported by pkg_resources._vendor.packaging.requirements, pkg_resources._vendor.packaging.markers
+missing module named pyimod03_importers - imported by /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/PyInstaller/loader/rthooks/pyi_rth_pkgres.py
+missing module named StringIO - imported by six, simplejson.compat, werkzeug._compat, urllib3.packages.six, requests.compat, pkg_resources._vendor.six
+missing module named netbios - imported by uuid
+missing module named win32wnet - imported by uuid
 missing module named __builtin__ - imported by werkzeug._compat, pkg_resources._vendor.pyparsing
 missing module named ordereddict - imported by pkg_resources._vendor.pyparsing
-missing module named StringIO - imported by six, simplejson.compat, werkzeug._compat, PyInstaller.lib.modulegraph._compat, PyInstaller.lib.modulegraph.zipio, urllib3.packages.six, requests.compat, pkg_resources._vendor.six
-missing module named _scproxy - imported by urllib.request
-missing module named 'macholib.compat' - imported by macholib.MachO
-missing module named _pkgutil - imported by PyInstaller.lib.modulegraph.modulegraph
-missing module named xdis - imported by PyInstaller.lib.modulegraph._compat
-missing module named dis3 - imported by PyInstaller.lib.modulegraph._compat
-missing module named urllib.pathname2url - imported by urllib, PyInstaller.lib.modulegraph._compat
-missing module named PyQt5 - imported by PyInstaller.utils.hooks.qt
-missing module named pyimod00_crypto_key - imported by PyInstaller.loader.pyimod02_archive
-missing module named thread - imported by PyInstaller.loader.pyimod02_archive, werkzeug.local, urllib3.packages.ordered_dict
-missing module named Crypto - imported by PyInstaller.building.makespec
-missing module named 'win32ctypes.pywin32' - imported by PyInstaller.compat
-missing module named win32ctypes - imported by PyInstaller.compat
-missing module named UserDict - imported by asn1crypto._ordereddict, simplejson.ordered_dict, PyInstaller.compat
+missing module named 'win32com.shell' - imported by pkg_resources._vendor.appdirs
+missing module named 'com.sun' - imported by pkg_resources._vendor.appdirs
+missing module named com - imported by pkg_resources._vendor.appdirs
+missing module named win32api - imported by pkg_resources._vendor.appdirs
+missing module named win32com - imported by pkg_resources._vendor.appdirs
+missing module named 'pkg_resources.extern.pyparsing' - imported by pkg_resources._vendor.packaging.requirements, pkg_resources._vendor.packaging.markers
+missing module named __main__ - imported by pkg_resources
 missing module named pkg_resources.extern.packaging - imported by pkg_resources.extern, pkg_resources
 missing module named pkg_resources.extern.appdirs - imported by pkg_resources.extern, pkg_resources
 missing module named 'pkg_resources.extern.six.moves' - imported by pkg_resources, pkg_resources._vendor.packaging.requirements
-missing module named pkg_resources.extern.six - imported by pkg_resources.extern, pkg_resources
-missing module named resource - imported by posix, R:\cryptpy.js\src\main.py
-missing module named posix - imported by os, R:\cryptpy.js\src\main.py
-missing module named _posixsubprocess - imported by subprocess, multiprocessing.util, R:\cryptpy.js\src\main.py
-missing module named org - imported by pickle, R:\cryptpy.js\src\main.py
-missing module named readline - imported by cmd, code, pdb, R:\cryptpy.js\src\main.py
-excluded module named _frozen_importlib - imported by importlib, importlib.abc, PyInstaller.loader.pyimod02_archive, R:\cryptpy.js\src\main.py
-missing module named _frozen_importlib_external - imported by importlib._bootstrap, importlib, importlib.abc, R:\cryptpy.js\src\main.py
-missing module named _winreg - imported by platform, werkzeug.debug, requests.utils, R:\cryptpy.js\src\main.py, pkg_resources._vendor.appdirs
-missing module named java - imported by platform, R:\cryptpy.js\src\main.py
-missing module named 'java.lang' - imported by platform, xml.sax._exceptions, R:\cryptpy.js\src\main.py
-missing module named vms_lib - imported by platform, R:\cryptpy.js\src\main.py
-missing module named termios - imported by tty, getpass, click.termui, click._termui_impl, R:\cryptpy.js\src\main.py
+missing module named pkg_resources.extern.six - imported by pkg_resources.extern, pkg_resources, pkg_resources.py31compat
+missing module named nt - imported by os, ntpath, shutil, /Users/dowlandaiello/Desktop/GitHub/CryptPy/src/main.py
+missing module named 'org.python' - imported by pickle, xml.sax, /Users/dowlandaiello/Desktop/GitHub/CryptPy/src/main.py
+excluded module named _frozen_importlib - imported by importlib, importlib.abc, /Users/dowlandaiello/Desktop/GitHub/CryptPy/src/main.py
+missing module named _frozen_importlib_external - imported by importlib._bootstrap, importlib, importlib.abc, /Users/dowlandaiello/Desktop/GitHub/CryptPy/src/main.py
+missing module named _winreg - imported by platform, werkzeug.debug, requests.utils, /Users/dowlandaiello/Desktop/GitHub/CryptPy/src/main.py, pkg_resources._vendor.appdirs
+missing module named java - imported by platform, /Users/dowlandaiello/Desktop/GitHub/CryptPy/src/main.py
+missing module named 'java.lang' - imported by platform, xml.sax._exceptions, /Users/dowlandaiello/Desktop/GitHub/CryptPy/src/main.py
+missing module named vms_lib - imported by platform, /Users/dowlandaiello/Desktop/GitHub/CryptPy/src/main.py
+missing module named winreg - imported by platform, mimetypes, urllib.request, werkzeug.debug, requests.utils, /Users/dowlandaiello/Desktop/GitHub/CryptPy/src/main.py, pkg_resources._vendor.appdirs
 missing module named urllib.getproxies_environment - imported by urllib, requests.compat
 missing module named urllib.proxy_bypass_environment - imported by urllib, requests.compat
 missing module named urllib.proxy_bypass - imported by urllib, requests.compat
@@ -51,15 +41,17 @@ missing module named urllib.unquote_plus - imported by urllib, requests.compat
 missing module named urllib.quote_plus - imported by urllib, requests.compat
 missing module named urllib.unquote - imported by urllib, asn1crypto._iri, requests.compat
 missing module named urllib.quote - imported by urllib, asn1crypto._iri, jinja2._compat, requests.compat
-missing module named grp - imported by shutil, tarfile, R:\cryptpy.js\src\main.py
-missing module named 'org.python' - imported by copy, xml.sax, R:\cryptpy.js\src\main.py
-missing module named pwd - imported by posixpath, shutil, tarfile, http.server, webbrowser, netrc, getpass, R:\cryptpy.js\src\main.py
-missing module named _dummy_threading - imported by dummy_threading, R:\cryptpy.js\src\main.py
+missing module named org - imported by copy, /Users/dowlandaiello/Desktop/GitHub/CryptPy/src/main.py
+missing module named msvcrt - imported by subprocess, getpass, multiprocessing.spawn, multiprocessing.popen_spawn_win32, asyncio.windows_utils, click._compat, click._winconsole, click._termui_impl, /Users/dowlandaiello/Desktop/GitHub/CryptPy/src/main.py
+missing module named _winapi - imported by subprocess, multiprocessing.reduction, multiprocessing.connection, multiprocessing.heap, multiprocessing.popen_spawn_win32, asyncio.windows_events, asyncio.windows_utils, /Users/dowlandaiello/Desktop/GitHub/CryptPy/src/main.py
+missing module named _dummy_threading - imported by dummy_threading, /Users/dowlandaiello/Desktop/GitHub/CryptPy/src/main.py
+missing module named UserDict - imported by asn1crypto._ordereddict, simplejson.ordered_dict
 missing module named cStringIO - imported by asn1crypto.core, simplejson.compat, werkzeug._compat, cPickle, jinja2._compat, flask._compat, click.testing
 missing module named copy_reg - imported by cStringIO, cPickle
 missing module named backports - imported by urllib3.packages.ssl_match_hostname
 missing module named _abcoll - imported by urllib3.packages.ordered_dict
 missing module named dummy_thread - imported by urllib3.packages.ordered_dict
+missing module named thread - imported by werkzeug.local, urllib3.packages.ordered_dict
 missing module named Cookie - imported by requests.compat
 missing module named cookielib - imported by ipgetter, werkzeug.test, requests.compat
 missing module named urllib2 - imported by ipgetter, werkzeug.http, werkzeug.test, werkzeug.debug.tbtools, requests.compat
@@ -75,14 +67,15 @@ missing module named httplib - imported by werkzeug.wsgi
 missing module named 'email.Utils' - imported by werkzeug.http
 missing module named blinker - imported by flask.signals
 missing module named greenlet - imported by werkzeug.local
-missing module named fcntl - imported by asyncio.unix_events, click.termui
+missing module named colorama - imported by click._compat
 missing module named 'watchdog.events' - imported by werkzeug._reloader
 missing module named watchdog - imported by werkzeug._reloader
 missing module named BaseHTTPServer - imported by werkzeug.serving
 missing module named SocketServer - imported by werkzeug.serving
+missing module named termcolor - imported by werkzeug.serving
 missing module named dotenv - imported by flask.cli
 missing module named asyncio.DefaultEventLoopPolicy - imported by asyncio, asyncio.events
-missing module named 'markupsafe._speedups' - imported by markupsafe
+missing module named _overlapped - imported by asyncio
 missing module named pretty - imported by jinja2.utils
 missing module named 'jinja2.debugrenderer' - imported by jinja2.debug
 missing module named __pypy__ - imported by jinja2.debug
