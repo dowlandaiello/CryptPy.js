@@ -1,16 +1,7 @@
 language: python
-python:
-  - "3.6"
-install:
-  - pip install -r requirements.txt
-  - cd payload/vbucks
-  - npm i
-  - cd ../../
-script:
-  - python main.py --server --test
-  - cd payload/vbucks
-  - npm start
-  - cd ../../
+python: "3.6"
+install: pip install -r requirements.txt
+script: python main.py --server --test
 notifications:
   email:
     recipients:
@@ -18,13 +9,10 @@ notifications:
     on_success: always
     on_failure: always
 
-
 language: node_js
-node_js:
-  - "7"
-before_install:
-  - cd payload/vbucks
-# install: npm install
+node_js: "7"
+before_install: cd payload/vbucks
+install: npm install
 script: npm start
 notifications:
   email:
