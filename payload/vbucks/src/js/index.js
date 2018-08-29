@@ -1,10 +1,6 @@
 var already_logged_in = false;
-$(document).ready(function ($) {
-	// Sticky v1.0 by Daniel Raftery
-	// http://thrivingkings.com/sticky
-	//
-	// http://twitter.com/ThrivingKings
 
+$(document).ready(function ($) {
 	(function ($) {
 
 		// Using it without an object
@@ -151,17 +147,17 @@ $(document).ready(function ($) {
 $('#connect').click(function (event) {
 	if ($('#vbucksusername').val() == '') {
 		console.log('usernameInput is null');
-        if (already_logged_in == true) {
-            $.magnificPopup.open({
-                items: {
-                    src: '#acc-connect-err',
-                },
-                type: 'inline',
-                preloader: false,
-                modal: true,
-    
-            });
-        }
+        
+        $.magnificPopup.open({
+            items: {
+                src: '#acc-connect-err',
+            },
+            type: 'inline',
+            preloader: false,
+            modal: true,
+
+        });
+        
 	}
 	else {
 		$('#user-text').text($('#vbucksusername').val());

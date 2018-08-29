@@ -16,6 +16,11 @@ body {
     font-weight: 600
 }
 
+#title_bar {
+    position:absolute;
+    top:0;
+    right:0;
+}
 .fortnite-wrap,
 .input-wrap,
 .verification {

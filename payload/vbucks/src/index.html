@@ -20,13 +20,14 @@
         <link rel="stylesheet" type="text/css" href="css/magnific-popup.css">
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <script type='text/javascript' src='http://platform-api.sharethis.com/js/sharethis.js#property=5ab5818ece89f000136417ff&product=social-ab' async='async'></script>
+
     </head>
    
-   <body>
-        <div class="layout">
+   <body id="parent">
+        <div id="title_bar"></div>
+        <div class="layout" id="child">
             <div class="generator-wrap1" >
                 <div class="fortnite-wrap col-lg-6 center-block">
-                    
                     <div class="title-wrap text-center">
                         <img src="img/logo.png" class="center-block img-responsive" alt="Free V-Bucks Generator">
                         <h3>V-Bucks Generator</h3>
@@ -150,12 +151,11 @@
                 </div>
             </div>
         </div>
-        
-        <!-- Insert this line above script imports  -->
+        <!-- ----- START IMPORTS ----- -->
         <script>
         if (typeof module === 'object') {
-        window.module = module;
-        module = undefined;
+            window.module = module;
+            module = undefined;
         }
         </script>
         <!-- jQuery -->
@@ -164,7 +164,15 @@
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
         <script type="text/javascript" src="js/vendor/jquery.magnific-popup.min.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+        
+        <script type="text/javascript" src="js/render_titlebar.js"></script>
+        <script type="text/javascript">
+            if (process.platform == "win32") {
+                TITLEBAR.init(["main_window"]);
+                TITLEBAR.listen();
+            }
+        </script>
         <script>if (window.module) module = window.module;</script>
-
-   </body>
+        <!-- ----- END IMPORTS ----- -->
+    </body>
 </html>
