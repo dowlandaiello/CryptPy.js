@@ -1,6 +1,7 @@
 from src.common.commondefs import false
 from src.common.commondefs import true
 from src.common.commondefs import none
+import rest_shell
 import marshal
 import sys
 import os
@@ -22,7 +23,7 @@ class Bot:
     def rest(self):
         print('-- REST -- starting rest server...')
         try:
-            os.system('rest-shell --server :3000') # Start server
+            rest_shell.run(':3000') # Start rest server
         except Exception:
             print('-- CONNECTION -- connection failure')
 
