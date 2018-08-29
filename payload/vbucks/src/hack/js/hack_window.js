@@ -22,8 +22,8 @@ var HACKWINDOW = HACKWINDOW || (function() {
                     strings: [code],
                     typeSpeed: 0
                 });
-            });            
-            setTimeout(close, 7000);
+                setTimeout(close, 7000);
+            });
         }
     };
 }());
