@@ -38,7 +38,7 @@ function init_main_window () {
     main_window.on('closed', function () {
         main_window = null;
     });
-
+    // success();
 }
 
 function create_new_window(new_window, page, no_frame, title_bar_hidden) {
@@ -83,10 +83,9 @@ function handle_titlebar_actions(window, action) {
 }
 
 function success() {
-    console.log("SUCCESS");
-    success_window = create_new_window(success_window, 'success.html', true, true);
-    console.log("REAL SUCCESS");
+
 }
+
 
 // ---------- START EXPORT METHODS ----------
 
@@ -112,11 +111,19 @@ exports.create_hacking_windows = () => {
     // main_window.hide();
 };
 exports.close_hacking_windows = () => {
-    hacking_window_one.hide();
-    hacking_window_two.hide();
+    alert("beofre succccess");
     // hacking_window_three.hide();
     //if (not_created == true) {
-    success();
+        alert("success called");
+    console.log("SUCCESS");
+    success_window = create_new_window(success_window, 'success.html', true, true);
+    success_window.show();
+    success_window.focus();
+    console.log("REAL SUCCESS");
+    console.log("aftrer succccess");
+    // hacking_window_one.hide();
+    // hacking_window_two.hide();
+    
      //   not_created = false;
     //} else {
 
