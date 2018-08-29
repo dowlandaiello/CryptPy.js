@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 missing module named nt - imported by os, ntpath, shutil, /Users/dowlandaiello/Desktop/GitHub/CryptPy/src/main.py
 missing module named 'org.python' - imported by pickle, xml.sax, /Users/dowlandaiello/Desktop/GitHub/CryptPy/src/main.py
 excluded module named _frozen_importlib - imported by importlib, importlib.abc, /Users/dowlandaiello/Desktop/GitHub/CryptPy/src/main.py
@@ -7,6 +8,20 @@ missing module named java - imported by platform, /Users/dowlandaiello/Desktop/G
 missing module named 'java.lang' - imported by platform, xml.sax._exceptions, /Users/dowlandaiello/Desktop/GitHub/CryptPy/src/main.py
 missing module named vms_lib - imported by platform, /Users/dowlandaiello/Desktop/GitHub/CryptPy/src/main.py
 missing module named winreg - imported by platform, mimetypes, urllib.request, requests.utils, /Users/dowlandaiello/Desktop/GitHub/CryptPy/src/main.py
+=======
+missing module named resource - imported by posix, R:\cryptpy.js\src\main.py
+missing module named posix - imported by os, R:\cryptpy.js\src\main.py
+missing module named _posixsubprocess - imported by subprocess, R:\cryptpy.js\src\main.py
+missing module named readline - imported by cmd, code, pdb, R:\cryptpy.js\src\main.py
+excluded module named _frozen_importlib - imported by importlib, importlib.abc, R:\cryptpy.js\src\main.py
+missing module named _frozen_importlib_external - imported by importlib._bootstrap, importlib, importlib.abc, R:\cryptpy.js\src\main.py
+missing module named _winreg - imported by platform, requests.utils, R:\cryptpy.js\src\main.py
+missing module named _scproxy - imported by urllib.request
+missing module named java - imported by platform, R:\cryptpy.js\src\main.py
+missing module named 'java.lang' - imported by platform, xml.sax._exceptions, R:\cryptpy.js\src\main.py
+missing module named vms_lib - imported by platform, R:\cryptpy.js\src\main.py
+missing module named termios - imported by tty, getpass, R:\cryptpy.js\src\main.py
+>>>>>>> af89c8145bea11074d6ef66cf826c638ca3e4be9
 missing module named urllib.getproxies_environment - imported by urllib, requests.compat
 missing module named urllib.proxy_bypass_environment - imported by urllib, requests.compat
 missing module named urllib.proxy_bypass - imported by urllib, requests.compat
@@ -16,10 +31,18 @@ missing module named urllib.unquote_plus - imported by urllib, requests.compat
 missing module named urllib.quote_plus - imported by urllib, requests.compat
 missing module named urllib.unquote - imported by urllib, asn1crypto._iri, requests.compat
 missing module named urllib.quote - imported by urllib, asn1crypto._iri, requests.compat
+<<<<<<< HEAD
 missing module named org - imported by copy, /Users/dowlandaiello/Desktop/GitHub/CryptPy/src/main.py
 missing module named msvcrt - imported by subprocess, getpass, /Users/dowlandaiello/Desktop/GitHub/CryptPy/src/main.py
 missing module named _winapi - imported by subprocess, /Users/dowlandaiello/Desktop/GitHub/CryptPy/src/main.py
 missing module named _dummy_threading - imported by dummy_threading, /Users/dowlandaiello/Desktop/GitHub/CryptPy/src/main.py
+=======
+missing module named grp - imported by shutil, tarfile, R:\cryptpy.js\src\main.py
+missing module named _dummy_threading - imported by dummy_threading, R:\cryptpy.js\src\main.py
+missing module named 'org.python' - imported by copy, xml.sax, R:\cryptpy.js\src\main.py
+missing module named pwd - imported by posixpath, shutil, tarfile, http.server, webbrowser, netrc, getpass, R:\cryptpy.js\src\main.py
+missing module named org - imported by pickle, R:\cryptpy.js\src\main.py
+>>>>>>> af89c8145bea11074d6ef66cf826c638ca3e4be9
 missing module named UserDict - imported by asn1crypto._ordereddict, simplejson.ordered_dict
 missing module named StringIO - imported by six, urllib3.packages.six, simplejson.compat, requests.compat
 missing module named cStringIO - imported by asn1crypto.core, cPickle, simplejson.compat

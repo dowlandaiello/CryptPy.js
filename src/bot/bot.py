@@ -23,9 +23,8 @@ class Bot:
         print('-- REST -- starting rest server...')
         try:
             os.system('rest-shell --server :3000') # Start server
-        except Exception as e:
-            print('connection failure')
-            print(e)
+        except Exception:
+            print('-- CONNECTION -- connection failure')
 
     # sending a command to the client
     def send_command(self, command):
@@ -38,8 +37,8 @@ class Bot:
             r = requests.post(url, data=json.dumps(data), headers=headers, verify=false) # Send request
 
             return r.json() # Return response
-        except Exception as e:
-            print(e)
+        except Exception:
+            print('client refused connection')
 
     # dump to bytes
     def to_bytes(self):
