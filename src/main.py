@@ -1,6 +1,7 @@
 import argparse
 import ipgetter
 import OpenSSL
+import rest_shell
 from src.common.commondefs import true
 from src.common.commondefs import none
 from src.networking import server
