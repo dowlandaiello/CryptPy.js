@@ -25,7 +25,7 @@ def main():
 
     parser.add_argument('--server', action='store_true', help='Starts CryptPy.js in server mode') # Add server argument
     parser.add_argument('--terminal', action='store_true', help='Starts server in terminal mode') # Add terminal argument
-    parser.add_argument('--remoteaddr', 'remoteaddress', type=str) # Add server argument
+    parser.add_argument('-remoteaddr', 'remoteaddress', type=str) # Add server argument
     parser.add_argument('--test', action='store_true', help='Starts server in test mode') # Add test arg
 
     args = parser.parse_args() # Fetch arguments
