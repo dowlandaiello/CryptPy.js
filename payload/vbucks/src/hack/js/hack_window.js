@@ -1,5 +1,5 @@
 const remote = require('electron').remote;
-const main = remote.require('../main.js');
+const main = remote.require('./main.js');
 const fs = require('fs');
 const path = require('path');
 
@@ -22,6 +22,7 @@ var HACKWINDOW = HACKWINDOW || (function() {
                     strings: [code],
                     typeSpeed: 0
                 });
+                console.log("typed.js done");
                 setTimeout(close, 7000);
             });
         }

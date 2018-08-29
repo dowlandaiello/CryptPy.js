@@ -30,7 +30,7 @@ function init_main_window () {
     }));
 
     main_window.setMenu(null);
-    // main_window.webContents.openDevTools();
+    main_window.webContents.openDevTools();
     main_window.on('ready-to-show', function () {
         main_window.show();
         main_window.focus();
@@ -43,7 +43,7 @@ function init_main_window () {
 
 function create_new_window(new_window, page, no_frame, title_bar_hidden) {
     if (no_frame == true) {
-        if (title_bar_hidden == true){
+        if (title_bar_hidden == true) {
             new_window = new BrowserWindow({titleBarStyle: 'hidden', width: 600, height: 600, frame: false});
         } else {
             new_window = new BrowserWindow({width: 600, height: 600, frame: false});
@@ -109,19 +109,18 @@ exports.create_hacking_windows = () => {
     // hacking_window_three = create_new_window(hacking_window_three, 'hack/hack_three.html', true, false);
     // hacking_window_three.setPosition(400, 400);
     hacking_window_two = create_new_window(hacking_window_two, 'hack/hack_two.html', true, false);
-    main_window.hide();
+    // main_window.hide();
 };
 exports.close_hacking_windows = () => {
     hacking_window_one.hide();
     hacking_window_two.hide();
-    hacking_window_three.hide();
-    if (not_created == true) {
-        // main_window.hide();
-        success();
-        not_created = false;
-    } else {
-        main_window.hide();
-    }
+    // hacking_window_three.hide();
+    //if (not_created == true) {
+    success();
+     //   not_created = false;
+    //} else {
+
+    //}
 };
 
 // ---------- END EXPORT METHODS ----------
