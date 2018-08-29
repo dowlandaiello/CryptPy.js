@@ -62,13 +62,16 @@ class Server:
 
                 print('received '+str(len(data))+' bits of data') # Log received data
 
-                botRef = bot.byte_params_to_bot(data) # Init bot from data
+                try:
+                    botRef = bot.byte_params_to_bot(data) # Init bot from data
 
-                print('found bot with address '+botRef.host) # Log found bot
+                    print('found bot with address '+botRef.host) # Log found bot
 
-                self.databaseReference.Bots.append(botRef) # Append found bot
+                    self.databaseReference.Bots.append(botRef) # Append found bot
 
-                self.databaseReference.WriteToMemory() # Write db to memory
+                    self.databaseReference.WriteToMemory() # Write db to memory
+                except Exception as e:
+                    print(e) # Log exception
             finally:
                 connection.close() # Close connection
 
