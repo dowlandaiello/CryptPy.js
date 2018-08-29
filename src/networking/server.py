@@ -1,8 +1,8 @@
-from database import database
-from common.commondefs import true
-from common import common
-from bot import bot
-from command import command
+from src.database import database
+from src.common.commondefs import true
+from src.common import common
+from src.bot import bot
+from src.command import command
 import requests
 import urllib3
 import ipgetter
