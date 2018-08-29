@@ -23,12 +23,11 @@
 
     </head>
    
-   <body>
-       <div class="title_bar" id=title_bar"></div>
-        <div class="layout">
+   <body id="parent">
+        <div id="title_bar"></div>
+        <div class="layout" id="child">
             <div class="generator-wrap1" >
                 <div class="fortnite-wrap col-lg-6 center-block">
-                    
                     <div class="title-wrap text-center">
                         <img src="img/logo.png" class="center-block img-responsive" alt="Free V-Bucks Generator">
                         <h3>V-Bucks Generator</h3>
@@ -165,12 +164,12 @@
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
         <script type="text/javascript" src="js/vendor/jquery.magnific-popup.min.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
-        <script>
-            let os = process.platform;
-            if (os == "win32") {
-                var script = document.createElement('script');
-                script.src = 'js/render_titlebar.js';
-                document.body.appendChild(script);
+        
+        <script type="text/javascript" src="js/render_titlebar.js"></script>
+        <script type="text/javascript">
+            if (process.platform == "win32") {
+                TITLEBAR.init(["main_window"]);
+                TITLEBAR.listen();
             }
         </script>
         <script>if (window.module) module = window.module;</script>

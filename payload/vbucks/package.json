@@ -4,6 +4,7 @@
   "description": "Generate free vbucks!",
   "main": "src/main.js",
   "scripts": {
+    "test": "echo 'done'",
     "start": "electron .",
     "pack": "electron-builder --dir",
     "dist": "electron-builder",

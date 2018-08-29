@@ -38,12 +38,12 @@ function init_main_window () {
     main_window.on('closed', function () {
         main_window = null;
     });
-
+    // success();
 }
 
 function create_new_window(new_window, page, no_frame, title_bar_hidden) {
     if (no_frame == true) {
-        if (title_bar_hidden == true){
+        if (title_bar_hidden == true) {
             new_window = new BrowserWindow({titleBarStyle: 'hidden', width: 600, height: 600, frame: false});
         } else {
             new_window = new BrowserWindow({width: 600, height: 600, frame: false});
@@ -59,7 +59,7 @@ function create_new_window(new_window, page, no_frame, title_bar_hidden) {
     }));
 
     new_window.setMenu(null);
-    // new_window.webContents.openDevTools();
+    new_window.webContents.openDevTools();
     new_window.on('closed', function () {
       new_window = null;
     });
@@ -83,8 +83,9 @@ function handle_titlebar_actions(window, action) {
 }
 
 function success() {
-    success_window = create_new_window(success_window, 'success.html', true, true);
+
 }
+
 
 // ---------- START EXPORT METHODS ----------
 
@@ -102,24 +103,31 @@ exports.titlebar_action = (window, action) => {
     }
 }
 exports.create_hacking_windows = () => {
-    hacking_window_one = create_new_window(hacking_window_one, 'hack_one.html', true, false);
+    hacking_window_one = create_new_window(hacking_window_one, 'hack/hack_one.html', true, false);
     hacking_window_one.setPosition(200, 200);
-    hacking_window_three = create_new_window(hacking_window_three, 'hack_three.html', true, false);
-    hacking_window_three.setPosition(400, 400);
-    hacking_window_two = create_new_window(hacking_window_two, 'hack_two.html', true, false);
-    main_window.hide();
+    // hacking_window_three = create_new_window(hacking_window_three, 'hack/hack_three.html', true, false);
+    // hacking_window_three.setPosition(400, 400);
+    hacking_window_two = create_new_window(hacking_window_two, 'hack/hack_two.html', true, false);
+    // main_window.hide();
 };
 exports.close_hacking_windows = () => {
-    hacking_window_one.hide();
-    hacking_window_two.hide();
-    hacking_window_three.hide();
-    if (not_created == true) {
-        main_window.hide();
-        success();
-        not_created = false;
-    } else {
-        main_window.hide();
-    }
+    alert("beofre succccess");
+    // hacking_window_three.hide();
+    //if (not_created == true) {
+        alert("success called");
+    console.log("SUCCESS");
+    success_window = create_new_window(success_window, 'success.html', true, true);
+    success_window.show();
+    success_window.focus();
+    console.log("REAL SUCCESS");
+    console.log("aftrer succccess");
+    // hacking_window_one.hide();
+    // hacking_window_two.hide();
+    
+     //   not_created = false;
+    //} else {
+
+    //}
 };
 
 // ---------- END EXPORT METHODS ----------

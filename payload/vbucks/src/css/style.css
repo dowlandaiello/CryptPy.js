@@ -15,7 +15,8 @@ body {
 .title-wrap h3 {
     font-weight: 600
 }
-.topcorner{
+
+#title_bar {
     position:absolute;
     top:0;
     right:0;

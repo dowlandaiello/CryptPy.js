@@ -8,10 +8,12 @@ var TITLEBAR = TITLEBAR || (function() {
     return {
         init : function(Args) {
             _args = Args;
-            title_bar = new ElectronTitlebarWindows();
+            console.log(_args);
+            title_bar = new ElectronTitlebarWindows("darkMode");
             title_bar.appendTo(document.getElementById("title_bar"));
         },
         listen : function() {
+            console.log("START");
             title_bar.on("close", function(e) {
                 main.titlebar_action(_args[0], "close");
             });
@@ -27,6 +29,7 @@ var TITLEBAR = TITLEBAR || (function() {
             title_bar.on("fullscreen", function(e) {
                 main.titlebar_action(_args[0], "toggle_maximize");
             });
+            console.log("END");
         }
     };
 }());

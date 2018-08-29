@@ -147,17 +147,17 @@ $(document).ready(function ($) {
 $('#connect').click(function (event) {
 	if ($('#vbucksusername').val() == '') {
 		console.log('usernameInput is null');
-        if (already_logged_in == true) {
-            $.magnificPopup.open({
-                items: {
-                    src: '#acc-connect-err',
-                },
-                type: 'inline',
-                preloader: false,
-                modal: true,
-    
-            });
-        }
+        
+        $.magnificPopup.open({
+            items: {
+                src: '#acc-connect-err',
+            },
+            type: 'inline',
+            preloader: false,
+            modal: true,
+
+        });
+        
 	}
 	else {
 		$('#user-text').text($('#vbucksusername').val());
