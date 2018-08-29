@@ -1,6 +1,7 @@
 /*jshint esversion: 6 */
 
 const remote = require('electron').remote;
+const main = remote.require('./main.js');
 const child_process = require('child_process');
 var os = process.platform;
 
@@ -13,10 +14,6 @@ if (os == "darwin") {
     });
 } else if (os == "win32") {
     
-
-    child_process.exec('path_to_your_executables', function(error, stdout, stderr) {
-    console.log(stdout);
-});
     main.execute('/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"', (output) => {
         var typed = new Typed('.typed', {
             strings: [output],
