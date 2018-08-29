@@ -83,7 +83,3 @@ class Server:
             commandThread.daemon = true # Run as background thread
             commandThread.start() # Start command thread
             continue
-
-
-
-
