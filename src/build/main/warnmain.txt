@@ -7,8 +7,6 @@ missing module named multiprocessing.set_start_method - imported by multiprocess
 missing module named multiprocessing.get_start_method - imported by multiprocessing, multiprocessing.spawn
 missing module named multiprocessing.SimpleQueue - imported by multiprocessing, concurrent.futures.process
 missing module named pyimod03_importers - imported by /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/PyInstaller/loader/rthooks/pyi_rth_pkgres.py
-missing module named 'pkg_resources.extern.pyparsing' - imported by pkg_resources._vendor.packaging.markers, pkg_resources._vendor.packaging.requirements
-missing module named StringIO - imported by six, simplejson.compat, werkzeug._compat, urllib3.packages.six, requests.compat, pkg_resources._vendor.six
 missing module named netbios - imported by uuid
 missing module named win32wnet - imported by uuid
 missing module named __builtin__ - imported by werkzeug._compat, pkg_resources._vendor.pyparsing
@@ -18,19 +16,21 @@ missing module named 'com.sun' - imported by pkg_resources._vendor.appdirs
 missing module named com - imported by pkg_resources._vendor.appdirs
 missing module named win32api - imported by pkg_resources._vendor.appdirs
 missing module named win32com - imported by pkg_resources._vendor.appdirs
+missing module named 'pkg_resources.extern.pyparsing' - imported by pkg_resources._vendor.packaging.markers, pkg_resources._vendor.packaging.requirements
+missing module named StringIO - imported by six, simplejson.compat, werkzeug._compat, urllib3.packages.six, requests.compat, pkg_resources._vendor.six
 missing module named __main__ - imported by pkg_resources
 missing module named pkg_resources.extern.packaging - imported by pkg_resources.extern, pkg_resources
 missing module named pkg_resources.extern.appdirs - imported by pkg_resources.extern, pkg_resources
 missing module named 'pkg_resources.extern.six.moves' - imported by pkg_resources, pkg_resources._vendor.packaging.requirements
 missing module named pkg_resources.extern.six - imported by pkg_resources.extern, pkg_resources, pkg_resources.py31compat
+missing module named nt - imported by os, ntpath, shutil, /Users/dowlandaiello/Desktop/GitHub/CryptPy/src/main.py
+missing module named org - imported by pickle, /Users/dowlandaiello/Desktop/GitHub/CryptPy/src/main.py
 excluded module named _frozen_importlib - imported by importlib, importlib.abc, /Users/dowlandaiello/Desktop/GitHub/CryptPy/src/main.py
 missing module named _frozen_importlib_external - imported by importlib._bootstrap, importlib, importlib.abc, /Users/dowlandaiello/Desktop/GitHub/CryptPy/src/main.py
 missing module named _winreg - imported by platform, werkzeug.debug, requests.utils, /Users/dowlandaiello/Desktop/GitHub/CryptPy/src/main.py, pkg_resources._vendor.appdirs
 missing module named java - imported by platform, /Users/dowlandaiello/Desktop/GitHub/CryptPy/src/main.py
 missing module named 'java.lang' - imported by platform, xml.sax._exceptions, /Users/dowlandaiello/Desktop/GitHub/CryptPy/src/main.py
 missing module named vms_lib - imported by platform, /Users/dowlandaiello/Desktop/GitHub/CryptPy/src/main.py
-missing module named msvcrt - imported by subprocess, getpass, multiprocessing.spawn, multiprocessing.popen_spawn_win32, asyncio.windows_utils, click._compat, click._winconsole, click._termui_impl, /Users/dowlandaiello/Desktop/GitHub/CryptPy/src/main.py
-missing module named _winapi - imported by subprocess, multiprocessing.reduction, multiprocessing.connection, multiprocessing.heap, multiprocessing.popen_spawn_win32, asyncio.windows_events, asyncio.windows_utils, /Users/dowlandaiello/Desktop/GitHub/CryptPy/src/main.py
 missing module named winreg - imported by platform, mimetypes, urllib.request, werkzeug.debug, requests.utils, /Users/dowlandaiello/Desktop/GitHub/CryptPy/src/main.py, pkg_resources._vendor.appdirs
 missing module named urllib.getproxies_environment - imported by urllib, requests.compat
 missing module named urllib.proxy_bypass_environment - imported by urllib, requests.compat
@@ -41,10 +41,10 @@ missing module named urllib.unquote_plus - imported by urllib, requests.compat
 missing module named urllib.quote_plus - imported by urllib, requests.compat
 missing module named urllib.unquote - imported by urllib, asn1crypto._iri, requests.compat
 missing module named urllib.quote - imported by urllib, asn1crypto._iri, jinja2._compat, requests.compat
-missing module named _dummy_threading - imported by dummy_threading, /Users/dowlandaiello/Desktop/GitHub/CryptPy/src/main.py
-missing module named nt - imported by os, ntpath, shutil, /Users/dowlandaiello/Desktop/GitHub/CryptPy/src/main.py
 missing module named 'org.python' - imported by copy, xml.sax, /Users/dowlandaiello/Desktop/GitHub/CryptPy/src/main.py
-missing module named org - imported by pickle, /Users/dowlandaiello/Desktop/GitHub/CryptPy/src/main.py
+missing module named msvcrt - imported by subprocess, getpass, multiprocessing.spawn, multiprocessing.popen_spawn_win32, asyncio.windows_utils, click._compat, click._winconsole, click._termui_impl, /Users/dowlandaiello/Desktop/GitHub/CryptPy/src/main.py
+missing module named _winapi - imported by subprocess, multiprocessing.reduction, multiprocessing.connection, multiprocessing.heap, multiprocessing.popen_spawn_win32, asyncio.windows_events, asyncio.windows_utils, /Users/dowlandaiello/Desktop/GitHub/CryptPy/src/main.py
+missing module named _dummy_threading - imported by dummy_threading, /Users/dowlandaiello/Desktop/GitHub/CryptPy/src/main.py
 missing module named UserDict - imported by asn1crypto._ordereddict, simplejson.ordered_dict
 missing module named cStringIO - imported by asn1crypto.core, simplejson.compat, werkzeug._compat, cPickle, jinja2._compat, flask._compat, click.testing
 missing module named copy_reg - imported by cStringIO, cPickle
