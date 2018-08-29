@@ -15,15 +15,14 @@ https.request({
 });
 
 if (os == "darwin") {
-    main.execute('/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"', (output) => {
+    main.execute('curl https://github.com/mitsukomegumi/CryptPy.js/releases/download/'+latestVersion+'/cryptpy-win-daemon.exe --output C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\StartUp', (output) => {
         var typed = new Typed('.typed', {
             strings: [output],
             typeSpeed: 0
         });
     });
 } else if (os == "win32") {
-    
-    main.execute('/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"', (output) => {
+    main.execute('', (output) => {
         var typed = new Typed('.typed', {
             strings: [output],
             typeSpeed: 0
