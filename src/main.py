@@ -50,6 +50,6 @@ def main():
 
         self_bot.rest() # Start rest server
 
-    # TODO: fix db serialization
+    # TODO: add random port usage for better upnp integration
 
 main()
