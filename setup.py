@@ -18,7 +18,7 @@ setup (
     # Version
     #
     # e.g. pip install CryptPy >= 0.1.0
-    version='0.3.1',
+    version='0.3.2',
 
     # Short description fetched from GitHub page
     description='Dynamically programmable Python/JS botnet (educational purposes only).',
