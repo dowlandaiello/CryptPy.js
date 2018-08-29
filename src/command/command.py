@@ -1,4 +1,4 @@
-from common.commondefs import true
+from src.common.commondefs import true
 import threading
 
 def command_bots(command, botnet):

@@ -1,6 +1,6 @@
-from common.commondefs import false
-from common.commondefs import true
-from common.commondefs import none
+from src.common.commondefs import false
+from src.common.commondefs import true
+from src.common.commondefs import none
 import marshal
 import sys
 import os
