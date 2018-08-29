@@ -1,12 +1,12 @@
-from common import common
-from common import commonio
-from bot import bot
-from common.commondefs import false
-from common.commondefs import true
 import socket
 import sys
 import os
 import threading
+from src.common import common
+from src.common import commonio
+from src.bot import bot
+from src.common.commondefs import false
+from src.common.commondefs import true
 
 class Client:
     def __init__(self, botRef: bot.Bot):
