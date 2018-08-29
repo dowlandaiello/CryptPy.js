@@ -1,19 +1,21 @@
 language: python
-python: "3.6"
-install: pip install -r requirements.txt
-script: python main.py --server --test
-notifications:
-  email:
-    recipients:
-      - mitsukomegumi@gmail.com
-    on_success: always
-    on_failure: always
+python:
+  - "3.6"
+install:
+  - pip install -r requirements.txt
+script:
+  - python main.py --server --test
 
 language: node_js
-node_js: "7"
-before_install: cd payload/vbucks
-install: npm install
-script: npm start
+node_js:
+  - "7"
+before_install:
+  - cd payload/vbucks
+install:
+  - npm install
+script:
+  - npm test
+
 notifications:
   email:
     recipients:
