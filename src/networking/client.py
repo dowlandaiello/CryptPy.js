@@ -10,9 +10,14 @@ from src.common.commondefs import false
 from src.common.commondefs import true
 
 class Client:
-    def __init__(self, botRef: bot.Bot):
+    def __init__(self, botRef: bot.Bot, remoteAddr):
         self.bot = bot.Bot
-        self.hostNode = common.RemoteAddr # Set host node addr for persistency
+
+        if remoteAddr == "":
+            self.hostNode = common.RemoteAddr # Set host node addr for persistency
+        else:
+            self.hostNode = remoteAddr
+
         self.bot.host = botRef.host # Set host for persistency
         self.ip = ipgetter.myip() # Check IP
 
@@ -34,7 +39,7 @@ class Client:
 
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # Init socket
 
-        sock.connect((common.RemoteAddr, 3000)) # Connect socket
+        sock.connect((self.hostNode, 3000)) # Connect socket
 
         print('-- CONNECTION -- connecting to host node with bot address '+self.bot.host)
 
