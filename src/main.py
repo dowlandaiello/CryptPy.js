@@ -1,11 +1,10 @@
-from networking import server # Import server
 import argparse
 import ipgetter
-from common.commondefs import true
-from common.commondefs import none
-from networking import server
-from networking import client
-from bot import bot
+from src.common.commondefs import true
+from src.common.commondefs import none
+from src.networking import server
+from src.networking import client
+from src.bot import bot
 
 #from payload.rsa.rsa import RSA
 """
