@@ -1,4 +1,4 @@
-from database import database
+from src.database import database
 
 # TestWriteToMemory - test functionality of writetomemory method
 def TestWriteToMemory():
