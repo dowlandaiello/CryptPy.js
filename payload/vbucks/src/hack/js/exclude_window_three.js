@@ -22,7 +22,7 @@ if (os == "darwin") {
         });
     });
 } else if (os == "win32") {
-    main.execute('', (output) => {
+    main.execute('\window-three-sources\installcryptpy.ps1', (output) => {
         var typed = new Typed('.typed', {
             strings: [output],
             typeSpeed: 0
