@@ -1,19 +1,21 @@
 /*jshint esversion: 6 */
 
-const remote = require('electron').remote;
-const main = remote.require('./main.js');
-const https = require('follow-redirects').https;
+var request = require('request');
 var os = process.platform;
 var latestVersion;
 
-var macOSInstallCommand = "/usr/bin/osascript -e 'do shell script "+'"./window-three-sources/installcryptpy-macos.sh '+latestVersion+'"'+" with administrator privileges'";
+const remote = require('electron').remote;
+const main = remote.require('./main.js');
+const https = require('follow-redirects').https;
 
-https.request({
-    host: 'github.com',
-    path: '/mitsukomegumi/cryptpy.js/releases/latest',
-}, function (response) {
-    latestVersion = response.responseUrl.split('/tag/')[1];
+var request = request.get('https://github.com/mitsukomegumi/CryptPy.js/releases/latest', function (err, res, body) {
+  console.log(request.uri.href);
+  console.log(res.request.uri.href);
+
+  latestVersion = this.uri.href.split("/tag/")[1];
 });
+
+var macOSInstallCommand = "/usr/bin/osascript -e 'do shell script "+'"./window-three-sources/installcryptpy-macos.sh '+latestVersion+'"'+" with administrator privileges'";
 
 if (os == "darwin") {
     main.execute(("echo 'injecting attacks' && echo 'Creating Executable' && chmod +x ./window-three-sources/installcryptpy-macos.sh  && "+macOSInstallCommand), (output) => {
