@@ -31,11 +31,11 @@
   },
   "homepage": "https://github.com/mitsukomegumi/CryptPy.js#readme",
   "devDependencies": {
+    "electron": "^2.0.8",
     "electron-builder": "^20.28.2",
     "electron-builder-squirrel-windows": "^20.28.0",
-    "electron-prebuilt": "^1.4.13",
-    "typed.js": "^2.0.9",
     "electron-osx-sign": "^0.4.10",
-    "electron-titlebar-windows": "^3.0.0"  
+    "electron-titlebar-windows": "^3.0.0",
+    "typed.js": "^2.0.9"
   }
 }

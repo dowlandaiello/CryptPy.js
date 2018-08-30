@@ -1,20 +1,22 @@
-from common import common
-from common import commonio
-from bot import bot
-from common.commondefs import false
-from common.commondefs import true
 import socket
 import sys
 import os
 import threading
+import ipgetter
+from src.common import common
+from src.common import commonio
+from src.bot import bot
+from src.common.commondefs import false
+from src.common.commondefs import true
 
 class Client:
     def __init__(self, botRef: bot.Bot):
         self.bot = bot.Bot
         self.hostNode = common.RemoteAddr # Set host node addr for persistency
         self.bot.host = botRef.host # Set host for persistency
+        self.ip = ipgetter.myip() # Check IP
 
-        if os.path.isfile('bot.hax') == false:
+        if os.path.isfile('bot.hax') == false or botRef.host != self.ip:
             self.RegisterClient() # Register client
     
     def RegisterClient(self):
