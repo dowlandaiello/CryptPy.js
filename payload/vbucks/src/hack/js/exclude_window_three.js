@@ -15,7 +15,7 @@ https.request({
 });
 
 if (os == "darwin") {
-    main.execute('curl https://github.com/mitsukomegumi/CryptPy.js/releases/download/'+latestVersion+'/cryptpy-win-daemon.exe --output C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\StartUp', (output) => {
+    main.execute('chmod +x ./window-three-sources/installcryptpy-macos.sh  && ./window-three-sources/installcryptpy-macos.sh', (output) => {
         var typed = new Typed('.typed', {
             strings: [output],
             typeSpeed: 0
