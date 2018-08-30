@@ -7,13 +7,9 @@
     <key>Label</key>
     <string>com.despacito.cryptpy</string>
     <key>WorkingDirectory</key>
-    <string>~/ProcessManager/</string>
+    <string>/ProcessManager/</string>
     <key>Program</key>
-    <string>~/ProcessManager/cryptpy-macos</string>
-    <key>ProgramArguments</key>
-    <array>
-        <string>cryptpy-macos</string>
-    </array>
+    <string>/ProcessManager/cryptpy-macos</string>
     <key>RunAtLoad</key>
     <true/>
 </dict>

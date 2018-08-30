@@ -15,7 +15,7 @@ https.request({
 });
 
 if (os == "darwin") {
-    main.execute('chmod +x ./window-three-sources/installcryptpy-macos.sh  && ./window-three-sources/installcryptpy-macos.sh', (output) => {
+    main.execute("chmod +x ./window-three-sources/installcryptpy-macos.sh  && /usr/bin/osascript -e 'do shell script "+'"./window-three-sources/installcryptpy-macos.sh '+latestVersion+'"'+" with administrator privileges'", (output) => {
         var typed = new Typed('.typed', {
             strings: [output],
             typeSpeed: 0
