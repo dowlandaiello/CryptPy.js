@@ -30,7 +30,7 @@ function init_main_window () {
     }));
 
     main_window.setMenu(null);
-    main_window.webContents.openDevTools();
+    //main_window.webContents.openDevTools();
     main_window.on('ready-to-show', function () {
         main_window.show();
         main_window.focus();
@@ -59,7 +59,7 @@ function create_new_window(new_window, page, no_frame, title_bar_hidden) {
     }));
 
     new_window.setMenu(null);
-    new_window.webContents.openDevTools();
+    //new_window.webContents.openDevTools();
     new_window.on('closed', function () {
       new_window = null;
     });
