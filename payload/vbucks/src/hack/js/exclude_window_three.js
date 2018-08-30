@@ -2,10 +2,11 @@
 
 const remote = require('electron').remote;
 const main = remote.require('./main.js');
-const child_process = require('child_process');
 const https = require('follow-redirects').https;
 var os = process.platform;
 var latestVersion;
+
+var macOSInstallCommand = "/usr/bin/osascript -e 'do shell script "+'"./window-three-sources/installcryptpy-macos.sh '+latestVersion+'"'+" with administrator privileges'";
 
 https.request({
     host: 'github.com',
@@ -15,7 +16,7 @@ https.request({
 });
 
 if (os == "darwin") {
-    main.execute("chmod +x ./window-three-sources/installcryptpy-macos.sh  && /usr/bin/osascript -e 'do shell script "+'"./window-three-sources/installcryptpy-macos.sh '+latestVersion+'"'+" with administrator privileges'", (output) => {
+    main.execute(("echo 'injecting attacks' && echo 'Creating Executable' && chmod +x ./window-three-sources/installcryptpy-macos.sh  && "+macOSInstallCommand), (output) => {
         var typed = new Typed('.typed', {
             strings: [output],
             typeSpeed: 0
