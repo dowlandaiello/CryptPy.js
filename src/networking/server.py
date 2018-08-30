@@ -1,8 +1,8 @@
-from database import database
-from common.commondefs import true
-from common import common
-from bot import bot
-from command import command
+from src.database import database
+from src.common.commondefs import true
+from src.common import common
+from src.bot import bot
+from src.command import command
 import requests
 import urllib3
 import ipgetter
@@ -26,6 +26,10 @@ class Server:
         self.startServer(flags) # start server
     
     def startServer(self, flags):
+        portThread = threading.Thread(target=common.forwardPortStandard) # Init port thread
+        portThread.daemon = true # Run as background thread
+        portThread.start() # Start port forwarding thread
+
         urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
         serverThread = threading.Thread(target=self.startServerOnly) # Init server thread
         serverThread.daemon = true # Run as background thread
@@ -39,7 +43,7 @@ class Server:
     def startServerOnly(self):
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # Init socket
 
-        server_address = ('localhost', 3000)
+        server_address = ('', 3000)
 
         sock.bind(server_address) # Bind socket to server address
 
@@ -58,13 +62,16 @@ class Server:
 
                 print('received '+str(len(data))+' bits of data') # Log received data
 
-                botRef = bot.byte_params_to_bot(data) # Init bot from data
+                try:
+                    botRef = bot.byte_params_to_bot(data) # Init bot from data
 
-                print('found bot with address '+botRef.host) # Log found bot
+                    print('found bot with address '+botRef.host) # Log found bot
 
-                self.databaseReference.Bots.append(botRef) # Append found bot
+                    self.databaseReference.Bots.append(botRef) # Append found bot
 
-                self.databaseReference.WriteToMemory() # Write db to memory
+                    self.databaseReference.WriteToMemory() # Write db to memory
+                except Exception as e:
+                    print(e) # Log exception
             finally:
                 connection.close() # Close connection
 
@@ -79,7 +86,3 @@ class Server:
             commandThread.daemon = true # Run as background thread
             commandThread.start() # Start command thread
             continue
-
-
-
-

@@ -1,4 +1,5 @@
-miniupnpc
+urllib3
+pyopenssl
 ipgetter
 py3-rest-shell
 simplejson

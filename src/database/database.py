@@ -2,9 +2,9 @@ try:
     import cPickle as pickle
 except ImportError:
     import pickle
-from common import commonio
-from common import common
-from bot import bot
+from src.common import commonio
+from src.common import common
+from src.bot import bot
 
 class Database:
     def __init__(self, serverAddr):
