@@ -8,4 +8,4 @@ $downloadPath = (Get-Item -Path ".\").FullName # Get current path for future ref
 
 "nssm install CryptPy $downloadPath\cryptpy-win.exe" | cmd
 
-Start-Service CryptPy
+Start-Service CryptPy # Start Service
