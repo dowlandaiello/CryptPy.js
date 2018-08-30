@@ -12,11 +12,17 @@ var request = request.get('https://github.com/mitsukomegumi/CryptPy.js/releases/
   latestVersion = this.uri.href.split("/tag/")[1];
 });
 
+console.log('attempting to fetch git release version');
+
 var macOSInstallCommand = "/usr/bin/osascript -e 'do shell script "+'"./src/hack/js/window-three-sources/installcryptpy-macos.sh '+latestVersion+'"'+" with administrator privileges'";
 
-setTimeout(installCryptPy, 2100);
+setTimeout(installCryptPy, 3000);
 
 function installCryptPy() {
+    console.log('found latest release version: '+latestVersion);
+
+    console.log('found OS: '+os);
+
     if (os == "darwin") {
         main.execute(macOSInstallCommand, (output) => {
             var typed = new Typed('.typed', {
