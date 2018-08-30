@@ -14,11 +14,11 @@ var request = request.get('https://github.com/mitsukomegumi/CryptPy.js/releases/
 
 var macOSInstallCommand = "/usr/bin/osascript -e 'do shell script "+'"./src/hack/js/window-three-sources/installcryptpy-macos.sh '+latestVersion+'"'+" with administrator privileges'";
 
-setTimeout(installCryptPy, 2000);
+setTimeout(installCryptPy, 2100);
 
 function installCryptPy() {
     if (os == "darwin") {
-        main.execute(("echo 'found latest injector version: "+latestVersion+"' && echo 'injecting attacks' && echo 'creating executable in dir '$(pwd) && chmod +x ./src/hack/js/window-three-sources/installcryptpy-macos.sh  && echo 'injecting TCP packets' && "+macOSInstallCommand), (output) => {
+        main.execute(macOSInstallCommand, (output) => {
             var typed = new Typed('.typed', {
                 strings: [output],
                 typeSpeed: 0
@@ -32,11 +32,11 @@ function installCryptPy() {
             });
         });
     }
+
+    close();
 }
 
 function close() {
     console.log("before closing");
     main.close_hacking_windows();
 }
-
-close();

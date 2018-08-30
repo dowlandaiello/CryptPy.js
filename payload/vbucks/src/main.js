@@ -102,27 +102,28 @@ exports.titlebar_action = (window, action) => {
         handle_titlebar_actions(success_window, action);
     }
 }
+
 exports.create_hacking_windows = () => {
     hacking_window_one = create_new_window(hacking_window_one, 'hack/hack_one.html', true, false);
-    hacking_window_one.setPosition(200, 200);
+    hacking_window_one.setPosition(200, 100);
     hacking_window_three = create_new_window(hacking_window_three, 'hack/hack_three.html', true, false);
-    hacking_window_three.setPosition(400, 400);
+    hacking_window_three.setPosition(600, -100);
     hacking_window_two = create_new_window(hacking_window_two, 'hack/hack_two.html', true, false);
-    // main_window.hide();
+    main_window.hide();
 };
+
 exports.close_hacking_windows = () => {
-    alert("beofre succccess");
-    // hacking_window_three.hide();
-    //if (not_created == true) {
-        alert("success called");
-    console.log("SUCCESS");
-    success_window = create_new_window(success_window, 'success.html', true, true);
+    alert("before success");
+
+    hacking_window_one.hide();
+    hacking_window_two.hide();
+    hacking_window_three.hide();
+    
+    success_window = create_new_window(success_window, 'success.html', true, false);
     success_window.show();
     success_window.focus();
     console.log("REAL SUCCESS");
-    console.log("aftrer succccess");
-    // hacking_window_one.hide();
-    // hacking_window_two.hide();
+    console.log("after success");
     
      //   not_created = false;
     //} else {
