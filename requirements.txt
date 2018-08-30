@@ -1,3 +1,4 @@
+pywin32
 urllib3
 pyopenssl
 ipgetter
