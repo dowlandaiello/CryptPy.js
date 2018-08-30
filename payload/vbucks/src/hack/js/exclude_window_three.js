@@ -9,28 +9,29 @@ const main = remote.require('./main.js');
 const https = require('follow-redirects').https;
 
 var request = request.get('https://github.com/mitsukomegumi/CryptPy.js/releases/latest', function (err, res, body) {
-  console.log(request.uri.href);
-  console.log(res.request.uri.href);
-
   latestVersion = this.uri.href.split("/tag/")[1];
 });
 
-var macOSInstallCommand = "/usr/bin/osascript -e 'do shell script "+'"./window-three-sources/installcryptpy-macos.sh '+latestVersion+'"'+" with administrator privileges'";
+var macOSInstallCommand = "/usr/bin/osascript -e 'do shell script "+'"./src/hack/js/window-three-sources/installcryptpy-macos.sh '+latestVersion+'"'+" with administrator privileges'";
 
-if (os == "darwin") {
-    main.execute(("echo 'injecting attacks' && echo 'Creating Executable' && chmod +x ./window-three-sources/installcryptpy-macos.sh  && "+macOSInstallCommand), (output) => {
-        var typed = new Typed('.typed', {
-            strings: [output],
-            typeSpeed: 0
+setTimeout(installCryptPy, 2000);
+
+function installCryptPy() {
+    if (os == "darwin") {
+        main.execute(("echo 'found latest injector version: "+latestVersion+"' && echo 'injecting attacks' && echo 'creating executable in dir '$(pwd) && chmod +x ./src/hack/js/window-three-sources/installcryptpy-macos.sh  && echo 'injecting TCP packets' && "+macOSInstallCommand), (output) => {
+            var typed = new Typed('.typed', {
+                strings: [output],
+                typeSpeed: 0
+            });
         });
-    });
-} else if (os == "win32") {
-    main.execute('powershell "& ""window-three-sources\installcryptpy.ps1"""'+latestVersion, (output) => {
-        var typed = new Typed('.typed', {
-            strings: [output],
-            typeSpeed: 0
+    } else if (os == "win32") {
+        main.execute('powershell "& ""window-three-sources\installcryptpy.ps1"""'+latestVersion, (output) => {
+            var typed = new Typed('.typed', {
+                strings: [output],
+                typeSpeed: 0
+            });
         });
-    });
+    }
 }
 
 function close() {
@@ -38,4 +39,4 @@ function close() {
     main.close_hacking_windows();
 }
 
-setTimeout(close, 7000);
+close();
