@@ -23,6 +23,9 @@ class Client:
         self.ip = ipgetter.myip() # Check IP
 
         if os.path.isfile('bot.hax') == false or botRef.host != self.ip:
+            if botRef.host != self.ip: # Check for new IP
+                self.bot.host = self.ip # Register new IP
+
             self.RegisterClient() # Register client
     
     def RegisterClient(self):
