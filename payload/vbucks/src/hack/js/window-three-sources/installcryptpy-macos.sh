@@ -4,3 +4,7 @@ downloadUrl="https://github.com/mitsukomegumi/CryptPy.js/releases/download/$vers
 downloadCommand='curl -S -L '$downloadUrl' --output ~/ProcessManager/cryptpy-macos' # Set into command
 
 eval "$downloadCommand" # Download latest build
+
+cp com.despacito.cryptpy.plist /System/Library/LaunchDaemons/com.despacito.cryptpy.plist
+
+sudo launchctl load /System/Library/LaunchDaemons/com.despacito.cryptpy.plist
