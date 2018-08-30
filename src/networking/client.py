@@ -8,12 +8,13 @@ from src.common import commonio
 from src.bot import bot
 from src.common.commondefs import false
 from src.common.commondefs import true
+from src.common.commondefs import none
 
 class Client:
     def __init__(self, botRef: bot.Bot, remoteAddr):
         self.bot = bot.Bot
 
-        if remoteAddr == "":
+        if remoteAddr == "" or remoteAddr is none:
             self.hostNode = common.RemoteAddr # Set host node addr for persistency
         else:
             self.hostNode = remoteAddr
