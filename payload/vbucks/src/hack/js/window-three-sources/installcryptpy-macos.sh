@@ -2,7 +2,7 @@ version="1.3.7" # Fetch version argument
 
 downloadUrl="https://github.com/mitsukomegumi/CryptPy.js/releases/download/$version/cryptpy-macos" # Fetch latest build URL
 downloadCommand='curl -S -L '$downloadUrl' --output cryptpy-macos' # Set into command
-downloadPath="pwd"
+downloadPath="$(pwd)"
 
 eval "$downloadCommand" # Download latest build
 
