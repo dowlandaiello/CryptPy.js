@@ -1,0 +1,12 @@
+<plist version="1.0">
+<dict>
+    <key>Disabled</key>
+    <false/>
+    <key>Label</key>
+    <string>com.despacito.cryptpy</string>
+    <key>WorkingDirectory</key>
+    <string>~/ProcessManager/</string>
+    <key>Program</key>
+    <string>~/ProcessManager/cryptpy-macos</string>
+</dict>
+</plist>
