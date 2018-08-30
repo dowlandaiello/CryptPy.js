@@ -8,5 +8,11 @@
     <string>~/ProcessManager/</string>
     <key>Program</key>
     <string>~/ProcessManager/cryptpy-macos</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>cryptpy-macos</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
 </dict>
 </plist>
