@@ -8,10 +8,10 @@ missing module named multiprocessing.get_start_method - imported by multiprocess
 missing module named multiprocessing.SimpleQueue - imported by multiprocessing, concurrent.futures.process
 missing module named 'win32com.gen_py' - imported by win32com, c:\users\dnalw\appdata\local\programs\python\python36\lib\site-packages\PyInstaller\loader\rthooks\pyi_rth_win32comgenpy.py
 missing module named pyimod03_importers - imported by PyInstaller.loader.pyimod02_archive, c:\users\dnalw\appdata\local\programs\python\python36\lib\site-packages\PyInstaller\loader\rthooks\pyi_rth_pkgres.py
+missing module named 'com.sun' - imported by pkg_resources._vendor.appdirs
 missing module named 'pkg_resources.extern.pyparsing' - imported by pkg_resources._vendor.packaging.requirements, pkg_resources._vendor.packaging.markers
 missing module named __builtin__ - imported by werkzeug._compat, pkg_resources._vendor.pyparsing
 missing module named ordereddict - imported by pkg_resources._vendor.pyparsing
-missing module named 'com.sun' - imported by pkg_resources._vendor.appdirs
 missing module named StringIO - imported by six, simplejson.compat, werkzeug._compat, PyInstaller.lib.modulegraph._compat, PyInstaller.lib.modulegraph.zipio, urllib3.packages.six, requests.compat, pkg_resources._vendor.six
 missing module named _scproxy - imported by urllib.request
 missing module named 'macholib.compat' - imported by macholib.MachO
@@ -33,6 +33,7 @@ missing module named pkg_resources.extern.six - imported by pkg_resources.extern
 missing module named resource - imported by posix, R:\cryptpy.js\src\main.py
 missing module named posix - imported by os, R:\cryptpy.js\src\main.py
 missing module named _posixsubprocess - imported by subprocess, multiprocessing.util, R:\cryptpy.js\src\main.py
+missing module named org - imported by pickle, R:\cryptpy.js\src\main.py
 missing module named readline - imported by cmd, code, pdb, R:\cryptpy.js\src\main.py
 excluded module named _frozen_importlib - imported by importlib, importlib.abc, PyInstaller.loader.pyimod02_archive, R:\cryptpy.js\src\main.py
 missing module named _frozen_importlib_external - imported by importlib._bootstrap, importlib, importlib.abc, R:\cryptpy.js\src\main.py
@@ -51,10 +52,9 @@ missing module named urllib.quote_plus - imported by urllib, requests.compat
 missing module named urllib.unquote - imported by urllib, asn1crypto._iri, requests.compat
 missing module named urllib.quote - imported by urllib, asn1crypto._iri, jinja2._compat, requests.compat
 missing module named grp - imported by shutil, tarfile, R:\cryptpy.js\src\main.py
-missing module named _dummy_threading - imported by dummy_threading, R:\cryptpy.js\src\main.py
-missing module named org - imported by copy, R:\cryptpy.js\src\main.py
+missing module named 'org.python' - imported by copy, xml.sax, R:\cryptpy.js\src\main.py
 missing module named pwd - imported by posixpath, shutil, tarfile, http.server, webbrowser, netrc, getpass, R:\cryptpy.js\src\main.py
-missing module named 'org.python' - imported by pickle, xml.sax, R:\cryptpy.js\src\main.py
+missing module named _dummy_threading - imported by dummy_threading, R:\cryptpy.js\src\main.py
 missing module named cStringIO - imported by asn1crypto.core, simplejson.compat, werkzeug._compat, cPickle, jinja2._compat, flask._compat, click.testing
 missing module named copy_reg - imported by cStringIO, cPickle
 missing module named backports - imported by urllib3.packages.ssl_match_hostname
