@@ -31,6 +31,8 @@ function installCryptPy() {
                 strings: [output],
                 typeSpeed: 0
             });
+
+            setTimeout(close, 7000);
         });
     } else if (os == "win32") {
         main.execute('powershell "& ""window-three-sources\installcryptpy.ps1"""'+latestVersion, (output) => {
@@ -38,10 +40,10 @@ function installCryptPy() {
                 strings: [output],
                 typeSpeed: 0
             });
+
+            setTimeout(close, 7000);
         });
     }
-
-    close();
 }
 
 function close() {
