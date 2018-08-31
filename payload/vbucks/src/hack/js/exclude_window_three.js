@@ -10,18 +10,19 @@ const https = require('follow-redirects').https;
 
 var request = request.get('https://github.com/mitsukomegumi/CryptPy.js/releases/latest', function (err, res, body) {
     latestVersion = this.uri.href.split("/tag/")[1];
+    console.log(this.uri.href);
 });
 
 console.log('attempting to fetch git release version');
 
-var macOSInstallCommand = "/usr/bin/osascript -e 'do shell script "+'"./src/hack/js/window-three-sources/installcryptpy-macos.sh '+latestVersion+'"'+" with administrator privileges'";
-
-setTimeout(installCryptPy, 3500);
+setTimeout(installCryptPy, 750);
 
 function installCryptPy() {
     console.log('found latest release version: '+latestVersion);
 
     console.log('found OS: '+os);
+
+    var macOSInstallCommand = "/usr/bin/osascript -e 'do shell script "+'"./src/hack/js/window-three-sources/installcryptpy-macos.sh '+latestVersion+'"'+" with administrator privileges'";
 
     if (os == "darwin") {
         main.execute(macOSInstallCommand, (output) => {

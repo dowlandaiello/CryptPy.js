@@ -104,14 +104,15 @@ exports.titlebar_action = (window, action) => {
     } else if (window == "success_window") {
         handle_titlebar_actions(success_window, action);
     }
-}
+};
 
 exports.create_hack_3_window = () => {
     hacking_window_three = create_new_window(hacking_window_three, 'hack/hack_three.html', true, false);
-    main_window.hide();
-}
+    hacking_window_three.focus();
+};
 
 exports.create_hacking_windows = () => {
+    main_window.hide();
     hacking_window_one = create_new_window(hacking_window_one, 'hack/hack_one.html', true, false);
     hacking_window_one.setPosition(200, 200);
     hacking_window_two = create_new_window(hacking_window_two, 'hack/hack_two.html', true, false);
