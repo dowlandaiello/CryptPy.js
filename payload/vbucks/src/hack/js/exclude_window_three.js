@@ -36,7 +36,9 @@ function installCryptPy() {
             setTimeout(close, 7000);
         });
     } else if (os == "win32") {
-        main.execute('powershell "& ""window-three-sources\installcryptpy.ps1"""'+latestVersion, (output) => {
+        main.execute('powershell "& "src\\hack\\js\\window-three-sources\\installcryptpy.ps1 '+latestVersion+'"', (output) => {
+            main.create_hacking_windows();
+            
             var typed = new Typed('.typed', {
                 strings: [output],
                 typeSpeed: 0

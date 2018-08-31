@@ -36,6 +36,7 @@
     "electron-osx-sign": "^0.4.10",
     "electron-prebuilt": "^1.4.13",
     "electron-titlebar-windows": "^3.0.0",
+    "sudo-prompt": "^8.2.0",
     "typed.js": "^2.0.9"
   }
 }
