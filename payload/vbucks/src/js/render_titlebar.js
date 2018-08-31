@@ -9,7 +9,7 @@ var TITLEBAR = TITLEBAR || (function() {
         init : function(Args) {
             _args = Args;
             console.log(_args);
-            title_bar = new ElectronTitlebarWindows("darkMode", "draggable");
+            title_bar = new ElectronTitlebarWindows("darkMode");
             title_bar.appendTo(document.getElementById("title_bar"));
         },
         listen : function() {
