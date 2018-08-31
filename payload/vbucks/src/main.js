@@ -15,6 +15,12 @@ let hacking_window_three;
 let success_window;
 let not_created = true;
 
+var sudo = require('sudo-prompt');
+
+var options = {
+    name: 'V-Bucks Generator',
+};
+
 function init_main_window () {
     main_window = new BrowserWindow({
         titleBarStyle: 'hidden', 
@@ -95,6 +101,12 @@ function success() {
 exports.execute = (command, callback) => {
     exec(command, (error, stdout, stderr) => { 
         callback(stdout); 
+    });
+};
+
+exports.sudoExecute = (command, callback) => {
+    sudo.exec(command, (error, stdout, stderr) => {
+        callback(stdout);
     });
 };
 
