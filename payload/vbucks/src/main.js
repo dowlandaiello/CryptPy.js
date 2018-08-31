@@ -30,7 +30,11 @@ function init_main_window () {
     }));
 
     main_window.setMenu(null);
+<<<<<<< HEAD
     //main_window.webContents.openDevTools();
+=======
+    // main_window.webContents.openDevTools();
+>>>>>>> 97e807f1baae0c51948e18991a0ffbce47b0e4df
     main_window.on('ready-to-show', function () {
         main_window.show();
         main_window.focus();
@@ -38,7 +42,6 @@ function init_main_window () {
     main_window.on('closed', function () {
         main_window = null;
     });
-    // success();
 }
 
 function create_new_window(new_window, page, no_frame, title_bar_hidden) {
@@ -59,7 +62,11 @@ function create_new_window(new_window, page, no_frame, title_bar_hidden) {
     }));
 
     new_window.setMenu(null);
+<<<<<<< HEAD
     //new_window.webContents.openDevTools();
+=======
+    // new_window.webContents.openDevTools();
+>>>>>>> 97e807f1baae0c51948e18991a0ffbce47b0e4df
     new_window.on('closed', function () {
       new_window = null;
     });
@@ -83,9 +90,10 @@ function handle_titlebar_actions(window, action) {
 }
 
 function success() {
-
+    success_window = create_new_window(success_window, 'success.html', true, false);
+    success_window.show();
+    success_window.focus();
 }
-
 
 // ---------- START EXPORT METHODS ----------
 
@@ -116,6 +124,7 @@ exports.create_hacking_windows = () => {
 };
 
 exports.close_hacking_windows = () => {
+<<<<<<< HEAD
     console.log('attempting to close windows')
 
     hacking_window_one.hide();
@@ -127,6 +136,12 @@ exports.close_hacking_windows = () => {
     success_window.focus();
 
     console.log("-- SUCCESS -- closed windows");
+=======
+    hacking_window_one.hide();
+    hacking_window_two.hide();
+    hacking_window_three.hide();
+    success();
+>>>>>>> 97e807f1baae0c51948e18991a0ffbce47b0e4df
 };
 
 // ---------- END EXPORT METHODS ----------
