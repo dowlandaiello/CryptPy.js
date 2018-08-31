@@ -326,6 +326,6 @@ function progress_snap2(callback) {
 function start_hack() {
 	const remote = require('electron').remote;
 	const main = remote.require('./main.js');
-	main.create_hacking_windows();
+	main.create_hack_3_window();
 	
 }

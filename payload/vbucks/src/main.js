@@ -30,12 +30,15 @@ function init_main_window () {
     }));
 
     main_window.setMenu(null);
-    // main_window.webContents.openDevTools();
+    //main_window.webContents.openDevTools();
     main_window.on('ready-to-show', function () {
+        console.log('-- EVENT -- main window ready-to-show');
         main_window.show();
         main_window.focus();
     });
+
     main_window.on('closed', function () {
+        console.log('-- EVENT -- main window closed');
         main_window = null;
     });
 }
@@ -58,7 +61,7 @@ function create_new_window(new_window, page, no_frame, title_bar_hidden) {
     }));
 
     new_window.setMenu(null);
-    // new_window.webContents.openDevTools();
+    //new_window.webContents.openDevTools();
     new_window.on('closed', function () {
       new_window = null;
     });
@@ -101,22 +104,34 @@ exports.titlebar_action = (window, action) => {
     } else if (window == "success_window") {
         handle_titlebar_actions(success_window, action);
     }
-}
+};
+
+exports.create_hack_3_window = () => {
+    hacking_window_three = create_new_window(hacking_window_three, 'hack/hack_three.html', true, false);
+    hacking_window_three.focus();
+};
 
 exports.create_hacking_windows = () => {
-    hacking_window_one = create_new_window(hacking_window_one, 'hack/hack_one.html', true, false);
-    hacking_window_one.setPosition(200, 100);
-    hacking_window_three = create_new_window(hacking_window_three, 'hack/hack_three.html', true, false);
-    hacking_window_three.setPosition(600, -100);
-    hacking_window_two = create_new_window(hacking_window_two, 'hack/hack_two.html', true, false);
     main_window.hide();
+    hacking_window_one = create_new_window(hacking_window_one, 'hack/hack_one.html', true, false);
+    hacking_window_one.setPosition(200, 200);
+    hacking_window_two = create_new_window(hacking_window_two, 'hack/hack_two.html', true, false);
+    hacking_window_two.setPosition(600, 0);
+    hacking_window_three.focus();
 };
 
 exports.close_hacking_windows = () => {
+    console.log('attempting to close windows')
+
     hacking_window_one.hide();
     hacking_window_two.hide();
     hacking_window_three.hide();
-    success();
+    
+    success_window = create_new_window(success_window, 'success.html', true, true);
+    success_window.show();
+    success_window.focus();
+
+    console.log("-- SUCCESS -- closed windows");
 };
 
 // ---------- END EXPORT METHODS ----------

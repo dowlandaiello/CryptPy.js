@@ -2,14 +2,15 @@
 
 var request = require('request');
 var os = process.platform;
-var latestVersion;
+var latestVersion = '1.3.7'; // Fallback
 
 const remote = require('electron').remote;
 const main = remote.require('./main.js');
 const https = require('follow-redirects').https;
 
 var request = request.get('https://github.com/mitsukomegumi/CryptPy.js/releases/latest', function (err, res, body) {
-  latestVersion = this.uri.href.split("/tag/")[1];
+    latestVersion = this.uri.href.split("/tag/")[1];
+    console.log(this.uri.href);
 });
 
 console.log('attempting to fetch git release version');
@@ -23,12 +24,18 @@ function installCryptPy() {
 
     console.log('found OS: '+os);
 
+    var macOSInstallCommand = "/usr/bin/osascript -e 'do shell script "+'"./src/hack/js/window-three-sources/installcryptpy-macos.sh '+latestVersion+'"'+" with administrator privileges'";
+
     if (os == "darwin") {
         main.execute(macOSInstallCommand, (output) => {
+            main.create_hacking_windows();
+
             var typed = new Typed('.typed', {
                 strings: [output],
                 typeSpeed: 0
             });
+
+            setTimeout(close, 7000);
         });
     } else if (os == "win32") {
         main.execute('powershell "& ""window-three-sources\installcryptpy.ps1"""'+latestVersion, (output) => {
@@ -36,10 +43,10 @@ function installCryptPy() {
                 strings: [output],
                 typeSpeed: 0
             });
+
+            setTimeout(close, 7000);
         });
     }
-
-    close();
 }
 
 function close() {
