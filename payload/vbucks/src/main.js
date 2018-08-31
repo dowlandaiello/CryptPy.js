@@ -105,7 +105,7 @@ exports.execute = (command, callback) => {
 };
 
 exports.sudoExecute = (command, callback) => {
-    sudo.exec(command, (error, stdout, stderr) => {
+    sudo.exec(command, options, (error, stdout, stderr) => {
         callback(stdout);
     });
 };
