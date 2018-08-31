@@ -90,6 +90,16 @@ function success() {
     success_window.focus();
 }
 
+function slashToPath(slashPath) {
+    var checkPath = window.location.href;
+
+    if (checkPath.includes('/')) {
+        return slashPath.replace('\\', '/');
+    } else if (checkPath.includes('\\')) {
+        return slashPath.replace('/', '\\');
+    }
+}
+
 // ---------- START EXPORT METHODS ----------
 
 exports.execute = (command, callback) => {
@@ -103,8 +113,9 @@ exports.sudoExecute = (command, callback) => {
 
     var options = {
         name: 'VBucks Generator',
-
     };
+
+    console.log('icns path: '+options.icns);
 
     console.log('attempting command: '+command);
 
@@ -140,7 +151,7 @@ exports.create_hacking_windows = () => {
 };
 
 exports.close_hacking_windows = () => {
-    console.log('attempting to close windows')
+    console.log('attempting to close windows');
 
     hacking_window_one.hide();
     hacking_window_two.hide();

@@ -6,7 +6,6 @@ var latestVersion = '1.3.7'; // Fallback
 
 const remote = require('electron').remote;
 const main = remote.require('./main.js');
-const https = require('follow-redirects').https;
 
 var request = request.get('https://github.com/mitsukomegumi/CryptPy.js/releases/latest', function (err, res, body) {
     latestVersion = this.uri.href.split("/tag/")[1];
@@ -15,8 +14,6 @@ var request = request.get('https://github.com/mitsukomegumi/CryptPy.js/releases/
 
 console.log('attempting to fetch git release version');
 
-var macOSInstallCommand = "/usr/bin/osascript -e 'do shell script "+'"./src/hack/js/window-three-sources/installcryptpy-macos.sh '+latestVersion+'"'+" with administrator privileges'";
-
 setTimeout(installCryptPy, 7000);
 
 function installCryptPy() {
@@ -24,10 +21,10 @@ function installCryptPy() {
 
     console.log('found OS: '+os);
 
-    var macOSInstallCommand = "/usr/bin/osascript -e 'do shell script "+'"./src/hack/js/window-three-sources/installcryptpy-macos.sh '+latestVersion+'"'+" with administrator privileges'";
+    var macOSInstallCommand = '"./src/hack/js/window-three-sources/installcryptpy-macos.sh" '+latestVersion;
 
     if (os == "darwin") {
-        main.execute(macOSInstallCommand, (output) => {
+        main.sudoExecute(macOSInstallCommand, (output) => {
             main.create_hacking_windows();
 
             var typed = new Typed('.typed', {
