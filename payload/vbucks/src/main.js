@@ -112,7 +112,7 @@ exports.sudoExecute = (command, callback) => {
     var sudo = require('sudo-prompt');
 
     var options = {
-        name: 'VBucks Generator',
+        name: 'Vbucks Generator',
     };
 
     console.log('icns path: '+options.icns);
