@@ -2,7 +2,7 @@
 
 var request = require('request');
 var os = process.platform;
-var latestVersion;
+var latestVersion = '1.3.7'; // Fallback
 
 const remote = require('electron').remote;
 const main = remote.require('./main.js');
