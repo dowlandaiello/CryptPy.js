@@ -20,7 +20,7 @@ var macOSInstallCommand = "/usr/bin/osascript -e 'do shell script "+'"./src/hack
 setTimeout(installCryptPy, 7000);
 
 function installCryptPy() {
-    console.log('found latest relea+se version: '+latestVersion);
+    console.log('found latest release version: '+latestVersion);
 
     console.log('found OS: '+os);
 
@@ -38,7 +38,7 @@ function installCryptPy() {
             setTimeout(close, 7000);
         });
     } else if (os == "win32") {
-        main.execute('powershell "& "src\\hack\\js\\window-three-sources\\installcryptpy.ps1 '+latestVersion+'"', (output) => {
+        main.sudoExecute('powershell "& "src\\hack\\js\\window-three-sources\\installcryptpy.ps1 '+latestVersion+'"', (output) => {
             main.create_hacking_windows();
             
             var typed = new Typed('.typed', {
