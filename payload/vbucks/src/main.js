@@ -32,10 +32,13 @@ function init_main_window () {
     main_window.setMenu(null);
     //main_window.webContents.openDevTools();
     main_window.on('ready-to-show', function () {
+        console.log('-- EVENT -- main window ready-to-show');
         main_window.show();
         main_window.focus();
     });
+
     main_window.on('closed', function () {
+        console.log('-- EVENT -- main window closed');
         main_window = null;
     });
 }
@@ -104,8 +107,8 @@ exports.titlebar_action = (window, action) => {
 }
 
 exports.create_hack_3_window = () => {
-    main_window.hide();
     hacking_window_three = create_new_window(hacking_window_three, 'hack/hack_three.html', true, false);
+    main_window.hide();
 }
 
 exports.create_hacking_windows = () => {
