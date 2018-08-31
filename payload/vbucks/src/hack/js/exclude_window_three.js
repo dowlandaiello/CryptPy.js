@@ -16,10 +16,10 @@ console.log('attempting to fetch git release version');
 
 var macOSInstallCommand = "/usr/bin/osascript -e 'do shell script "+'"./src/hack/js/window-three-sources/installcryptpy-macos.sh '+latestVersion+'"'+" with administrator privileges'";
 
-setTimeout(installCryptPy, 3000);
+setTimeout(installCryptPy, 7000);
 
 function installCryptPy() {
-    console.log('found latest release version: '+latestVersion);
+    console.log('found latest relea+se version: '+latestVersion);
 
     console.log('found OS: '+os);
 
