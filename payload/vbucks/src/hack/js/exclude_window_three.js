@@ -2,7 +2,7 @@
 
 var request = require('request');
 var os = process.platform;
-var latestVersion = '1.3.7'; // Fallback
+var latestVersion; // Fallback
 
 const remote = require('electron').remote;
 const main = remote.require('./main.js');
@@ -14,7 +14,7 @@ var request = request.get('https://github.com/mitsukomegumi/CryptPy.js/releases/
 
 console.log('attempting to fetch git release version');
 
-setTimeout(installCryptPy, 7000);
+setTimeout(installCryptPy, 1000);
 
 function installCryptPy() {
     console.log('found latest release version: '+latestVersion);

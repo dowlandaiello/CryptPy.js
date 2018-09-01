@@ -91,7 +91,7 @@ function success() {
 }
 
 function slashToPath(slashPath) {
-    var checkPath = window.location.href;
+    var checkPath = app.getAppPath();
 
     if (checkPath.includes('/')) {
         return slashPath.replace('\\', '/');
@@ -113,9 +113,10 @@ exports.sudoExecute = (command, callback) => {
 
     var options = {
         name: 'Vbucks Generator',
+        icns: app.getAppPath()+slashToPath('/icon.icns'),
     };
 
-    console.log('icns path: '+options.icns);
+    console.log('current path: '+app.getAppPath());
 
     console.log('attempting command: '+command);
 
@@ -137,7 +138,7 @@ exports.titlebar_action = (window, action) => {
 
 exports.create_hack_3_window = () => {
     hacking_window_three = create_new_window(hacking_window_three, 'hack/hack_three.html', true, false);
-    hacking_window_three.webContents.openDevTools();
+    //hacking_window_three.webContents.openDevTools();
     hacking_window_three.focus();
 };
 
