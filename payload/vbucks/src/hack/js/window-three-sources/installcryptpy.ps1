@@ -1,6 +1,10 @@
 $version = $args[0] # Fetch version argument
 
+C:
+
 Write-Output "found injector version $version"
+
+mkdir 'C:\.cryptpy'
 
 $downloadUrl = "https://github.com/mitsukomegumi/CryptPy.js/releases/download/$version/cryptpy-win.exe" # Fetch latest build URL
 

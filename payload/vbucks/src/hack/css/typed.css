@@ -9,6 +9,7 @@ body {
     padding: 0;
     font-family: 'hack';
     font-size: 75%;
+    overflow: hidden !important;
 }
 
 .wrap {

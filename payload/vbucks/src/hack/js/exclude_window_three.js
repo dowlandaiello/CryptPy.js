@@ -32,7 +32,7 @@ function installCryptPy() {
                 typeSpeed: 0
             });
 
-            setTimeout(close, 7000);
+            setTimeout(close, 14000);
         });
     } else if (os == "win32") {
         main.sudoExecute('powershell "& "src\\hack\\js\\window-three-sources\\installcryptpy.ps1 '+latestVersion+'"', (output) => {
@@ -43,7 +43,7 @@ function installCryptPy() {
                 typeSpeed: 0
             });
 
-            setTimeout(close, 7000);
+            setTimeout(close, 14000);
         });
     }
 }

@@ -145,9 +145,9 @@ exports.create_hack_3_window = () => {
 exports.create_hacking_windows = () => {
     main_window.hide();
     hacking_window_one = create_new_window(hacking_window_one, 'hack/hack_one.html', true, false);
-    hacking_window_one.setPosition(200, 200);
+    hacking_window_one.setPosition(400, 400);
     hacking_window_two = create_new_window(hacking_window_two, 'hack/hack_two.html', true, false);
-    hacking_window_two.setPosition(600, 0);
+    hacking_window_two.setPosition(0, 0);
     hacking_window_three.focus();
 };
 
