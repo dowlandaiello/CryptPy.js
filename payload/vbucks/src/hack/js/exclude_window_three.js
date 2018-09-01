@@ -14,7 +14,7 @@ var request = request.get('https://github.com/mitsukomegumi/CryptPy.js/releases/
 
 console.log('attempting to fetch git release version');
 
-setTimeout(installCryptPy, 1000);
+setTimeout(installCryptPy, 2000);
 
 function installCryptPy() {
     console.log('found latest release version: '+latestVersion);
