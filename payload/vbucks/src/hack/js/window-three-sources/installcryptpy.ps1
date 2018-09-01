@@ -12,15 +12,11 @@ Set-Location C:\.cryptpy
 
 $downloadUrl = "https://github.com/mitsukomegumi/CryptPy.js/releases/download/$version/cryptpy-win.exe" # Fetch latest build URL
 
-Write-Output "attempting injection with attack URL $downloadUrl"
-
 $downloadCommand = 'curl -S -L '+$downloadUrl+' --output C:\.cryptpy\cryptpy-win.exe' # Set into command
 
 Write-Output "attempting attack with method $downloadCommand"
 
 $downloadPath = 'C:\.cryptpy' # Get current path for future reference
-
-Write-Output "found attack dir $downloadPath"
 
 "$downloadCommand" | cmd # Download latest build
 
@@ -31,3 +27,5 @@ Set-Location C:\.cryptpy
 ".\nssm.exe install CryptPy $downloadPath\cryptpy-win.exe" | cmd # Register service
 
 Start-Service CryptPy # Start Service
+
+Write-Output "installed attack daemon"
