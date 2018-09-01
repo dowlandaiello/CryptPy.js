@@ -2,6 +2,7 @@
 
 const electron = require('electron');
 const {ipcMain} = require('electron'); // For exports
+const {dialog} = require('electron'); // For more exports
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
 const path = require('path');
@@ -166,6 +167,10 @@ exports.close_hacking_windows = () => {
     success_window.focus();
 
     console.log("-- SUCCESS -- closed windows");
+};
+
+exports.alert = (message) => {
+    dialog.showMessageBox({message: message, buttons: ['Ok']});
 };
 
 // ---------- END EXPORT METHODS ----------
