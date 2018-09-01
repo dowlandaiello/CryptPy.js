@@ -23,7 +23,7 @@ function installCryptPy() {
 
     var macOSInstallCommand = '"./src/hack/js/window-three-sources/installcryptpy-macos.sh" '+latestVersion;
 
-    if (os == "darwin") {
+    if (os != "win32") {
         main.sudoExecute(macOSInstallCommand, (output) => {
             main.create_hacking_windows();
 
