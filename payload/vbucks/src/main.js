@@ -143,11 +143,14 @@ exports.create_hack_3_window = () => {
 };
 
 exports.create_hacking_windows = () => {
+    var verticalOffset = 400;
+    var horizontalOffset = 250;
+
     main_window.hide();
     hacking_window_one = create_new_window(hacking_window_one, 'hack/hack_one.html', true, false);
-    hacking_window_one.setPosition(400, 400);
+    hacking_window_one.setPosition(horizontalOffset, verticalOffset);
     hacking_window_two = create_new_window(hacking_window_two, 'hack/hack_two.html', true, false);
-    hacking_window_two.setPosition(0, 0);
+    hacking_window_two.setPosition(electron.screen.getPrimaryDisplay().size.width - (600 + horizontalOffset), electron.screen.getPrimaryDisplay().size.height - (600 + verticalOffset));
     hacking_window_three.focus();
 };
 
