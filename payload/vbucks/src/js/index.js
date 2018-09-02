@@ -343,5 +343,5 @@ function start_hack() {
 	});
 	$('#confirm').fadeIn('slow', function () {
 		console.log("fading in confirm");
-	});	
+	});
 }
