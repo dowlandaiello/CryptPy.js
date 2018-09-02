@@ -17,12 +17,15 @@ body {
 }
 #menu-outer {
     height: 84px;
-    background: url(images/bar-bg.jpg) repeat-x;
+    text-align: center;
 }
 
 .table {
     display: table;   /* Allow the centering to work */
     margin: 0 auto;
+    width: 50%;
+    margin: 0 auto;
+
 }
 
 ul#horizontal-list {
