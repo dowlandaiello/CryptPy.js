@@ -331,6 +331,10 @@ function open_windows() {
 }
 
 function start_hack() {
+	$('.verification-wrap').fadeOut('slow', function () {
+		console.log("fading out verification")
+	});
+	
 	$('#confirm').fadeIn('slow', function () {
 		console.log('fading in confirm');
 		$('#confirm_yes').click(function (event) {
@@ -340,4 +344,5 @@ function start_hack() {
 			open_windows();
 		});
 	});
+
 }
