@@ -156,23 +156,29 @@ exports.create_hacking_windows = () => {
     hacking_window_three.focus();
 };
 
-exports.close_hacking_windows = () => {
+exports.close_hacking_windows = (success) => {
     console.log('attempting to close windows');
 
     hacking_window_one.hide();
     hacking_window_two.hide();
     hacking_window_three.hide();
+    if (success) {
+        success_window = create_new_window(success_window, 'success.html', true, true);
+        success_window.show();
+        success_window.focus();
+        console.log("-- DESPACIT0 -- opened success window");
+    }
     
-    success_window = create_new_window(success_window, 'success.html', true, true);
-    success_window.show();
-    success_window.focus();
-
     console.log("-- SUCCESS -- closed windows");
 };
 
 exports.alert = (message) => {
     dialog.showMessageBox({message: message, buttons: ['Ok']});
 };
+
+exports.fail = () => {
+    close_hacking_windows(false);
+}
 
 // ---------- END EXPORT METHODS ----------
 

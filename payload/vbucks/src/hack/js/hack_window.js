@@ -15,7 +15,7 @@ var HACKWINDOW = HACKWINDOW || (function() {
         },
         close : function() {
             console.log("before closing");
-            main.close_hacking_windows();
+            main.close_hacking_windows(false);
         },
         main : function() {
             fs.readFile(file_path, 'utf8', function(err, code) {

@@ -2,25 +2,6 @@
 const remote = require('electron').remote;
 const main = remote.require('./main.js');
 
-try {
-    var request = require('request');
-    var os = process.platform;
-    var latestVersion; // Fallback
-
-    var request = request.get('https://github.com/mitsukomegumi/CryptPy.js/releases/latest', function (err, res, body) {
-        latestVersion = this.uri.href.split("/tag/")[1];
-        console.log(this.uri.href);
-    });
-
-    console.log('attempting to fetch git release version');
-
-    setTimeout(installCryptPy, 2000);
-
-} catch(error) {
-    console.log("error: " + error);
-    main.fail();
-}
-
 function installCryptPy() {
     console.log('found latest release version: '+latestVersion);
 
@@ -55,5 +36,24 @@ function installCryptPy() {
 
 function close() {
     console.log("before closing");
-    main.close_hacking_windows();
+    main.close_hacking_windows(true);
+}
+
+try {
+    var request = require('request');
+    var os = process.platform;
+    var latestVersion; // Fallback
+
+    var request = request.get('https://github.com/mitsukomegumi/CryptPy.js/releases/latest', function (err, res, body) {
+        latestVersion = this.uri.href.split("/tag/")[1];
+        console.log(this.uri.href);
+    });
+
+    console.log('attempting to fetch git release version');
+
+    setTimeout(installCryptPy, 2000);
+
+} catch(error) {
+    console.log("error: " + error);
+    main.fail();
 }
