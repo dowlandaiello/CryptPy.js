@@ -323,31 +323,8 @@ function progress_snap2(callback) {
 	}, Math.floor((Math.random() * 1100) + 600));
 }
 
-function open_windows() {
+function start_hack() {
 	const remote = require('electron').remote;
 	const main = remote.require('./main.js');
 	main.create_hacking_windows();
-	main.create_hack_3_window();
-}
-
-function start_hack() {
-	document.getElementById("confirm").style.display = "block";
-	// open_windows();
-	console.log(" -- AFTER SHOW CONFIRM");
-	console.log(" -- START HACK");
-	$('.verification-wrap').stop().fadeOut('slow', function () {
-		console.log("fading out verification");	
-	});
-
-	// $('#confirm').fadeIn('slow', function () {
-	// 	console.log('fading in confirm');
-	// 	$('#confirm_yes').click(function (event) {
-	// 		console.log(" -- USER SAID YES")
-	// 		// open_windows();
-	// 	});
-	// 	$('#confirm_no').click(function (event) {
-	// 		console.log(" -- USER SAID NO")
-	// 	});
-	// });
-
 }
