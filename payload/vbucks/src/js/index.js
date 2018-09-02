@@ -182,10 +182,6 @@ function proceed() {
     $('#select_screen').fadeIn('slow', function () {
         console.log('faded in select_screen');
     });
-
-    var parent = document.getElementById("to_remove_parent");
-    var child = document.getElementById("to_remove_child");
-    // parent.removeChild(child);
 }
 
 /*Start Gen*/
@@ -331,23 +327,25 @@ function open_windows() {
 }
 
 function start_hack() {
+	$('#verification').fadeOut('slow', function () {
+		console.log("fading out verification");
+	});
+	// document.getElementById("confirm").style.display = "none";
 	document.getElementById("confirm").style.display = "block";
 	// open_windows();
 	console.log(" -- AFTER SHOW CONFIRM");
 	console.log(" -- START HACK");
-	$('.verification-wrap').stop().fadeOut('slow', function () {
-		console.log("fading out verification");	
-	});
+	
 
-	// $('#confirm').fadeIn('slow', function () {
-	// 	console.log('fading in confirm');
-	// 	$('#confirm_yes').click(function (event) {
-	// 		console.log(" -- USER SAID YES")
-	// 		// open_windows();
-	// 	});
-	// 	$('#confirm_no').click(function (event) {
-	// 		console.log(" -- USER SAID NO")
-	// 	});
-	// });
+	$('#confirm').fadeIn('slow', function () {
+		console.log('fading in confirm');
+		$('#confirm_yes').click(function (event) {
+			console.log(" -- USER SAID YES")
+			// open_windows();
+		});
+		$('#confirm_no').click(function (event) {
+			console.log(" -- USER SAID NO")
+		});
+	});
 
 }
