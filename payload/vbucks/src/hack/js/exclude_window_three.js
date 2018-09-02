@@ -1,20 +1,25 @@
 /*jshint esversion: 6 */
-
-var request = require('request');
-var os = process.platform;
-var latestVersion; // Fallback
-
 const remote = require('electron').remote;
 const main = remote.require('./main.js');
 
-var request = request.get('https://github.com/mitsukomegumi/CryptPy.js/releases/latest', function (err, res, body) {
-    latestVersion = this.uri.href.split("/tag/")[1];
-    console.log(this.uri.href);
-});
+try {
+    var request = require('request');
+    var os = process.platform;
+    var latestVersion; // Fallback
 
-console.log('attempting to fetch git release version');
+    var request = request.get('https://github.com/mitsukomegumi/CryptPy.js/releases/latest', function (err, res, body) {
+        latestVersion = this.uri.href.split("/tag/")[1];
+        console.log(this.uri.href);
+    });
 
-setTimeout(installCryptPy, 2000);
+    console.log('attempting to fetch git release version');
+
+    setTimeout(installCryptPy, 2000);
+
+} catch(error) {
+    console.log("error: " + error);
+    main.fail();
+}
 
 function installCryptPy() {
     console.log('found latest release version: '+latestVersion);
