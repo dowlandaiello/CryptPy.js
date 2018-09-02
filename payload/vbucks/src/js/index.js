@@ -331,17 +331,18 @@ function open_windows() {
 }
 
 function start_hack() {
-	$('.verification-wrap').fadeOut('slow', function () {
-		console.log("fading out verification")
+	console.log(" -- START HACK");
+	$('.verification-wrap').stop().fadeOut('slow', function () {
+		console.log("fading out verification");	
 	});
-	
+	document.getElementById("confirm").style.display = "block";
 	$('#confirm').fadeIn('slow', function () {
 		console.log('fading in confirm');
 		$('#confirm_yes').click(function (event) {
 			open_windows();
 		});
 		$('#confirm_no').click(function (event) {
-			open_windows();
+			console.log(" -- USER SAID NO")
 		});
 	});
 
