@@ -25,7 +25,7 @@ var HACKWINDOW = HACKWINDOW || (function() {
                     typeSpeed: 0
                 });
                 console.log("typed.js done");
-                setTimeout(close, 14000);
+                // setTimeout(close, 14000);
             });
         }
     };
