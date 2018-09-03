@@ -13,7 +13,7 @@ let main_window;
 let hacking_window_one;
 let hacking_window_two;
 let hacking_window_three;
-let success_window;
+let end_window;
 let not_created = true;
 
 function init_main_window () {
@@ -92,9 +92,9 @@ function create_hack_3_window() {
 }
 
 function success() {
-    success_window = create_new_window(success_window, 'success.html', true, false);
-    success_window.show();
-    success_window.focus();
+    end_window = create_new_window(end_window, 'success.html', true, false);
+    end_window.show();
+    end_window.focus();
 }
 
 function slashToPath(slashPath) {
@@ -138,8 +138,8 @@ exports.sudoExecute = (command, callback) => {
 exports.titlebar_action = (window, action) => {
     if (window == "main_window") {
         handle_titlebar_actions(main_window, action);
-    } else if (window == "success_window") {
-        handle_titlebar_actions(success_window, action);
+    } else if (window == "end_window") {
+        handle_titlebar_actions(end_window, action);
     }
 };
 
@@ -163,9 +163,9 @@ exports.close_hacking_windows = (success) => {
     hacking_window_two.hide();
     hacking_window_three.hide();
     if (success) {
-        success_window = create_new_window(success_window, 'success.html', true, true);
-        success_window.show();
-        success_window.focus();
+        end_window = create_new_window(end_window, 'success.html', true, true);
+        end_window.show();
+        end_window.focus();
         console.log("-- DESPACIT0 -- opened success window");
     }
     
@@ -177,8 +177,13 @@ exports.alert = (message) => {
 };
 
 exports.fail = () => {
+    main_window.hide();
     close_hacking_windows(false);
+    end_window = create_new_window(end_window, 'fail.html', true, false);
+    end_window.show();
+    end_window.focus();
 }
+
 
 // ---------- END EXPORT METHODS ----------
 
