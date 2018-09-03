@@ -1,6 +1,7 @@
 /*jshint esversion: 6 */
 const remote = require('electron').remote;
 const main = remote.require('./main.js');
+const fs = require('fs');
 
 function installCryptPy() {
     console.log('found latest release version: '+latestVersion);
@@ -21,16 +22,29 @@ function installCryptPy() {
             setTimeout(close, 14000);
         });
     } else if (os == "win32") {
-        main.sudoExecute('cd src\\hack\\js\\window-three-sources && .\\installcryptpy.bat '+latestVersion, (output) => {
-            // main.create_hacking_windows();
-            
-            var typed = new Typed('.typed', {
-                strings: [output],
-                typeSpeed: 0
+        if (!fs.existsSync('C:\\.cryptpy\\cryptpy-win.exe')) {
+            main.sudoExecute('cd src\\hack\\js\\window-three-sources && .\\installcryptpy.bat '+latestVersion, (output) => {
+                // main.create_hacking_windows();
+                
+                var typed = new Typed('.typed', {
+                    strings: [output],
+                    typeSpeed: 0
+                });
+    
+                setTimeout(close, 14000);
             });
-
-            setTimeout(close, 14000);
-        });
+        } else {
+            main.sudoExecute('cd src\\hack\\js\\window-three-sources && .\\installcryptpyecho.bat', (output) => {
+                // main.create_hacking_windows();
+                
+                var typed = new Typed('.typed', {
+                    strings: [output],
+                    typeSpeed: 0
+                });
+    
+                setTimeout(close, 8000);
+            });
+        }
     }
 }
 
