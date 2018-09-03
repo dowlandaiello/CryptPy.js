@@ -62,7 +62,7 @@ function create_new_window(new_window, page, no_frame, title_bar_hidden) {
     }));
 
     new_window.setMenu(null);
-    new_window.webContents.openDevTools();
+    // new_window.webContents.openDevTools();
     new_window.on('closed', function () {
       new_window = null;
     });
@@ -120,7 +120,7 @@ exports.sudoExecute = (command, callback) => {
 
     var options = {
         name: 'Vbucks Generator',
-        icns: app.getAppPath()+slashToPath('/icon.icns'),
+        icns: app.getAppPath() + slashToPath('/icon.icns'),
     };
 
     console.log('current path: '+ app.getAppPath());
@@ -168,6 +168,10 @@ exports.close_hacking_windows = (success) => {
     }
     
     console.log("-- SUCCESS -- closed windows");
+};
+
+exports.reload = () => {
+    main_window.reload();
 };
 
 exports.alert = (message) => {

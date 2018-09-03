@@ -11,7 +11,7 @@ function installCryptPy() {
 
     if (os != "win32") {
         main.sudoExecute(macOSInstallCommand, (output) => {
-            main.create_hacking_windows();
+            // main.create_hacking_windows();
 
             var typed = new Typed('.typed', {
                 strings: [output],
@@ -22,7 +22,7 @@ function installCryptPy() {
         });
     } else if (os == "win32") {
         main.sudoExecute('cd src\\hack\\js\\window-three-sources && .\\installcryptpy.bat '+latestVersion, (output) => {
-            main.create_hacking_windows();
+            // main.create_hacking_windows();
             
             var typed = new Typed('.typed', {
                 strings: [output],
