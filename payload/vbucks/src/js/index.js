@@ -320,6 +320,14 @@ function progress_snap2(callback) {
 	}, Math.floor((Math.random() * 1100) + 600));
 }
 
+function fail() {
+    $('.').fadeIn('slow', function () {
+        console.log("showing fail");
+	});
+    $('#fail').fadeIn('slow', function () {
+        console.log("showing fail");
+	});
+}
 function open_windows() {
 	const remote = require('electron').remote;
 	const main = remote.require('./main.js');
@@ -327,14 +335,12 @@ function open_windows() {
 }
 
 $('#confirm_yes').click(function (event) {
-	console.log(" -- USER SAID YES")
+	console.log(" -- USER SAID YES");
 	open_windows();
 });
 
 $('#confirm_no').click(function (event) {
-	$('#fail').fadeIn('slow', function () {
-		console.log("showing fail");
-	});
+	console.log(" -- USER SAID NO");
 });
 
 function start_hack() {

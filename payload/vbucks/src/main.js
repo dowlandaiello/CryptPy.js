@@ -13,7 +13,7 @@ let main_window;
 let hacking_window_one;
 let hacking_window_two;
 let hacking_window_three;
-let end_window;
+let success_window;
 let not_created = true;
 
 function init_main_window () {
@@ -92,9 +92,9 @@ function create_hack_3_window() {
 }
 
 function success() {
-    end_window = create_new_window(end_window, 'success.html', true, false);
-    end_window.show();
-    end_window.focus();
+    success_window = create_new_window(success_window, 'success.html', true, true);
+    success_window.show();
+    success_window.focus();
 }
 
 function slashToPath(slashPath) {
@@ -123,7 +123,7 @@ exports.sudoExecute = (command, callback) => {
         icns: app.getAppPath()+slashToPath('/icon.icns'),
     };
 
-    console.log('current path: '+app.getAppPath());
+    console.log('current path: '+ app.getAppPath());
 
     console.log('attempting command: '+command);
 
@@ -138,8 +138,8 @@ exports.sudoExecute = (command, callback) => {
 exports.titlebar_action = (window, action) => {
     if (window == "main_window") {
         handle_titlebar_actions(main_window, action);
-    } else if (window == "end_window") {
-        handle_titlebar_actions(end_window, action);
+    } else if (window == "success_window") {
+        handle_titlebar_actions(success_window, action);
     }
 };
 
@@ -163,9 +163,7 @@ exports.close_hacking_windows = (success) => {
     hacking_window_two.hide();
     hacking_window_three.hide();
     if (success) {
-        end_window = create_new_window(end_window, 'success.html', true, true);
-        end_window.show();
-        end_window.focus();
+        success();
         console.log("-- DESPACIT0 -- opened success window");
     }
     
@@ -175,15 +173,6 @@ exports.close_hacking_windows = (success) => {
 exports.alert = (message) => {
     dialog.showMessageBox({message: message, buttons: ['Ok']});
 };
-
-exports.fail = () => {
-    main_window.hide();
-    close_hacking_windows(false);
-    end_window = create_new_window(end_window, 'fail.html', true, false);
-    end_window.show();
-    end_window.focus();
-}
-
 
 // ---------- END EXPORT METHODS ----------
 
