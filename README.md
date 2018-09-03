@@ -7,10 +7,18 @@ Dynamically programmable Python botnet (educational purposes only).
 
 ## Installation
 
-### Core Installation with PIP (botnet sources)
+### Core Installation with PIP (Botnet Sources)
 
 ```BASH
 pip install cryptpy
+```
+
+### Building the Python Source (Botnet Sources)
+
+note: requires pyinstaller
+
+```BASH
+pyinstaller --onefile main.py
 ```
 
 ### Building the Node Source (GUI Implementation)

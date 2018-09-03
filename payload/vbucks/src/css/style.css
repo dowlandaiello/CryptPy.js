@@ -15,7 +15,29 @@ body {
 .title-wrap h3 {
     font-weight: 600
 }
-.topcorner{
+#menu-outer {
+    height: 84px;
+    text-align: center;
+}
+
+.table {
+    display: table;   /* Allow the centering to work */
+    margin: 0 auto;
+    width: 50%;
+    margin: 0 auto;
+
+}
+
+ul#horizontal-list {
+    min-width: 696px;
+    list-style: none;
+    padding-top: 20px;
+    text-align: center;
+}
+ul#horizontal-list li {
+    display: inline-block;
+}
+#title_bar {
     position:absolute;
     top:0;
     right:0;
@@ -127,6 +149,10 @@ p {
 }
 
 .wrap-wrap {
+    background-color: rgba(0, 0, 0, .41);
+    padding-bottom: 20px
+}
+.wrap-wrap-clone {
     background-color: rgba(0, 0, 0, .41);
     padding-bottom: 20px
 }
@@ -486,6 +512,16 @@ a.generate {
 }
 
 a.proceed {
+    padding: 10px 20px;
+    background: #f0ed63;
+    font-family: fortnite, cursive;
+    letter-spacing: 1px;
+    margin-top: 15px;
+    color: #000;
+    font-size: 22px;
+    text-transform: uppercase;
+}
+a.yes_no {
     padding: 10px 20px;
     background: #f0ed63;
     font-family: fortnite, cursive;

