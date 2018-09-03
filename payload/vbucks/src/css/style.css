@@ -32,10 +32,11 @@ ul#horizontal-list {
     min-width: 696px;
     list-style: none;
     padding-top: 20px;
-    }
-    ul#horizontal-list li {
-        display: inline;
-    }
+    text-align: center;
+}
+ul#horizontal-list li {
+    display: inline-block;
+}
 #title_bar {
     position:absolute;
     top:0;
