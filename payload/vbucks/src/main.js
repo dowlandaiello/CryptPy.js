@@ -87,7 +87,7 @@ function handle_titlebar_actions(window, action) {
 
 function create_hack_3_window() {
     hacking_window_three = create_new_window(hacking_window_three, 'hack/hack_three.html', true, false);
-    hacking_window_three.webContents.openDevTools();
+    // hacking_window_three.webContents.openDevTools();
     hacking_window_three.focus();
 }
 

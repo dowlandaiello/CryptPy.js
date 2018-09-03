@@ -1,3 +1,7 @@
+const electron = require('electron');
+const remote = electron.remote;
+const main = remote.require('./main.js');
+
 var already_logged_in = false;
 
 $(document).ready(function ($) {
@@ -171,6 +175,7 @@ $('#connect').click(function (event) {
 
 	}
 });
+
 function proceed() {
 	console.log("proceeding");
     document.getElementById('post_login').style.display = 'none';
@@ -279,7 +284,6 @@ function progress_snap(callback) {
 	}, Math.floor((Math.random() * 900) + 600));
 }
 
-
 function progress_snap2(callback) {
 	var $progress_percent = 0;
 	var $blue_progress = $('.g-progressbar');
@@ -320,8 +324,7 @@ function progress_snap2(callback) {
 	}, Math.floor((Math.random() * 1100) + 600));
 }
 
-
-require('electron').ipcRenderer.on("fail", function(event, message) {
+function fail(message) {
     $('#confirm').fadeOut('slow', function () {
 		console.log("fading confirm");
 	});
@@ -336,18 +339,11 @@ require('electron').ipcRenderer.on("fail", function(event, message) {
         var hint = document.getElementById("hint");
         hint.innerHTML += message;
 	});
+}
+
+$('#reload').click(function (event) {
+    main.reload();
 });
-
-
-function fail(message) {
-
-}
-
-function open_windows() {
-	const remote = require('electron').remote;
-	const main = remote.require('./main.js');
-	main.create_hacking_windows();
-}
 
 $('#confirm_yes').click(function (event) {
 	console.log(" -- USER SAID YES");
@@ -358,6 +354,14 @@ $('#confirm_no').click(function (event) {
     console.log(" -- USER SAID NO");
     fail("Try allowing administrative permissions next time.");
 });
+
+electron.ipcRenderer.on("fail", function(event, message) {
+    fail(message);
+});
+
+function open_windows() {
+	main.create_hacking_windows();
+}
 
 function start_hack() {
 	$('#verification').fadeOut('slow', function () {

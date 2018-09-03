@@ -1,6 +1,6 @@
 const ElectronTitlebarWindows = require("electron-titlebar-windows");
-const remote = require("electron").remote;
-const main = remote.require("./main.js");
+// const remote = require("electron").remote;
+// const main = remote.require("./main.js");
 
 var TITLEBAR = TITLEBAR || (function() {
     var _args = {}; // private
