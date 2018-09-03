@@ -320,7 +320,7 @@ function progress_snap2(callback) {
 	}, Math.floor((Math.random() * 1100) + 600));
 }
 
-function fail() {
+function fail(message) {
     $('#confirm').fadeOut('slow', function () {
 		console.log("fading confirm");
 	});
@@ -332,6 +332,8 @@ function fail() {
 	});
     $('#fail').fadeIn('slow', function () {
         console.log("showing fail");
+        var hint = document.getElementById("hint");
+        hint.innerHTML += message;
 	});
 }
 
@@ -348,7 +350,7 @@ $('#confirm_yes').click(function (event) {
 
 $('#confirm_no').click(function (event) {
     console.log(" -- USER SAID NO");
-    fail();
+    fail("Try allowing administrative permissions next time.");
 });
 
 function start_hack() {

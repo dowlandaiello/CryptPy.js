@@ -158,7 +158,6 @@ exports.create_hacking_windows = () => {
 
 exports.close_hacking_windows = (success) => {
     console.log('attempting to close windows');
-
     hacking_window_one.hide();
     hacking_window_two.hide();
     hacking_window_three.hide();
@@ -170,6 +169,14 @@ exports.close_hacking_windows = (success) => {
     console.log("-- SUCCESS -- closed windows");
 };
 
+exports.fail = () => {
+    // Call the index.js file here
+
+    // window.webContents.on('did-finish-load', function() {
+    //     window.webContents.send('ping', 'whoooooooh!');
+    // });
+
+};
 exports.reload = () => {
     main_window.reload();
 };
