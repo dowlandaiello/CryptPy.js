@@ -1,31 +1,26 @@
 /*jshint esversion: 6 */
 
 const electron = require('electron');
-const {ipcMain} = require('electron');
+const {ipcMain} = require('electron'); // For exports
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
 const path = require('path');
 const url = require('url');
 const exec = require('child_process').exec;
-const getos = require('getos');
-const ElectronTitlebarWindows = require('electron-titlebar-windows');
 
-let title_bar;
 let main_window;
 let hacking_window_one;
 let hacking_window_two;
 let hacking_window_three;
 let success_window;
 let not_created = true;
-let os;
 
 function init_main_window () {
-    os = exports.get_os();
-
     main_window = new BrowserWindow({
         titleBarStyle: 'hidden', 
         width: 1280, height: 720,
-        menu: false, frame: false
+        menu: false, frame: false,
+        show: false
     });
 
     main_window.loadURL(url.format({
@@ -34,13 +29,12 @@ function init_main_window () {
         slashes: true
     }));
 
-    if(os.includes("win")) {
-        title_bar = new ElectronTitlebarWindows("darkMode");
-        title_bar.appendTo(main_window.webContents);
-    }
-
     main_window.setMenu(null);
-    // main_window.webContents.openDevTools();
+    main_window.webContents.openDevTools();
+    main_window.on('ready-to-show', function () {
+        main_window.show();
+        main_window.focus();
+    });
     main_window.on('closed', function () {
         main_window = null;
     });
@@ -69,20 +63,30 @@ function create_new_window(new_window, page, no_frame, title_bar_hidden) {
     new_window.on('closed', function () {
       new_window = null;
     });
-    
     return new_window;
+}
+
+function handle_titlebar_actions(window, action) {
+    if (action == "close") {
+        window.close();
+    } else if (action == "minimize") {
+        window.minimize();
+    } else if (action == "toggle_maximize") {
+        if (window.isMaximized() == true) {
+            window.unmaximize();
+        } else {
+            window.maximize();
+        }
+    } else {
+        console.log("invalid titlebar action");
+    }
 }
 
 function success() {
     success_window = create_new_window(success_window, 'success.html', true, true);
 }
 
-exports.get_os = () => {
-    getos(function(e,os) {
-        if(e) return console.log(e);
-        return os;
-    });
-};
+// ---------- START EXPORT METHODS ----------
 
 exports.execute = (command, callback) => {
     exec(command, (error, stdout, stderr) => { 
@@ -90,6 +94,13 @@ exports.execute = (command, callback) => {
     });
 };
 
+exports.titlebar_action = (window, action) => {
+    if (window == "main_window") {
+        handle_titlebar_actions(main_window, action);
+    } else if (window == "success_window") {
+        handle_titlebar_actions(success_window, action);
+    }
+}
 exports.create_hacking_windows = () => {
     hacking_window_one = create_new_window(hacking_window_one, 'hack_one.html', true, false);
     hacking_window_one.setPosition(200, 200);
@@ -98,12 +109,10 @@ exports.create_hacking_windows = () => {
     hacking_window_two = create_new_window(hacking_window_two, 'hack_two.html', true, false);
     main_window.hide();
 };
-
 exports.close_hacking_windows = () => {
     hacking_window_one.hide();
     hacking_window_two.hide();
     hacking_window_three.hide();
-
     if (not_created == true) {
         main_window.hide();
         success();
@@ -112,6 +121,8 @@ exports.close_hacking_windows = () => {
         main_window.hide();
     }
 };
+
+// ---------- END EXPORT METHODS ----------
 
 ipcMain.on('resize-window', (event, width, height) => {
     hacking_window_one.setSize(width, height);

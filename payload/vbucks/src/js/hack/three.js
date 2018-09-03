@@ -1,11 +1,10 @@
 /*jshint esversion: 6 */
 
 const remote = require('electron').remote;
-const main = remote.require('./main.js');
 
-var os = main.get_os();
+var os = process.platform;
 
-if (os.includes("darwin")) {
+if (os == "darwin") {
     main.execute('/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"', (output) => {
         var typed = new Typed('.typed', {
             strings: [output],

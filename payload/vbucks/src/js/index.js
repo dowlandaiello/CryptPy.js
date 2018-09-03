@@ -1,4 +1,5 @@
 var already_logged_in = false;
+
 $(document).ready(function ($) {
 	(function ($) {
 

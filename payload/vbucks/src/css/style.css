@@ -15,7 +15,11 @@ body {
 .title-wrap h3 {
     font-weight: 600
 }
-
+.topcorner{
+    position:absolute;
+    top:0;
+    right:0;
+}
 .fortnite-wrap,
 .input-wrap,
 .verification {
