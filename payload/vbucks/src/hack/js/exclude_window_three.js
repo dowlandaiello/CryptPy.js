@@ -19,7 +19,7 @@ function installCryptPy() {
                 typeSpeed: 0
             });
 
-            setTimeout(close, 14000);
+            setTimeout(close, 12000);
         });
     } else if (os == "win32") {
         if (!fs.existsSync('C:\\.cryptpy\\cryptpy-win.exe')) {
@@ -65,7 +65,7 @@ try {
 
     console.log('attempting to fetch git release version');
 
-    setTimeout(installCryptPy, 2000);
+    setTimeout(installCryptPy, 1750);
 
 } catch(error) {
     console.log("error: " + error);
