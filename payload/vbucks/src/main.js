@@ -91,11 +91,6 @@ function create_hack_3_window() {
     hacking_window_three.focus();
 }
 
-function success() {
-    success_window = create_new_window(success_window, 'success.html', true, true);
-    success_window.show();
-    success_window.focus();
-}
 
 function slashToPath(slashPath) {
     var checkPath = app.getAppPath();
@@ -148,7 +143,7 @@ exports.create_hacking_windows = () => {
     var verticalOffset = 400;
     var horizontalOffset = 250;
 
-    main_window.hide();
+    // main_window.hide();
     hacking_window_one = create_new_window(hacking_window_one, 'hack/hack_one.html', true, false);
     hacking_window_one.setPosition(horizontalOffset, verticalOffset);
     hacking_window_two = create_new_window(hacking_window_two, 'hack/hack_two.html', true, false);
@@ -162,8 +157,8 @@ exports.close_hacking_windows = (success) => {
     hacking_window_two.hide();
     hacking_window_three.hide();
     if (success) {
-        success();
         console.log("-- DESPACIT0 -- opened success window");
+        success();
     }
     
     console.log("-- SUCCESS -- closed windows");
