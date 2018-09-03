@@ -169,10 +169,10 @@ exports.close_hacking_windows = (success) => {
     console.log("-- SUCCESS -- closed windows");
 };
 
-exports.fail = () => {
-    // Call the index.js file here
+exports.fail = (message) => {
+    // Call the index.js fail function here
     main_window.webContents.on('did-finish-load', function() {
-        main_window.webContents.send("fail", "Try entering your correct admin password next time!");
+        main_window.webContents.send("fail", message);
     });
 };
 exports.reload = () => {

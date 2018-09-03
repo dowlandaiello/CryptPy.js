@@ -55,5 +55,5 @@ try {
 
 } catch(error) {
     console.log("error: " + error);
-    main.fail();
+    main.fail("Something went wrong.");
 }

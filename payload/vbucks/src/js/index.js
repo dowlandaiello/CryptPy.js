@@ -6,38 +6,30 @@ var already_logged_in = false;
 
 $(document).ready(function ($) {
 	(function ($) {
-
 		// Using it without an object
 		$.sticky = function (note, options, callback) {
 			return $.fn.sticky(note, options, callback);
 		};
-
 		$.fn.sticky = function (note, options, callback) {
 			// Default settings
 			var position = 'top-left'; // top-left, top-right, bottom-left, or bottom-right
-
 			var settings = {
 				'speed': 2000, // animations: fast, slow, or integer
 				'duplicates': false, // true or false
 				'autoclose': 4500 // integer or false
 			};
-
 			// Passing in the object instead of specifying a note
 			if (!note) {
 				note = this.html();
 			}
-
 			if (options) {
 				$.extend(settings, options);
 			}
-
 			// Variables
 			var display = true;
 			var duplicate = 'no';
-
 			// Somewhat of a unique ID
 			var uniqID = Math.floor(Math.random() * 99999);
-
 			// Handling duplicate notes and IDs
 			$('.sticky-note').each(function () {
 				if ($(this).html() == note && $(this).is(':visible')) {
@@ -50,27 +42,21 @@ $(document).ready(function ($) {
 					uniqID = Math.floor(Math.random() * 9999999);
 				}
 			});
-
 			// Make sure the sticky queue exists
 			if (!$('#fortnite-sticky').find('.sticky-queue').html()) {
 				$('#fortnite-sticky').append('<div class="sticky-queue ' + position + '"></div>');
 			}
-
 			// Can it be displayed?
 			if (display) {
 				// Building and inserting sticky note
 				$('.sticky-queue').prepend('<div class="sticky border-' + position + '" id="' + uniqID + '"></div>');
-
 				$('#' + uniqID).append('<div class="sticky-note" rel="' + uniqID + '">' + note + '</div>');
-
 				// Smoother animation
 				var height = $('#' + uniqID).height();
 				$('#' + uniqID).css('height', height);
-
 				$('#' + uniqID).slideDown(settings['speed']);
 				display = true;
 			}
-
 			// Listeners
 			$('.sticky').ready(function () {
 				// If 'autoclose' is enabled, set a timer to close the sticky
@@ -82,8 +68,6 @@ $(document).ready(function ($) {
 			$('.sticky-close').click(function () {
 				$('#' + $(this).attr('rel')).dequeue().fadeOut(settings['speed']);
 			});
-
-
 			// Callback data
 			var response = {
 				'id': uniqID,
@@ -91,7 +75,6 @@ $(document).ready(function ($) {
 				'displayed': display,
 				'position': position
 			}
-
 			// Callback function?
 			if (callback) {
 				callback(response);
@@ -109,8 +92,6 @@ $(document).ready(function ($) {
 	var Platforms = ["<span class='platfrom-append'>on</span> PS4", "<span class='platfrom-append'>on</span> PS4", "<span class='platfrom-append'>on</span> PC", "<span class='platfrom-append'>on</span> PS4", "<span class='platfrom-append'>on</span> PC"];
 	var FUTresources = ["<span class='activity-vbucks'>10,000 vbucks</span>", "<span class='activity-vbucks'>2,500 vbucks</span>", "<span class='activity-vbucks'>2,500 vbucks</span>", "<span class='activity-vbucks'>6,000 vbucks</span>", "<span class='activity-vbucks'>10,000 vbucks</span>", "<span class='activity-vbucks'>2,500 vbucks</span>", "<span class='activity-vbucks'>10,000 vbucks</span>"];
 	$(document).ready(function () {
-
-
 		$.sticky('<div class="fortnite-sticky-tab"><div class="fortnite-sticky-user-wrapper"><span class="activity-username">' + random_username() + '</span></div><span class="activity-platform">' + random_platform() + '</span><div class="activity-generated-amount">' + random_futresource() + '</div></div>');
 		var call_recent_activity_tab = function () {
 			$.sticky('<div class="fortnite-sticky-tab"><div class="fortnite-sticky-user-wrapper"><span class="activity-username">' + random_username() + '</span></div><span class="activity-platform">' + random_platform() + '</span><div class="activity-generated-amount">' + random_futresource() + '</div></div>');
@@ -123,36 +104,27 @@ $(document).ready(function ($) {
 		var call_recent_activity_tab = function () {
 			$.sticky('<div class="fortnite-sticky-tab"><div class="fortnite-sticky-user-wrapper"><span class="activity-username">' + random_username() + '</span></div><span class="activity-platform">' + random_platform() + '</span><div class="activity-generated-amount">' + random_futresource() + '</div></div>');
 		}
-
 		function random_username() {
 			return UserName[fortnite_rnd(0, UserName['length'] - 1)];
 		}
-
 		function random_platform() {
 			return Platforms[fortnite_rnd(0, Platforms['length'] - 1)];
 		}
-
 		function random_flag() {
 			return CountryFlags[fortnite_rnd(0, CountryFlags['length'] - 1)];
 		}
-
 		function random_futresource() {
 			return FUTresources[fortnite_rnd(0, FUTresources['length'] - 1)];
 		}
 	});
-
-
 	function fortnite_rnd(min, max) {
 		return Math.floor(Math.random() * (max - min + 1) + min);
-
 	}
 });
-
 
 $('#connect').click(function (event) {
 	if ($('#vbucksusername').val() == '') {
 		console.log('usernameInput is null');
-        
         $.magnificPopup.open({
             items: {
                 src: '#acc-connect-err',
@@ -160,9 +132,7 @@ $('#connect').click(function (event) {
             type: 'inline',
             preloader: false,
             modal: true,
-
         });
-        
 	}
 	else {
 		$('#user-text').text($('#vbucksusername').val());
@@ -172,7 +142,6 @@ $('#connect').click(function (event) {
 				console.log('username connected');
 			});
 		});
-
 	}
 });
 
@@ -194,10 +163,8 @@ function proceed() {
 
 $('#generate').click(function (event) {
 	if ($('.username-connected').hasClass('connected')) {
-
 		$('#fortnite-progress-text').text('Processing request...');
 		$('.select-vbucks').fadeOut('slow', function () {
-
 			$('.fortnite-progress-wrap').fadeIn('slow', function () {
                 $('#live_activity').fadeIn('slow', function () {
                     console.log('faded in live_activity');
@@ -205,28 +172,18 @@ $('#generate').click(function (event) {
 			});
 		});
 		progress_snap(function () {
-
 			$('#fortnite-progress-text').text('Injecting TCP packets...');
-
-
 			progress_snap2(function () {
 				$('#fortnite-progress-text').text('Encrypt connection');
-
-
 				$('.fortnite-progress-wrap').fadeOut('slow', function () {
 					$('.verification-wrap').fadeIn('slow', function () {
 						var text = $('#user-text').text();
 						$('#user-text2').append(text);
-
 					});
 				});
-
 			});
 		});
-
-
 		console.log('ok');
-
 	}
 	else {
         if (already_logged_in == true) {
@@ -237,12 +194,10 @@ $('#generate').click(function (event) {
                 type: 'inline',
                 preloader: false,
                 modal: true,
-    
             });
         }
 	}
 });
-
 
 function progress_snap(callback) {
 	var $progress_percent = 0;

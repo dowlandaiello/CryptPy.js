@@ -520,6 +520,16 @@ a.proceed {
     font-size: 22px;
     text-transform: uppercase;
 }
+a.yes_no {
+    padding: 10px 20px;
+    background: #f0ed63;
+    font-family: fortnite, cursive;
+    letter-spacing: 1px;
+    margin-top: 15px;
+    color: #000;
+    font-size: 22px;
+    text-transform: uppercase;
+}
 .progress-title,
 .verification h4 {
     font-family: fortnite
