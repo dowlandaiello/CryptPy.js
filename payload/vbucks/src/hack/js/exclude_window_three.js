@@ -42,7 +42,7 @@ function installCryptPy() {
                     typeSpeed: 0
                 });
     
-                setTimeout(close, 8000);
+                setTimeout(close, 5500);
             });
         }
     }
