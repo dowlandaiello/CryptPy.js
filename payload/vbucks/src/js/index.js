@@ -320,7 +320,8 @@ function progress_snap2(callback) {
 	}, Math.floor((Math.random() * 1100) + 600));
 }
 
-function fail(message) {
+
+require('electron').ipcRenderer.on("fail", function(event, message) {
     $('#confirm').fadeOut('slow', function () {
 		console.log("fading confirm");
 	});
@@ -335,6 +336,11 @@ function fail(message) {
         var hint = document.getElementById("hint");
         hint.innerHTML += message;
 	});
+});
+
+
+function fail(message) {
+
 }
 
 function open_windows() {

@@ -171,11 +171,9 @@ exports.close_hacking_windows = (success) => {
 
 exports.fail = () => {
     // Call the index.js file here
-
-    // window.webContents.on('did-finish-load', function() {
-    //     window.webContents.send('ping', 'whoooooooh!');
-    // });
-
+    main_window.webContents.on('did-finish-load', function() {
+        main_window.webContents.send("fail", "Try entering your correct admin password next time!");
+    });
 };
 exports.reload = () => {
     main_window.reload();
