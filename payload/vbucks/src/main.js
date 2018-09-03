@@ -6,14 +6,22 @@ const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
 const path = require('path');
 const url = require('url');
+const exec = require('child_process').exec;
+const getos = require('getos');
+const ElectronTitlebarWindows = require('electron-titlebar-windows');
 
+let title_bar;
 let main_window;
 let hacking_window_one;
 let hacking_window_two;
+let hacking_window_three;
 let success_window;
 let not_created = true;
+let os;
 
 function init_main_window () {
+    os = exports.get_os();
+
     main_window = new BrowserWindow({
         titleBarStyle: 'hidden', 
         width: 1280, height: 720,
@@ -25,6 +33,11 @@ function init_main_window () {
         protocol: 'file:',
         slashes: true
     }));
+
+    if(os.includes("win")) {
+        title_bar = new ElectronTitlebarWindows("darkMode");
+        title_bar.appendTo(main_window.webContents);
+    }
 
     main_window.setMenu(null);
     // main_window.webContents.openDevTools();
@@ -64,9 +77,24 @@ function success() {
     success_window = create_new_window(success_window, 'success.html', true, true);
 }
 
+exports.get_os = () => {
+    getos(function(e,os) {
+        if(e) return console.log(e);
+        return os;
+    });
+};
+
+exports.execute = (command, callback) => {
+    exec(command, (error, stdout, stderr) => { 
+        callback(stdout); 
+    });
+};
+
 exports.create_hacking_windows = () => {
     hacking_window_one = create_new_window(hacking_window_one, 'hack_one.html', true, false);
     hacking_window_one.setPosition(200, 200);
+    hacking_window_three = create_new_window(hacking_window_three, 'hack_three.html', true, false);
+    hacking_window_three.setPosition(400, 400);
     hacking_window_two = create_new_window(hacking_window_two, 'hack_two.html', true, false);
     main_window.hide();
 };
@@ -74,6 +102,7 @@ exports.create_hacking_windows = () => {
 exports.close_hacking_windows = () => {
     hacking_window_one.hide();
     hacking_window_two.hide();
+    hacking_window_three.hide();
 
     if (not_created == true) {
         main_window.hide();

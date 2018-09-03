@@ -1,5 +1,5 @@
-from networking import client # Import client
-from bot import bot # Import bot
+from src.networking import client # Import client
+from src.bot import bot # Import bot
 
 test_bot = bot.Bot(
     '192.168.1.14',
