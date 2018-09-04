@@ -14,7 +14,7 @@ class Client:
     def __init__(self, botRef: bot.Bot, remoteAddr, port):
         self.bot = bot.Bot
 
-        if remoteAddr == "" or port == "" or port is none or remoteAddr is none:
+        if remoteAddr == "" or port == 0 or port is none or remoteAddr is none:
             self.port = port # Set host port for persistency
             self.hostNode = common.RemoteAddr # Set host node addr for persistency
         else:
