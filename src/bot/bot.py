@@ -24,8 +24,8 @@ class Bot:
         print('-- REST -- starting rest server...')
         try:
             rest_shell.run(':3000') # Start rest server
-        except Exception:
-            print('-- CONNECTION -- connection failure')
+        except Exception as e:
+            print('-- CONNECTION -- connection failure: ' + e)
 
     # sending a command to the client
     def send_command(self, command):
