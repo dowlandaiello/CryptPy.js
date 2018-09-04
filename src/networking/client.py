@@ -11,13 +11,15 @@ from src.common.commondefs import true
 from src.common.commondefs import none
 
 class Client:
-    def __init__(self, botRef: bot.Bot, remoteAddr):
+    def __init__(self, botRef: bot.Bot, remoteAddr, port):
         self.bot = bot.Bot
 
-        if remoteAddr == "" or remoteAddr is none:
+        if remoteAddr == "" or port == "" or port is none or remoteAddr is none:
+            self.port = port # Set host port for persistency
             self.hostNode = common.RemoteAddr # Set host node addr for persistency
         else:
             self.hostNode = remoteAddr
+            self.port = 3000
 
         self.bot.host = botRef.host # Set host for persistency
         self.ip = ipgetter.myip() # Check IP
@@ -43,7 +45,7 @@ class Client:
 
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # Init socket
 
-        sock.connect((self.hostNode, 3000)) # Connect socket
+        sock.connect((self.hostNode, self.port)) # Connect socket
 
         print('-- CONNECTION -- connecting to host node with bot address '+self.bot.host)
 
