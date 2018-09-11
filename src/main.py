@@ -33,21 +33,19 @@ def main():
 
     if args.server == true:
         if args.terminal == true:
-            server.Server("terminal") # Init server
+            server.Server("terminal", args.port) # Init server
 
             if args.test == true:
                 raise SystemExit(0) # Success
         else:
-            server.Server("") # Init server
+            server.Server("", args.port) # Init server
 
             if args.test == true:
                 raise SystemExit(0) # Success
     else:
         self_bot = bot.Bot
 
-        self_bot = bot.Bot ( # Init bot
-            ipgetter.myip() # Get external IP
-        )
+        self_bot = bot.Bot(ipgetter.myip(), args.port) # Init bot
 
         client.Client(self_bot, args.remoteaddr, args.port) # Init and register client
 

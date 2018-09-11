@@ -14,16 +14,20 @@ class ImportTest:
         print("imported successfully") # Log success
 class Bot:
     # init class instance
-    def __init__(self, host):
+    def __init__(self, host, port):
         print('-- INFO -- initializing bot...')
 
         self.host = host # Fetch and store host reference
+
+        if port == 0 or port is none:
+            port = 3000
+        self.port = port
 
     # open rest gateway to bot
     def rest(self):
         print('-- REST -- starting rest server...')
         try:
-            rest_shell.run(':3000') # Start rest server
+            rest_shell.run(':' + self.port) # Start rest server
         except Exception as e:
             print('-- CONNECTION -- connection failure: ' + e)
 
@@ -31,7 +35,7 @@ class Bot:
     def send_command(self, command):
         try:
             print('\nattempting on host '+self.host+'\n')
-            url = "https://"+self.host+":3000/execute" # Get addr
+            url = "https://"+self.host+":"+self.port+"/execute" # Get addr
 
             data = {'command': command} # Set request data
             headers = {'Content-Type': 'application/json'} # Init request headers
@@ -47,7 +51,7 @@ class Bot:
 
     # dump params to bytes
     def params_to_bytes(self):
-        arr = [self.host]
+        arr = [self.host, self.port]
         return marshal.dumps(arr)
 
     # read from bytes
@@ -56,4 +60,4 @@ class Bot:
 
 def byte_params_to_bot(b):
     arrVal = marshal.loads(b)
-    return Bot(arrVal[0])
+    return Bot(arrVal[0], arrVal[1])
