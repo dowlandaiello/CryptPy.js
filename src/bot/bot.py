@@ -14,14 +14,15 @@ class ImportTest:
         print("imported successfully") # Log success
 class Bot:
     # init class instance
-    def __init__(self, host, port):
+    def __init__(self, host, remotePort):
         print('-- INFO -- initializing bot...')
 
         self.host = host # Fetch and store host reference
 
-        if port == 0 or port is none:
-            port = 3000
-        self.port = port
+        if remotePort == 0 or remotePort is none:
+            self.port = 3000
+        else:            
+            self.port = remotePort
 
     # open rest gateway to bot
     def rest(self):
