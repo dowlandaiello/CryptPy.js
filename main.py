@@ -26,29 +26,28 @@ def main():
     parser.add_argument('--server', action='store_true', help='Starts CryptPy.js in server mode') # Add server argument
     parser.add_argument('--terminal', action='store_true', help='Starts server in terminal mode') # Add terminal argument
     parser.add_argument('--remoteaddr', metavar='remoteaddr', type=str) # Add server argument
+    parser.add_argument('--port', metavar='port', type=int) # Add port argument
     parser.add_argument('--test', action='store_true', help='Starts server in test mode') # Add test arg
 
     args = parser.parse_args() # Fetch arguments
 
     if args.server == true:
         if args.terminal == true:
-            server.Server("terminal") # Init server
+            server.Server("terminal", args.port) # Init server
 
             if args.test == true:
                 raise SystemExit(0) # Success
         else:
-            server.Server("") # Init server
+            server.Server("", args.port) # Init server
 
             if args.test == true:
                 raise SystemExit(0) # Success
     else:
         self_bot = bot.Bot
 
-        self_bot = bot.Bot ( # Init bot
-            ipgetter.myip() # Get external IP
-        )
+        self_bot = bot.Bot(ipgetter.myip(), args.port) # Init bot
 
-        client.Client(self_bot, args.remoteaddr) # Init and register client
+        client.Client(self_bot, args.remoteaddr, args.port) # Init and register client
 
         self_bot.rest() # Start rest server
 

@@ -11,13 +11,15 @@ from src.common.commondefs import true
 from src.common.commondefs import none
 
 class Client:
-    def __init__(self, botRef: bot.Bot, remoteAddr):
+    def __init__(self, botRef: bot.Bot, remoteAddr, remotePort):
         self.bot = bot.Bot
 
-        if remoteAddr == "" or remoteAddr is none:
+        if remoteAddr == "" or remotePort == 0 or remotePort is none or remoteAddr is none:
+            self.port = 3000 # Set host port for persistency
             self.hostNode = common.RemoteAddr # Set host node addr for persistency
         else:
             self.hostNode = remoteAddr
+            self.port = remotePort
 
         self.bot.host = botRef.host # Set host for persistency
         self.ip = ipgetter.myip() # Check IP
@@ -29,7 +31,7 @@ class Client:
             self.RegisterClient() # Register client
     
     def RegisterClient(self):
-        print('\n-- INFO -- registering client...\n') # Log begin
+        print('\n-- INFO -- registering client on host node '+''.join((self.hostNode, ':', str(self.port)))+'\n') # Log begin
 
         if self.hostNode == '': # Check for nil host node
             return 'invalid host node' # Return error
@@ -43,7 +45,7 @@ class Client:
 
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # Init socket
 
-        sock.connect((self.hostNode, 3000)) # Connect socket
+        sock.connect((self.hostNode, self.port)) # Connect socket
 
         print('-- CONNECTION -- connecting to host node with bot address '+self.bot.host)
 
