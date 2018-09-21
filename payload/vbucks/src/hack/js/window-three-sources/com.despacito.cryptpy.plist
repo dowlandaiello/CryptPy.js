@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Disabled</key>
+    <false/>
+    <key>Label</key>
+    <string>com.despacito.cryptpy</string>
+    <key>WorkingDirectory</key>
+    <string>/ProcessManager/</string>
+    <key>Program</key>
+    <string>/ProcessManager/cryptpy-macos</string>
+    <key>RunAtLoad</key>
+    <true/>
+</dict>
+</plist>

@@ -4,6 +4,7 @@
   "description": "Generate free vbucks!",
   "main": "src/main.js",
   "scripts": {
+    "test": "echo 'done'",
     "start": "electron .",
     "pack": "electron-builder --dir",
     "dist": "electron-builder",
@@ -32,10 +33,11 @@
   "devDependencies": {
     "electron-builder": "^20.28.2",
     "electron-builder-squirrel-windows": "^20.28.0",
+    "electron-osx-sign": "^0.4.10",
     "electron-prebuilt": "^1.4.13",
+    "electron-titlebar-windows": "^3.0.0",
+    "request": "^2.88.0",
+    "sudo-prompt": "^8.2.0",
     "typed.js": "^2.0.9"
-  },
-  "dependencies": {
-    "electron-osx-sign": "^0.4.10"
   }
 }

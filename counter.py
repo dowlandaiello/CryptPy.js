@@ -1,10 +1,14 @@
-DIR_NAME_HERE = "."
+DIR_NAME_HERE = "./bootstrap"
 IGNORE = [
     ".git",
     ".vscode",
-    "node_modules"
+    "node_modules",
+    "build",
+    "dist",
+    "key"
 ]
-LISENCE = 0
+#IGNORE = []
+LISENCE = 674
 import os
 global total_count
 total_count = 0

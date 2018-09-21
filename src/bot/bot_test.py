@@ -1,4 +1,4 @@
-from bot import bot
+from src.bot import bot
 
 bot.ImportTest() # Test importable
 

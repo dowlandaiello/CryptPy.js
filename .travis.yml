@@ -3,13 +3,22 @@ python:
   - "3.6"
 install:
   - pip install -r requirements.txt
-
 script:
-  - python src/main.py --server --test
+  - python main.py --server --test
+
+language: node_js
+node_js:
+  - "7"
+before_install:
+  - cd payload/vbucks
+install:
+  - npm install
+script:
+  - npm test
 
 notifications:
   email:
     recipients:
-      - mitsukomegumi@gmail.com
+      - mitsukomegumii@gmail.com
     on_success: always
     on_failure: always
