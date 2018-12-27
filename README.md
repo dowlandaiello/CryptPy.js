@@ -1,6 +1,7 @@
 ![Logo](http://mattnappo.com/crypt.png)
 
-[![Build Status](https://travis-ci.com/mitsukomegumi/CryptPy.js.svg?branch=master)](https://travis-ci.com/mitsukomegumi/CryptPy.js)
+[![Build Status](https://travis-ci.com/dowlandaiello/CryptPy.js.svg?branch=master)](https://travis-ci.com/dowlandaiello/CryptPy.js)
+[![As Seen On](https://img.shields.io/badge/As%20Seen%20On-GitHub,%20PyPi,%20NPM,%20Google%20Chrome-brightgreen.svg)](https://img.shields.io/badge/As%20Seen%20On-GitHub-brightgreen.svg)
 ___
 
 Dynamically programmable Python botnet (educational purposes only).
