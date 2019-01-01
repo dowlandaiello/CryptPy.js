@@ -1,3 +1,4 @@
+import os
 DIR_NAME_HERE = "./bootstrap"
 IGNORE = [
     ".git",
@@ -9,9 +10,10 @@ IGNORE = [
 ]
 #IGNORE = []
 LISENCE = 674
-import os
 global total_count
 total_count = 0
+
+
 def file_len(fname):
     global total_count
     cnt = 0
@@ -20,6 +22,8 @@ def file_len(fname):
             cnt+=i
     total_count += i + 1
     return i + 1
+
+
 def looper(dir_name):
     global total_count
     files = os.listdir(dir_name)
@@ -36,5 +40,6 @@ def looper(dir_name):
                 print(dir_name + "/" + f + ": " + str(file_len(dir_name + "/" + f)))
             except:
                 print(dir_name + "/" + f + " is not readble.")
+
 looper(DIR_NAME_HERE)
 print("Total Line Count of root folder '" + DIR_NAME_HERE + "/': " + str(total_count - LISENCE))
