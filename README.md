@@ -4,7 +4,7 @@
 [![As Seen On](https://img.shields.io/badge/As%20Seen%20On-GitHub,%20PyPi,%20NPM,%20Google%20Chrome-brightgreen.svg)](https://img.shields.io/badge/As%20Seen%20On-GitHub-brightgreen.svg)
 ___
 
-Dynamically programmable Python botnet (educational purposes only).
+Agile Python botnet (educational purposes only).
 
 ## Installation
 
